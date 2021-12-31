@@ -1,0 +1,22 @@
+title = "Luke's Blog"
+base_url = "https://loks0n.github.io"
+generate_feed = true
+# Whether to build a search index to be used later on by a JavaScript library
+build_search_index = true
+
+theme = "lightspeed"
+
+[markdown]
+# Whether to do syntax highlighting
+# Theme can be customised by setting the `highlight_theme` variable to a theme supported by Zola
+highlight_code = true
+
+[extra]
+# Put all your custom variables here
+footer_links = [
+    { url = "$BASE_URL/pages/about/", name = "About" },
+    { url = "$BASE_URL/atom.xml", name = "RSS" },
+]
+zola = false
+maintained_with_love = false
+footer_tagline = "Stop staring. You got a footer fetish or something?"
