@@ -21,7 +21,7 @@ A cursory search reveals [wholesale deals like this one](https://www.ebay.co.uk/
 
 ![£1 for a brush](ebay-toothbrush.png)
 
-Wow! And don't forget about inflation: the CPI inflation rate in the United Kingdom averaged [2.50 percent from 1989 until 2021](https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l55o/mm23). You might reasonable guestimate, therefore, a toothbrush purchased in 10 years might cost you **£1.28** compared to the **£1** you'd buy today. 
+Wow! And don't forget about inflation: the CPI inflation rate in the United Kingdom averaged [2.50 percent from 1989 until 2021](https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l55o/mm23). You could estimate that a toothbrush purchased in 10 years might cost you **£1.28** compared to the **£1** you'd buy today. 
 
 Buy your lifetime supply of toothbrushes in 1 go, and you'll escape the inevitable march of inflation.
 
