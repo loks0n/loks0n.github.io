@@ -15,21 +15,21 @@ I'm 22 years old. If I live to 90, using 5 toothbrushes each year, I'll use 390 
 
 ![£1 for a brush](amazon-toothbrush.png)
 
-Whilst £1 for single brush is a relatively mundane price, **£390 for 390 brushes** is *awful* if the brushes are purchased at once.
+Whilst £1 for a single brush is a relatively mundane price, **£390 for 390 brushes** is *awful* if the brushes are purchased at once.
 
 A cursory search reveals [wholesale deals like this one](https://www.ebay.co.uk/itm/255265071545), offering **400 brushes for only £132**!
 
 ![£1 for a brush](ebay-toothbrush.png)
 
-Wow! And don't forget about inflation: the CPI inflation rate in the United Kingdom averaged [2.50 percent from 1989 until 2021](https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l55o/mm23). You might reasonable guestimate, therefore, a toothbrush purchased in 10 years time might cost you **£1.28** compared the **£1** you'd buy today. 
+Wow! And don't forget about inflation: the CPI inflation rate in the United Kingdom averaged [2.50 percent from 1989 until 2021](https://www.ons.gov.uk/economy/inflationandpriceindices/timeseries/l55o/mm23). You might reasonable guestimate, therefore, a toothbrush purchased in 10 years might cost you **£1.28** compared to the **£1** you'd buy today. 
 
 Buy your lifetime supply of toothbrushes in 1 go, and you'll escape the inevitable march of inflation.
 
 # Sociological
 
-Should society collapse, you can be the *legend* that had the foresight to stock up on the real essential items. Everyone else is stuck with useless electronics that hasn't worked since the initial apocolyptic solar flare. Not only do healthy teeth vastly improve a survivors quality of life: they might even be a useful bartering item, should it come to it.
+Should society collapse, you can be the *legend* that had the foresight to stock up on the real essential items. Everyone else is stuck with useless electronics that haven't worked since the initial apocalyptic solar flare. Not only do healthy teeth vastly improve a survivor's quality of life: they might even be a useful bartering item, should it come to it.
 
-Even if society remains intact, you can dip into your brush supply to produce a last minute Christmas gift. 
+Even if society remains intact, you can dip into your brush supply to produce a last-minute Christmas gift. 
 
 If that won't convince you: know this.
 People would worship you for your toothbrushes. 
