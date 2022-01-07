@@ -11,7 +11,7 @@ I'd booked a train for 16:46 from Newark Northgate. Having got the bus to the st
 
 The respite from the cold Newark air was short-lived, however, as the ticket attendant would start to reprimand me.
 
-"That's not valid for this service?" He bemoaned.
+"That's not valid for this service!" He moaned.
 
 Why? It's the same route. Almost the same price, more expensive in fact, in advance. Same operator. The same royal red seats to remind me of the times I've sat on these trains, delayed for hours.
 
