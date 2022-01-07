@@ -10,7 +10,7 @@ During 2022, I'd like to:
 - Visit Kielder forest.
 - Write a total of 12 posts on this blog.
 - Bring the rewrite of <draughts.org> to feature parity with the existing site, and release it.
-- Climb an entire set of red routes (V4-6) at the Depot Climbing Centre in Nottingham.
+- Climb an entire set of red routes (V3-5) at the Depot Climbing Centre in Nottingham.
 - Do a muscle-up with good form.
 
 These seem pretty easy. I could probably do all these in a month if a really got my act together. Maybe I will.
