@@ -18,3 +18,20 @@ Why? It's the same route. Almost the same price, more expensive in fact, in adva
 I was made to pay £15 which included a discount on the cost of my previous ticket. This was presented as a courtesy. It's not. I've already paid for this journey. I want the money back.
 
 If this doesn't get an adequate resolution, I will probably take up cycling from destination to destination or something so I don't have to give you any more money.
+
+
+> Dear Mr Silver
+> 
+> Thank you for getting in touch with us at London North Eastern Railway.
+> 
+> I am sincerely sorry to hear that your journey was tainted by the cold temperature and the charge you received. I understand this must have been disappointing. I do feel it is important to point out that the process followed by the member of staff who charged you is correct. When buying a ticket, you are entering into a contract to travel on the service you have booked for. It is stated in the terms and conditions of your ticket that if you do not travel on the correct service, you will be charged.
+>
+> Thanks again for contacting us at London North Eastern Railway.
+
+
+Very well, 
+
+I shall journey via bike henceforth.
+
+Thanks,
+Luke
