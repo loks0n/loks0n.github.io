@@ -1,7 +1,10 @@
 +++
 title = "About"
 +++
-I'm a **Software Engineer** currenly working at [THG](https://www.thg.com). 
+
+I'm a **Software Engineer**  taking a sabbatical to travel around in my campervan.
+
+I've previously worked [THG](https://www.thg.com) and [Samsung](https://samsung.com). 
 
 Here's a picture of me on a large hill, somewhere in the Lake District.
 
@@ -9,7 +12,7 @@ Here's a picture of me on a large hill, somewhere in the Lake District.
 
 My interests include:
 - Climbing
-- Fencing
+- Running
 - Football
 - Cooking
 
