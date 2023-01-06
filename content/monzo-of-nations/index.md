@@ -1,0 +1,14 @@
++++
+title = "The Monzo of Nations"
+date = 2023-01-06
++++
+
+Imagine the Monzo of nations. Kinda like Gov.UK but rather than just the websites being useable, the entire country's infrastructure is a loveable, customer-facing enterprise.
+
+Nation-states hold a monopoly of violence over geographic regions. This enables them to act mainly in interests of their employees. In Banking, as technology has lowered barriers to entry, we've seen incumbent giants lose market share to new competition, like Monzo and Starling.
+
+One natural consequence of a growing digital economy is greater transnational competition for the business of, newly digital, citizens. At the risk of sounding like a corporate shill, I invite Monzo to do it themselves: I'd be a citizen of Monzo.
+
+Democracies are slow. Imagine your favourite cereal brand changed its recipe, and it started to taste like human waste. You wouldn't wait 5 years until the next shareholders meeting of the cereal manufacturer, and then queue to vote against the CEO. You'd switch to a different cereal.
+
+Cerealiously. If switching residency becomes any easier, world leaders might have to start looking towards their bowl of Wheaties&trade; for inspiration.
