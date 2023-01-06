@@ -9,7 +9,7 @@ Ticked off a few, and then forgot about the rest. I did do some other cool stuff
 The trick is picking a few stuff I actually want to do.
 
 During 2023, I'd like to:
-- [1/6] Write a total of 6 posts on this blog.
+- [2/6] Write a total of 6 posts on this blog.
 - [ ] Do a muscle-up.
 - [ ] Run the York Marathon faster than 3:45:00.
 
