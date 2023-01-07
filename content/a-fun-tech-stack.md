@@ -1,5 +1,5 @@
 +++
-title = "A fun tech stack"
+title = "A Fun Tech Stack"
 date = 2023-01-07
 +++
 
