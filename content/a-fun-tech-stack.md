@@ -22,7 +22,7 @@ Don't both reinventing the wheel, PicoCSS restyles most HTML component and provi
 
 Share your types between client and server to catch a bunch of bugs. Svelte is flexible, so for simple, or purely view-oriented, components you don't even need to use TS.
 
-## [Prisma](https://www.prisma.io/) + [SQLite]()
+## [Prisma](https://www.prisma.io/) + [SQLite](https://www.sqlite.org/)
 
 Querying your DB with GraphQL is sexy stuff, and once again generated types help catch bugs. With Prisma you have a bunch of options for your database, but unless you have a good reason - why not SQLite?
 
