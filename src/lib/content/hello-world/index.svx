@@ -1,0 +1,11 @@
+---
+title: Hello, World!
+date: 2021-12-27
+---
+
+This is my first blog post. 
+
+<!-- more -->
+Mostly just to see if <https://www.getzola.org> works correctly.
+
+It looks pretty nice, huh?
