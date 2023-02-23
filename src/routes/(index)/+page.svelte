@@ -15,7 +15,7 @@
 			<p>
 				{new Date(post.date).toDateString()}
 			</p>
-			<a href={`post/${post.slug}`}>
+			<a href={`/${post.slug}`}>
 				{post.title}
 			</a>
 		</li>

@@ -1,6 +1,8 @@
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from '$lib/config';
 import { posts } from '$lib/server/posts';
 
+export const prerender = true;
+
 type Posts = typeof posts;
 
 const xml = (posts: Posts) => `<?xml version="1.0" encoding="UTF-8" ?>

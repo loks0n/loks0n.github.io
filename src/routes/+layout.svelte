@@ -1,8 +1,6 @@
 <script>
 	import { page } from '$app/stores';
 	import '../pico.css';
-
-	$: console.log($page.url.pathname);
 </script>
 
 <main>
