@@ -14,23 +14,24 @@
 <article>
 	<header>
 		<h1>{data.post.title}</h1>
+		<small>authored by Luke Silver on {date}</small>
 	</header>
 	<svelte:component this={data.component} />
-
-	<footer>
-		authored by Luke Silver on {date}
-	</footer>
 </article>
 
 <style>
-	h1 {
-		margin: 0;
-	}
 	header {
-		display: grid;
-		place-items: center;
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 1.5em;
 	}
-	article {
-		padding-top: 0;
+
+	h1 {
+		margin-bottom: 0.25em;
+	}
+
+	small {
+		font-size: 0.9rem;
+		opacity: 0.5;
 	}
 </style>

@@ -9,7 +9,7 @@ Economic and sociological arguments
 
 Suppose you are 30 years old. Assuming you use at least [5 toothbrushes each year](https://www.statista.com/statistics/302827/toothbrush-usage-frequency-in-the-uk/), you have probably already used over 150 toothbrushes. 
 
-# Economic
+## Economic
 
 I'm 22 years old. If I live to 90, using 5 toothbrushes each year, I'll use 390 toothbrushes. On Amazon, the going rate seems to be [around £1 for a brush](https://www.amazon.co.uk/Bamboo-Toothbrushes-Ecofriendly-Bristles-Multicolored/dp/B082LVC5GL).
 
@@ -25,7 +25,7 @@ Wow! And don't forget about inflation: the CPI inflation rate in the United King
 
 Buy your lifetime supply of toothbrushes in 1 go, and you'll escape the inevitable march of inflation.
 
-# Sociological
+## Sociological
 
 Should society collapse, you can be the *legend* that had the foresight to stock up on the real essential items. Everyone else is stuck with useless electronics that haven't worked since the initial apocalyptic solar flare. Not only do healthy teeth vastly improve a survivor's quality of life: they might even be a useful bartering item, should it come to it.
 
