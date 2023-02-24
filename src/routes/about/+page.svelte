@@ -27,6 +27,9 @@
 </article>
 
 <style>
+	h1 {
+		margin-bottom: 0.5em;
+	}
 	img {
 		max-width: min(100%, 20em);
 		border-radius: 0.5em;

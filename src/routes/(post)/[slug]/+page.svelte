@@ -23,7 +23,7 @@
 	header {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 1.5em;
+		margin-bottom: 1em;
 	}
 
 	h1 {
