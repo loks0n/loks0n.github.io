@@ -1,9 +1,16 @@
 <script>
 	import '../app.css';
 	import '@fontsource/work-sans/variable.css';
+	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
 	import Footer from '$lib/components/Footer.svelte';
+	import { onMount } from 'svelte';
+	import { dev } from '$app/environment';
+
+	onMount(() => {
+		if (!dev) splitbee.init();
+	});
 </script>
 
 <svelte:head>
