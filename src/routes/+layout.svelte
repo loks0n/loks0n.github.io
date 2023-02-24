@@ -1,7 +1,9 @@
 <script>
-	import { page } from '$app/stores';
+	import '../app.css';
+	import '@fontsource/work-sans/variable.css';
+	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
-	import '../pico.css';
+	import Footer from '$lib/components/Footer.svelte';
 </script>
 
 <svelte:head>
@@ -9,60 +11,26 @@
 </svelte:head>
 
 <main>
-	<nav class="container">
-		<ul>
-			<li>
-				<a href="/" class:secondary={$page.url.pathname === '/'}>Blog</a>
-			</li>
-			<li>
-				<a href="/about" class:secondary={$page.url.pathname === '/about'}>About</a>
-			</li>
-			<li>
-				<a href="/rss.xml" target="_blank">RSS</a>
-			</li>
-		</ul>
-		<ul>
-			<li>
-				<a role="button" class="outline" href="https://linkedin.com/in/lukebsilver">LinkedIn</a>
-			</li>
-			<li>
-				<a role="button" class="outline" href="https://github.com/loks0n">GitHub</a>
-			</li>
-		</ul>
-	</nav>
-
-	<div class="container">
-		<div class="constrained">
-			<slot />
-		</div>
+	<Nav />
+	<div>
+		<slot />
 	</div>
-
-	<footer class="container">
-		<small>Stop staring! You got a footer fetish or something?</small>
-	</footer>
+	<Footer />
 </main>
 
 <style>
 	main {
+		min-height: 100vh;
+		min-height: 100dvh;
 		display: grid;
 		justify-items: center;
+		gap: 1em;
 		grid-template-rows: auto 1fr auto;
-		min-height: 100dvh;
 	}
 
-	nav {
-		padding-bottom: 1em;
-	}
-
-	.constrained {
+	div {
+		width: 100%;
 		max-width: 35em;
-	}
-
-	footer {
-		padding: 1em 0;
-	}
-
-	small {
-		color: rgb(186, 186, 186);
+		padding: 1em;
 	}
 </style>

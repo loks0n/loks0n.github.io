@@ -15,9 +15,8 @@
 	<header>
 		<h1>{data.post.title}</h1>
 	</header>
-	<div>
-		<svelte:component this={data.component} />
-	</div>
+	<svelte:component this={data.component} />
+
 	<footer>
 		authored by Luke Silver on {date}
 	</footer>

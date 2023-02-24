@@ -1,0 +1,70 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+}
+
+ul {
+	padding: revert;
+}
+
+nav > ul {
+	padding: 0;
+}
+
+body {
+	font-family: 'Work SansVariable', sans-serif;
+}
+
+img,
+picture,
+svg,
+video {
+	display: block;
+	max-width: 100%;
+}
+
+article {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}
+
+p,
+ul {
+	color: #333333;
+}
+
+h1 {
+	font-size: 2rem;
+	font-weight: 600;
+	color: #111111;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-weight: 500;
+	color: #111111;
+}
+
+h3 {
+	font-size: 1.2rem;
+	font-weight: 400;
+	color: #333333;
+}
+
+@supports (font-variation-settings: normal) {
+	h1 {
+		font-variation-settings: 'wght' 600;
+	}
+
+	h2 {
+		font-variation-settings: 'wght' 500;
+	}
+}

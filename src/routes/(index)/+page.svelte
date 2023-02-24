@@ -10,11 +10,12 @@
 </svelte:head>
 
 <ul>
+	<hr />
 	{#each data.posts as post}
 		<li>
-			<p>
+			<small>
 				{new Date(post.date).toDateString()}
-			</p>
+			</small>
 			<a href={`/${post.slug}`}>
 				{post.title}
 			</a>
@@ -24,16 +25,32 @@
 </ul>
 
 <style>
-	p {
-		margin: 0;
+	small {
 		color: rgb(186, 186, 186);
+		flex: 1;
 	}
+
 	ul {
 		padding: 0;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		gap: 0.5em;
 	}
+
 	li {
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
+	}
+
+	hr {
+		opacity: 0.1;
+	}
+
+	@supports (font-variation-settings: normal) {
+		a {
+			font-variation-settings: 'wght' 600;
+		}
 	}
 </style>
