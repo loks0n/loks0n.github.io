@@ -1,7 +1,12 @@
 <script>
 	import { page } from '$app/stores';
+	import { SITE_TITLE } from '$lib/config';
 	import '../pico.css';
 </script>
+
+<svelte:head>
+	<link rel="alternate" type="application/atom+xml" title={SITE_TITLE} href="/rss.xml" />
+</svelte:head>
 
 <main>
 	<nav class="container">
@@ -13,7 +18,7 @@
 				<a href="/about" class:secondary={$page.url.pathname === '/about'}>About</a>
 			</li>
 			<li>
-				<a href="/rss.xml">RSS</a>
+				<a href="/rss.xml" target="_blank">RSS</a>
 			</li>
 		</ul>
 		<ul>
