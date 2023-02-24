@@ -3,9 +3,15 @@
 </script>
 
 <article>
+	<h1>About Luke</h1>
+
+	<p>Here's a picture of me on a large hill, somewhere in the Lake District.</p>
+
+	<img alt="My face" src={meSrc} />
+
 	<p>
-		I'm a <strong>Software Engineer</strong> taking a sabbatical to travel around in my campervan.
-		I've previously worked <a href="https://www.thg.com">THG</a> and
+		I'm a <strong>Software Engineer</strong>. Currently taking a sabbatical to travel around in my
+		campervan. I've previously worked <a href="https://www.thg.com">THG</a> and
 		<a href="https://samsung.com">Samsung</a>.
 	</p>
 
@@ -17,18 +23,12 @@
 		<li>Cooking</li>
 	</ul>
 
-	<p>Here's a picture of me on a large hill, somewhere in the Lake District.</p>
-	<figure>
-		<img alt="My face" src={meSrc} />
-	</figure>
-
 	<p>You can contact me <a href="https://www.linkedin.com/in/lukebsilver/">via LinkedIn</a></p>
 </article>
 
 <style>
 	img {
-		aspect-ratio: 1/1;
-		max-height: 50vw;
+		max-width: min(100%, 20em);
 		border-radius: 0.5em;
 	}
 </style>
