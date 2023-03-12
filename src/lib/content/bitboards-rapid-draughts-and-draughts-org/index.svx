@@ -1,0 +1,18 @@
+---
+title: Bitboards, rapid-draughts and draughts.org
+date: 2023-03-12
+---
+
+## draughts.org
+Do you love to play online draughts for FREE? 
+Don't answer.
+Yes you do.
+Visit [draughts.org](https://www.draughts.org) today!
+
+## rapid-draughts
+I recently built a draughts engine in TypeScript that uses Bitboard representation. It's very fast.
+You can see code here [on GitHub](https://github.com/loks0n/rapid-draughts)
+It's now this engine that powers [draughts.org](https://www.draughts.org)!
+
+## Bitboards
+Bitboards are an efficient way of representing board games within memory. They use bit vector structures, such as unsigned integers, to store the state of the board. To represent English draughts, you only need three 32 bit unsigned integers! One each for the light and dark pieces, and another to store the crowned pieces.
