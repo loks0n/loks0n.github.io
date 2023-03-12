@@ -38,10 +38,20 @@
 		gap: 0.5em;
 	}
 
+	a {
+		text-align: right;
+		width: 70%;
+	}
+
+	small {
+		width: 30%;
+	}
+
 	li {
 		list-style: none;
 		display: flex;
 		justify-content: space-between;
+		gap: 1em;
 	}
 
 	hr {
