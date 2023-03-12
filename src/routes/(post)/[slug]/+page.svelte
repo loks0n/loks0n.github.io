@@ -8,7 +8,7 @@
 </script>
 
 <svelte:head>
-	<title>{data.post.title} | ${SITE_TITLE}</title>
+	<title>{data.post.title} | {SITE_TITLE}</title>
 </svelte:head>
 
 <article>
