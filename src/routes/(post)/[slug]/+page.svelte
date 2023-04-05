@@ -14,7 +14,7 @@
 <article>
 	<header>
 		<h1>{data.post.title}</h1>
-		<small>authored by Luke Silver on {date}</small>
+		<small>authored by Luke B. Silver on {date}</small>
 	</header>
 	<svelte:component this={data.component} />
 </article>
