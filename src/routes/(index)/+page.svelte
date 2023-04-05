@@ -28,6 +28,9 @@
 	small {
 		color: rgb(186, 186, 186);
 		flex: 1;
+		font-size: 0.75rem;
+		font-family: monospace;
+		align-self: center;
 	}
 
 	ul {
@@ -40,17 +43,12 @@
 
 	a {
 		text-align: right;
-		width: 70%;
-	}
-
-	small {
-		width: 30%;
 	}
 
 	li {
 		list-style: none;
-		display: flex;
-		justify-content: space-between;
+		display: grid;
+		grid-template-columns: 1fr 2fr;
 		gap: 1em;
 	}
 

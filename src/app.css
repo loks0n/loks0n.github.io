@@ -73,3 +73,11 @@ h3 {
 		font-variation-settings: 'wght' 500;
 	}
 }
+
+a {
+	color: #301985;
+}
+
+a:visited {
+	color: #221359;
+}

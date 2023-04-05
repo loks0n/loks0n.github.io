@@ -29,7 +29,7 @@
 		max-width: 35em;
 		display: flex;
 		width: 100%;
-		padding: 1em;
+		padding: 1.5em;
 		align-items: center;
 		justify-content: space-between;
 	}

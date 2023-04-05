@@ -4,7 +4,6 @@
 	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
-	import Footer from '$lib/components/Footer.svelte';
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
 
@@ -22,7 +21,6 @@
 	<div>
 		<slot />
 	</div>
-	<Footer />
 </main>
 
 <style>
@@ -38,6 +36,6 @@
 	div {
 		width: 100%;
 		max-width: 35em;
-		padding: 1em;
+		padding: 1.5em;
 	}
 </style>
