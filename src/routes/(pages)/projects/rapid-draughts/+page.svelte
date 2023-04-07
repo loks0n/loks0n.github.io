@@ -2,6 +2,7 @@
 	import Highlight from 'svelte-highlight';
 	import { a11yDark } from 'svelte-highlight/styles';
 	import { shell, typescript } from 'svelte-highlight/languages';
+	import { SITE_TITLE } from '$lib/config';
 
 	const importSnippet = `import { DraughtsPlayer, DraughtsStatus } from 'rapid-draughts';
 import {
@@ -31,6 +32,7 @@ console.log(\`ended after \${draughts.history.moves.length} moves\`);
 </script>
 
 <svelte:head>
+	<title>rapid-draughts | {SITE_TITLE}</title>
 	{@html a11yDark}
 </svelte:head>
 

@@ -1,3 +1,11 @@
+<script>
+	import { SITE_TITLE } from '$lib/config';
+</script>
+
+<svelte:head>
+	<title>Projects | {SITE_TITLE}</title>
+</svelte:head>
+
 <article>
 	<h1>My Projects</h1>
 	<ul>

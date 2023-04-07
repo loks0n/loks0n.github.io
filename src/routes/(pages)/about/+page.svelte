@@ -1,6 +1,11 @@
 <script>
+	import { SITE_TITLE } from '$lib/config';
 	import meSrc from './me.jpeg';
 </script>
+
+<svelte:head>
+	<title>About | {SITE_TITLE}</title>
+</svelte:head>
 
 <article>
 	<h1>About Me</h1>
