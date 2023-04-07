@@ -8,18 +8,12 @@
 			<a href="/" class:secondary={$page.url.pathname === '/'}>Blog</a>
 		</li>
 		<li>
-			<a href="/about" class:secondary={$page.url.pathname === '/about'}>About</a>
-		</li>
-		<li>
-			<a href="/rss.xml" target="_blank">RSS</a>
+			<a href="/projects" class:secondary={$page.url.pathname === '/projects'}>Projects</a>
 		</li>
 	</ul>
 	<ul>
 		<li>
-			<a role="button" class="outline" href="https://linkedin.com/in/lukebsilver">LinkedIn</a>
-		</li>
-		<li>
-			<a role="button" class="outline" href="https://github.com/loks0n">GitHub</a>
+			<a href="/about" class:secondary={$page.url.pathname === '/about'}>About</a>
 		</li>
 	</ul>
 </nav>

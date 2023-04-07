@@ -6,6 +6,7 @@
 	import { SITE_TITLE } from '$lib/config';
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
+	import Footer from '$lib/components/Footer.svelte';
 
 	onMount(() => {
 		if (!dev) splitbee.init();
@@ -21,6 +22,7 @@
 	<div>
 		<slot />
 	</div>
+	<Footer />
 </main>
 
 <style>
@@ -29,8 +31,8 @@
 		min-height: 100dvh;
 		display: grid;
 		justify-items: center;
-		gap: 1em;
 		grid-template-rows: auto 1fr auto;
+		background-color: rgb(255, 250, 239);
 	}
 
 	div {

@@ -9,20 +9,23 @@
 	<title>{SITE_TITLE}</title>
 </svelte:head>
 
-<ul>
-	<hr />
-	{#each data.posts as post}
-		<li>
-			<small>
-				{new Date(post.date).toDateString()}
-			</small>
-			<a href={`/${post.slug}`}>
-				{post.title}
-			</a>
-		</li>
+<article>
+	<h1>My Blog</h1>
+	<ul>
 		<hr />
-	{/each}
-</ul>
+		{#each data.posts as post}
+			<li>
+				<small>
+					{new Date(post.date).toDateString()}
+				</small>
+				<a href={`/${post.slug}`}>
+					{post.title}
+				</a>
+			</li>
+			<hr />
+		{/each}
+	</ul>
+</article>
 
 <style>
 	small {
