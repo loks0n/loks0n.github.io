@@ -42,8 +42,4 @@
 		font-size: 0.9rem;
 		opacity: 0.5;
 	}
-
-	hr {
-		opacity: 0.1;
-	}
 </style>

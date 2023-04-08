@@ -1,57 +1,53 @@
-<div>
-	<footer>
-		<ul>
-			<li>
-				<a href="/rss.xml" target="_blank" rel="noreferer">RSS</a>
-			</li>
-			<li>
-				<a
-					role="button"
-					class="outline"
-					target="_blank"
-					rel="noreferer"
-					href="https://linkedin.com/in/lukebsilver">LinkedIn</a
-				>
-			</li>
-			<li>
-				<a
-					role="button"
-					class="outline"
-					target="_blank"
-					rel="noreferer"
-					href="https://github.com/loks0n">GitHub</a
-				>
-			</li>
-		</ul>
-		<small>© 2023</small>
-	</footer>
-</div>
+<footer>
+	<ul>
+		<li>
+			<a href="/rss.xml" target="_blank" rel="noreferer">RSS</a>
+		</li>
+		<li>
+			<a
+				role="button"
+				class="outline"
+				target="_blank"
+				rel="noreferer"
+				href="https://linkedin.com/in/lukebsilver">LinkedIn</a
+			>
+		</li>
+		<li>
+			<a
+				role="button"
+				class="outline"
+				target="_blank"
+				rel="noreferer"
+				href="https://github.com/loks0n">GitHub</a
+			>
+		</li>
+	</ul>
+	<small>© 2023</small>
+</footer>
 
 <style>
-	div {
-		margin-top: 1.5em;
-		width: 100%;
-		display: flex;
-		background-color: rgb(191, 196, 200);
-	}
 	footer {
+		margin-top: 0 1.5em;
+		padding: 1.5em;
+		background-color: rgb(191, 196, 200);
+		display: flex;
+		flex-wrap: wrap;
 		width: 100%;
-		display: flex;
-		margin: 0 auto;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: center;
-		display: flex;
-		max-width: 35em;
+		gap: 2em;
 	}
 
 	small {
-		padding: 1.5em;
+		white-space: nowrap;
 	}
 
 	ul {
 		list-style: none;
 		display: flex;
-		padding: 1.5em;
+		justify-content: center;
+		flex-wrap: wrap;
+		padding: 0;
 		gap: 1em;
 	}
 </style>

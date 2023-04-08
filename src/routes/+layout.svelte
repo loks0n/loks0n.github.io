@@ -29,15 +29,16 @@
 	main {
 		min-height: 100vh;
 		min-height: 100dvh;
-		display: grid;
-		justify-items: center;
-		grid-template-rows: auto 1fr auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 		background-color: rgb(255, 250, 239);
 	}
 
 	div {
-		width: 100%;
-		max-width: 35em;
+		width: min(100%, 35em);
 		padding: 1.5em;
+		flex: 1;
+		margin-bottom: 2em;
 	}
 </style>

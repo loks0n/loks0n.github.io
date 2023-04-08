@@ -55,10 +55,6 @@
 		gap: 1em;
 	}
 
-	hr {
-		opacity: 0.1;
-	}
-
 	@supports (font-variation-settings: normal) {
 		a {
 			font-variation-settings: 'wght' 600;
