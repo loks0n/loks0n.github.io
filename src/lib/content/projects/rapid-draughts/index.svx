@@ -1,7 +1,7 @@
 ---
 name: rapid-draughts
 description: A super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
-github: https://github.com/rapid-draughts
+github: https://github.com/loks0n/rapid-draughts
 ---
 
 rapid-draughts is a super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
