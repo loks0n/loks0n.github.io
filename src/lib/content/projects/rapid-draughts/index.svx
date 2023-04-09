@@ -6,7 +6,7 @@ github: https://github.com/loks0n/rapid-draughts
 
 rapid-draughts is a super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
 
-## Table of Contents
+### Table of Contents
 - [1. Introduction](#1-introduction)
 - [2. Core](#2-core)
   * [2.1. Setting up the engine](#21-setting-up-the-engine)
