@@ -1,0 +1,180 @@
+---
+name: rapid-draughts
+description: A super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
+github: https://github.com/rapid-draughts
+---
+
+rapid-draughts is a super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
+
+## Table of Contents
+- [1. Introduction](#1-introduction)
+- [2. Core](#2-core)
+  * [2.1. Setting up the engine](#21-setting-up-the-engine)
+  * [2.2 Using the draughts engine](#22-using-the-draughts-engine)
+    + [2.2.1. The board](#221-the-board)
+    + [2.2.2. Current player](#222-current-player)
+    + [2.2.3. Current status](#223-current-status)
+    + [2.2.4. Game history](#224-game-history)
+    + [2.2.3. Making a move](#223-making-a-move)
+- [3. AI](#3-ai)
+  * [3.1. Random Strategy](#31-random-strategy)
+  * [3.2. AlphaBeta Strategy](#32-alphabeta-strategy)
+
+## 1. Introduction <div id="1-introduction"></div>
+
+One of the key advantages is its use of bitboards, a board representation that holds the draughts board in three 32 or 64-bit unsigned integers. One for the light pieces, dark pieces, and the king pieces. Bitboards enable fast move generation and have minimal memory usage, contributing to the library's exceptional performance.
+
+In the following sections, we will explore its usage in detail, covering installation, usage, AI strategies, game history, and more.
+
+## 2. Core <div id="2-core"></div>
+### 2.1. Setting up the engine <div id="21-setting-up-the-engine"></div>
+
+First, let's import the `EnglishDraughts` factory object:
+
+```typescript
+import { 
+    EnglishDraughts as Draughts 
+} from 'rapid-draughts/english';
+```
+
+With this, we call the `setup()` function to create a new draughts game.
+
+```typescript
+const draughts = Draughts.setup();
+```
+
+In english draughts, the dark pieces move first. You can change this by passing in the `player` property.
+
+```typescript
+import {
+    DraughtsPlayer
+} from 'rapid-draughts'
+import {
+    EnglishDraughts as Draughts
+} from 'rapid-draughts/english';
+
+const draughts = Draughts.setup({ player: DraughtsPlayer.LIGHT });
+```
+
+### 2.2 Using the draughts engine <div id="22-using-the-draughts-engine"></div>
+
+#### 2.2.1. The board <div id="221-the-board"></div>
+
+By default, the draughts board is set up with the standard starting position.
+You can get the current board state by accessing the board property. The board is returned as a 1D array with the following type:
+
+```typescript
+type Board = {
+    position?: number
+    dark: boolean
+    piece?: {
+        king: boolean
+        player: DraughtsPlayer
+    }
+}[]
+```
+
+Only valid, dark squares will have a `position` property, and only squares with a pieces will have a `piece` property.
+
+For convenience you can output an ASCII representation of the board with the `asciiBoard` method:
+
+```typescript
+console.log(draughts.asciiBoard());
+```
+
+#### 2.2.2. Current player <div id="222-current-player"></div>
+
+To get the current player, access the `player` property of the `draughts` object. The player will be either `DraughtsPlayer.LIGHT` or `DraughtsPlayer.DARK`.
+
+```typescript
+const { player } = draughts;
+console.log(`Current player: ${currentPlayer}`);
+```
+
+#### 2.2.3. Current status <div id="223-current-status"></div>
+
+To get the current game status, access the `status` property of the `draughts` object. The status will be one of the following values: `DraughtsStatus.PLAYING`, `DraughtsStatus.DRAW`, `DraughtsStatus.LIGHT_WINS`, or `DraughtsStatus.DARK_WINS`.
+
+```typescript
+const { status } = draughts;
+console.log(`Current status: ${currentStatus}`);
+```
+
+
+#### 2.2.4. Game history <div id="224-game-history"></div>
+The `draughts` object maintains a history of moves played during the game, as well as all the resulting board positions. To access the game history, use the `history` property.
+
+```typescript
+const { moves, boards } = draughts.history;
+```
+
+#### 2.2.3. Making a move <div id="223-making-a-move"></div>
+
+To make a move, first, get the list of legal moves available for the current position. You can access this list using the `moves` property of the `draughts` object. 
+
+```typescript
+const { moves } = draughts;
+```
+
+Each move is an object with the following type: 
+
+```typescript
+type EnglishDraughtsMove = {
+    origin: number
+    destination: number
+    captures: number[]
+}
+```
+
+`origin` refers to the square the piece is moving from, `destination` refers to the square the piece is moving to, and `captures` refers to the positions of the pieces that are being captured. To make a move, call the `move()` method of the `draughts` object, passing in one of the legal moves.
+
+```typescript
+const selectedMove = draughts.moves[0];
+draughts.move(selectedMove);
+```
+
+After making a move, the draughts object will update the board, the current player, and the game status. It will also add the move to the game history. Keep in mind that the `move()` method does not validate if the move is legal. An error will be thrown if an illegal move is passed in.
+
+## 3. AI <div id="3-ai"></div>
+The library provides a set of AI strategies that can be used to play against or to simulate games. In this section, we'll cover two strategies: Random and AlphaBeta.
+
+
+### 3.1. Random Strategy <div id="31-random-strategy"></div>
+The random strategy is a simple AI that chooses a random legal move. To create a random AI player, use the `ComputerFactory.random()` method.
+
+```typescript
+import { 
+    EnglishDraughtsComputerFactory as ComputerFactory 
+} from 'rapid-draughts/english';
+
+const randomComputer = ComputerFactory.random();
+```
+
+To get a random move, pass the `draughts` object to the `randomComputer` function. Make the move as usual with the `draughts.move()` function.
+
+```typescript
+const randomMove = await randomComputer(draughts);
+draughts.move(randomMove);
+```
+
+Note that the computer player functions are asynchronous, so you'll need to use the `await` keyword.
+
+### 3.2. AlphaBeta Strategy <div id="32-alphabeta-strategy"></div>
+The AlphaBeta strategy is a more advanced AI that uses the alpha-beta pruning algorithm to search for the best move. You can configure the search depth by passing an object with the `maxDepth` property to the `ComputerFactory.alphaBeta()` method.
+
+```typescript
+import { 
+    EnglishDraughtsComputerFactory as ComputerFactory 
+} from 'rapid-draughts/english';
+
+const alphaBetaComputer = ComputerFactory.alphaBeta({ maxDepth: 7 });
+```
+
+To get a move from the alpha-beta computer player, pass the draughts object as an argument. Make the move as usual with the `draughts.move()` function.
+
+```typescript
+const alphaBetaMove = await alphaBetaComputer(draughts);
+draughts.move(alphaBetaMove);
+```
+
+Note that the computer player functions are asynchronous, so you'll need to use the `await` keyword.

@@ -1,5 +1,7 @@
 <script>
 	import { SITE_TITLE } from '$lib/config';
+
+	export let data;
 </script>
 
 <svelte:head>
@@ -9,10 +11,11 @@
 <article>
 	<h1>My Projects</h1>
 	<ul>
-		<li>
-			<a href="/projects/rapid-draughts">rapid-draughts</a> - A super speedy, blazing fast, rocket-powered
-			TypeScript draughts/checkers engine with move validation, AI and game history.
-		</li>
+		{#each data.projects as project}
+			<li>
+				<a href="/projects/{project.slug}">{project.name}</a> - {project.description}
+			</li>
+		{/each}
 	</ul>
 </article>
 
