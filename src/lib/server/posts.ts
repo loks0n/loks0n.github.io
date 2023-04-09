@@ -12,7 +12,7 @@ export interface Post {
 }
 
 export const posts = Object.entries(
-	import.meta.glob<GlobEntry>('/src/lib/content/*/index.svx', { eager: true })
+	import.meta.glob<GlobEntry>('/src/lib/content/posts/*/index.svx', { eager: true })
 )
 	.map(([filePath, { metadata }]) => {
 		const dirname = path.dirname(filePath);
