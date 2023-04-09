@@ -29,7 +29,13 @@ In the following sections, we will explore its usage in detail, covering install
 ## 2. Core <div id="2-core"></div>
 ### 2.1. Setting up the engine <div id="21-setting-up-the-engine"></div>
 
-First, let's import the `EnglishDraughts` factory object:
+First, install the library using npm:
+
+```shell
+npm install rapid-draughts
+```
+
+Next we can import the `EnglishDraughts` factory object into your project:
 
 ```typescript
 import { 
