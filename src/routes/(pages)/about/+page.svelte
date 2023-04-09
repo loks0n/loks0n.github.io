@@ -1,6 +1,6 @@
 <script>
 	import { SITE_TITLE } from '$lib/config';
-	import meSrc from './me.jpeg';
+	import meSrc from './me.jpg';
 </script>
 
 <svelte:head>
@@ -11,13 +11,10 @@
 	<h1>About Me</h1>
 
 	<p>
-		I'm a <strong>Software Engineer</strong>. Currently taking a sabbatical to travel around in my
-		campervan. I've previously worked <a href="https://www.thg.com">THG</a> and
+		I'm a <strong>Software Engineer</strong>. Currently looking for an exciting full stack role.
+		I've previously worked <a href="https://www.thg.com">THG</a> and
 		<a href="https://samsung.com">Samsung</a>.
 	</p>
-
-	<p>Here's a picture of me on a large hill, somewhere in the Lake District.</p>
-
 	<img alt="My face" src={meSrc} />
 
 	<p>
