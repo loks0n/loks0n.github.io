@@ -94,7 +94,7 @@ To get the current player, access the `player` property of the `draughts` object
 
 ```typescript
 const { player } = draughts;
-console.log(`Current player: ${currentPlayer}`);
+console.log(`Current player: ${player}`);
 ```
 
 #### 2.2.3. Current status <div id="223-current-status"></div>
@@ -103,7 +103,7 @@ To get the current game status, access the `status` property of the `draughts` o
 
 ```typescript
 const { status } = draughts;
-console.log(`Current status: ${currentStatus}`);
+console.log(`Current status: ${status}`);
 ```
 
 
