@@ -7,7 +7,7 @@ Not only am I a cabinet - I am also a newly famous pop-star.
 
 I am thrilled to announce to release of my new, inevitable hit, single: i'm a cabinet.
 
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/album/5NP3KdqyBlUaKl2ZESvv66?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/7zXkAWc1lwMGCf8ku3ZctL?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 
 You might think this a song about a deluded person who thinks they are a cabinet. But you'd be wrong. This is a song about life. Struggle. Heartache. But most of all: carpentry.
 
