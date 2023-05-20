@@ -56,6 +56,7 @@ h1 {
 	line-height: 1.1;
 	margin-bottom: 0.5em;
 	color: darkslategray;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 h2 {
@@ -63,6 +64,7 @@ h2 {
 	font-weight: 700;
 	margin-top: 1.5em;
 	color: darkslategray;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 h3 {
@@ -70,6 +72,7 @@ h3 {
 	font-weight: 600;
 	margin-top: 0.5em;
 	color: darkslategray;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 h4 {
@@ -77,6 +80,7 @@ h4 {
 	font-weight: 500;
 	margin-top: 0.5em;
 	color: darkslategray;
+	font-family: 'Courier New', Courier, monospace;
 }
 
 @supports (font-variation-settings: normal) {

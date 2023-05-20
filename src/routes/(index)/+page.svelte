@@ -10,10 +10,9 @@
 </svelte:head>
 
 <article>
-	<h1>My Blog</h1>
+	<h1>This is my blog</h1>
 	<ul>
-		<hr />
-		{#each data.posts as post}
+		{#each data.posts as post, index}
 			<li>
 				<small>
 					{new Date(post.date).toDateString()}
@@ -22,7 +21,9 @@
 					{post.title}
 				</a>
 			</li>
-			<hr />
+			{#if index !== data.posts.length - 1}
+				<hr />
+			{/if}
 		{/each}
 	</ul>
 </article>

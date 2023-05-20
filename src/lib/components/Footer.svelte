@@ -29,13 +29,14 @@
 	footer {
 		margin-top: 0 1.5em;
 		padding: 1.5em;
-		background-color: rgb(191, 196, 200);
 		display: flex;
 		flex-wrap: wrap;
 		width: 100%;
 		justify-content: center;
 		align-items: center;
-		gap: 2em;
+		gap: 3em;
+		background-color: rgba(215, 209, 196, 0.5);
+		font-size: 0.9rem;
 	}
 
 	small {

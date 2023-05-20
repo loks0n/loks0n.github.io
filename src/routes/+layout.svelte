@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
 	import Footer from '$lib/components/Footer.svelte';
+	import Header from '$lib/components/Header.svelte';
 
 	onMount(() => {
 		if (!dev) splitbee.init();
@@ -18,6 +19,7 @@
 </svelte:head>
 
 <main>
+	<Header />
 	<Nav />
 	<div>
 		<slot />
@@ -36,9 +38,9 @@
 	}
 
 	div {
-		width: min(100%, 35em);
-		padding: 1.5em;
+		width: min(100%, 40em);
+		padding: 2em;
 		flex: 1;
-		margin-bottom: 2em;
+		margin: 3em 0;
 	}
 </style>
