@@ -40,7 +40,8 @@
 	div {
 		width: min(100%, 40em);
 		padding: 2em;
+		margin-top: 1em;
+		margin-bottom: 2em;
 		flex: 1;
-		margin: 3em 0;
 	}
 </style>

@@ -9,8 +9,8 @@
 			45deg,
 			rgba(215, 209, 196, 1),
 			rgba(215, 209, 196, 1) 5px,
-			#e3ded5 5px,
-			#e3ded5 25px
+			rgb(227, 222, 213) 5px,
+			rgb(227, 222, 213) 25px
 		);
 		display: flex;
 		width: 100%;
@@ -21,6 +21,6 @@
 	h1 {
 		font-size: 4.25rem;
 		text-align: center;
-		margin: 0.5em 0;
+		margin: 0.125em 0;
 	}
 </style>

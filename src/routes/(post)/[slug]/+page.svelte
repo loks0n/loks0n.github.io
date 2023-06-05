@@ -12,11 +12,11 @@
 </svelte:head>
 
 <article>
-	<hr />
 	<header>
 		<h1>{data.post.title}</h1>
 		<small>authored by Luke B. Silver on {date}</small>
 	</header>
+	<hr />
 	<svelte:component this={data.component} />
 	<hr />
 </article>
@@ -27,7 +27,10 @@
 	header {
 		display: flex;
 		flex-direction: column;
-		margin-bottom: 1em;
+	}
+
+	hr {
+		margin-bottom: 2em;
 	}
 
 	article {
@@ -41,5 +44,6 @@
 	small {
 		font-size: 0.9rem;
 		opacity: 0.5;
+		text-align: center;
 	}
 </style>

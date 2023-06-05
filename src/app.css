@@ -54,7 +54,7 @@ h1 {
 	font-size: 2.5rem;
 	font-weight: 800;
 	line-height: 1.1;
-	margin-bottom: 0.5em;
+	margin: 0 auto 0.5em;
 	color: darkslategray;
 	font-family: 'Courier New', Courier, monospace;
 }
