@@ -19,8 +19,33 @@
 	}
 
 	h1 {
-		font-size: 4.25rem;
+		font-size: 2rem;
 		text-align: center;
-		margin: 0.125em 0;
+		margin: 0.15em 0;
+		white-space: nowrap;
+	}
+
+	@media (min-width: 450px) {
+		h1 {
+			font-size: 3rem;
+		}
+	}
+
+	@media (min-width: 600px) {
+		h1 {
+			font-size: 4rem;
+		}
+	}
+
+	@media (min-width: 800px) {
+		h1 {
+			font-size: 5rem;
+		}
+	}
+
+	@media (min-width: 900px) {
+		h1 {
+			font-size: 6rem;
+		}
 	}
 </style>

@@ -1,6 +1,7 @@
 <script>
 	import '../app.css';
-	import '@fontsource/work-sans/variable.css';
+	import '@fontsource-variable/work-sans';
+	import '@fontsource-variable/azeret-mono';
 	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';

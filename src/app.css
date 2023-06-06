@@ -56,7 +56,7 @@ h1 {
 	line-height: 1.1;
 	margin: 0 auto 0.5em;
 	color: darkslategray;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Azeret Mono Variable', monospace;
 }
 
 h2 {
@@ -64,7 +64,7 @@ h2 {
 	font-weight: 700;
 	margin-top: 1.5em;
 	color: darkslategray;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Azeret Mono Variable', monospace;
 }
 
 h3 {
@@ -72,7 +72,7 @@ h3 {
 	font-weight: 600;
 	margin-top: 0.5em;
 	color: darkslategray;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Azeret Mono Variable', monospace;
 }
 
 h4 {
@@ -80,7 +80,7 @@ h4 {
 	font-weight: 500;
 	margin-top: 0.5em;
 	color: darkslategray;
-	font-family: 'Courier New', Courier, monospace;
+	font-family: 'Azeret Mono Variable', monospace;
 }
 
 @supports (font-variation-settings: normal) {
@@ -92,7 +92,7 @@ h4 {
 		font-variation-settings: 'wght' 700;
 	}
 
-	h2 {
+	h3 {
 		font-variation-settings: 'wght' 600;
 	}
 }

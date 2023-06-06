@@ -53,7 +53,7 @@
 		text-decoration: none;
 		font-weight: 600;
 		text-align: center;
-		font-family: 'Courier New', Courier, monospace;
+		font-family: 'Azeret Mono Variable', monospace;
 	}
 
 	a:hover,

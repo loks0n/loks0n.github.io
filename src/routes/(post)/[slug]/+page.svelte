@@ -39,6 +39,7 @@
 
 	h1 {
 		margin-bottom: 0.25em;
+		text-align: center;
 	}
 
 	small {
