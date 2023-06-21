@@ -37,6 +37,7 @@
 		gap: 3em;
 		background-color: rgba(215, 209, 196, 0.5);
 		font-size: 0.9rem;
+		font-family: 'Azeret Mono Variable', monospace;
 	}
 
 	small {

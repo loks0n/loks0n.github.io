@@ -38,8 +38,9 @@
 	}
 
 	h1 {
-		margin-bottom: 0.25em;
+		margin-bottom: 0.5em;
 		text-align: center;
+		font-size: 1.75rem;
 	}
 
 	small {

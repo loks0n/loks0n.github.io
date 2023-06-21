@@ -55,6 +55,7 @@ h1 {
 	font-weight: 800;
 	line-height: 1.1;
 	margin: 0 auto 0.5em;
+	text-wrap: balance;
 	color: darkslategray;
 	font-family: 'Azeret Mono Variable', monospace;
 }
@@ -63,6 +64,7 @@ h2 {
 	font-size: 2rem;
 	font-weight: 700;
 	margin-top: 1.5em;
+	text-wrap: balance;
 	color: darkslategray;
 	font-family: 'Azeret Mono Variable', monospace;
 }
@@ -71,6 +73,7 @@ h3 {
 	font-size: 1.75rem;
 	font-weight: 600;
 	margin-top: 0.5em;
+	text-wrap: balance;
 	color: darkslategray;
 	font-family: 'Azeret Mono Variable', monospace;
 }
@@ -79,6 +82,7 @@ h4 {
 	font-size: 1.25rem;
 	font-weight: 500;
 	margin-top: 0.5em;
+	text-wrap: balance;
 	color: darkslategray;
 	font-family: 'Azeret Mono Variable', monospace;
 }
@@ -99,6 +103,7 @@ h4 {
 
 a {
 	color: darkslategray;
+	font-family: 'Azeret Mono Variable', monospace;
 }
 
 a:visited {

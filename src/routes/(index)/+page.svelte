@@ -10,16 +10,15 @@
 </svelte:head>
 
 <article>
-	<h1>This is my blog</h1>
 	<ul>
 		{#each data.posts as post, index}
 			<li>
-				<small>
-					{new Date(post.date).toDateString()}
-				</small>
 				<a href={`/${post.slug}`}>
 					{post.title}
 				</a>
+				<small>
+					{new Date(post.date).toDateString()}
+				</small>
 			</li>
 			{#if index !== data.posts.length - 1}
 				<hr />
@@ -31,9 +30,9 @@
 <style>
 	small {
 		color: rgb(186, 186, 186);
-		flex: 1;
 		font-size: 0.75rem;
 		font-family: monospace;
+		text-align: right;
 		align-self: center;
 	}
 
@@ -46,13 +45,14 @@
 	}
 
 	a {
-		text-align: right;
+		text-align: left;
+		text-wrap: balance;
 	}
 
 	li {
 		list-style: none;
 		display: grid;
-		grid-template-columns: 1fr 2fr;
+		grid-template-columns: auto auto;
 		gap: 1em;
 	}
 

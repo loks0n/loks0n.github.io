@@ -9,7 +9,6 @@
 </svelte:head>
 
 <article>
-	<h1>These are my projects</h1>
 	<ul>
 		{#each data.projects as project}
 			<li>

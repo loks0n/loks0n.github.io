@@ -8,8 +8,6 @@
 </svelte:head>
 
 <article>
-	<h1>This is my face</h1>
-
 	<div>
 		<img alt="My face" src={meSrc} />
 		<ul>
@@ -29,9 +27,6 @@
 </article>
 
 <style>
-	h1 {
-		margin-bottom: 0.5em;
-	}
 	img {
 		max-width: 90%;
 		border-radius: 0.5em;
