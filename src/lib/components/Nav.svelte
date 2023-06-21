@@ -27,7 +27,7 @@
 
 	div {
 		max-width: 40em;
-		padding: 0.5em 2em;
+		padding: 0.5em 1em;
 		display: flex;
 		flex: 1;
 
@@ -38,18 +38,34 @@
 	ul {
 		list-style: none;
 		display: flex;
-		justify-content: center;
+		width: 100%;
+		flex-direction: column;
+		justify-content: stretch;
 		align-items: center;
 		padding: 0;
 		gap: 0.5em;
 	}
 
+	li {
+		width: 100%;
+	}
+
+	@media (min-width: 450px) {
+		div {
+			padding: 0.5em 2em;
+		}
+		ul {
+			flex-direction: row;
+		}
+	}
+
 	a {
 		display: block;
+
 		background-color: rgb(227, 222, 213);
 		border: 0.25em solid rgb(216, 216, 216);
 		padding: 0.25em 0.5em;
-		min-width: 10ch;
+		min-width: 12ch;
 		text-decoration: none;
 		font-weight: 600;
 		text-align: center;

@@ -40,9 +40,15 @@
 
 	div {
 		width: min(100%, 40em);
-		padding: 2em;
+		padding: 1em;
 		margin-top: 1em;
 		margin-bottom: 2em;
 		flex: 1;
+	}
+
+	@media (min-width: 450px) {
+		div {
+			padding: 2em;
+		}
 	}
 </style>

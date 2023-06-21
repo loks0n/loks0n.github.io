@@ -19,10 +19,16 @@
 	}
 
 	h1 {
-		font-size: 2rem;
+		font-size: 1.5rem;
 		text-align: center;
-		margin: 0.15em 0;
+		margin: 0.3em 0;
 		white-space: nowrap;
+	}
+
+	@media (min-width: 350px) {
+		h1 {
+			font-size: 2rem;
+		}
 	}
 
 	@media (min-width: 450px) {
