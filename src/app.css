@@ -110,6 +110,10 @@ a:visited {
 	filter: brightness(0.8);
 }
 
+button {
+	font-family: 'Azeret Mono Variable', monospace;
+}
+
 article pre {
 	max-width: 100%;
 	overflow-x: scroll;
