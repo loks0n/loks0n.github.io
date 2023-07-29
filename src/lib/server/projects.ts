@@ -12,7 +12,7 @@ export interface Project {
 }
 
 export const projects = Object.entries(
-	import.meta.glob<GlobEntry>('/src/lib/content/projects/*/index.svx', { eager: true })
+	import.meta.glob<GlobEntry>('/content/projects/*/index.svx', { eager: true })
 ).map(([filePath, { metadata }]) => {
 	const dirname = path.dirname(filePath);
 	return {
