@@ -1,14 +1,13 @@
 <script lang="ts">
 	import { SITE_TITLE } from '$lib/config';
-	import type { PageData } from './$types';
 
-	export let data: PageData;
+	export let data;
 
-	const PAGE_SIZE = 5;
+	$: pageStart = data.page * data.pageSize + 1;
+	$: pageEnd = Math.min(data.total, pageStart + data.pageSize - 1);
 
-	let page = 0;
-
-	$: posts = data.posts.slice(page * PAGE_SIZE, (page + 1) * PAGE_SIZE);
+	$: isLastPage = pageEnd === data.total;
+	$: isFirstPage = pageStart === 1;
 </script>
 
 <svelte:head>
@@ -17,7 +16,7 @@
 
 <article class="posts">
 	<ul>
-		{#each posts as post, index}
+		{#each data.posts as post, index}
 			<li>
 				<a href={`/${post.slug}`}>
 					{post.title}
@@ -26,7 +25,7 @@
 					{new Date(post.date).toDateString()}
 				</small>
 			</li>
-			{#if index !== posts.length - 1}
+			{#if index !== data.posts.length - 1}
 				<hr />
 			{/if}
 		{/each}
@@ -34,24 +33,18 @@
 </article>
 
 <nav>
-	<button disabled={page === 0} on:click|preventDefault={() => page--}> Newer posts</button>
-
+	<a href={`?page=${data.page - 1}`} class="btn" class:disabled={isFirstPage}>Newer</a>
 	<small>
-		{page * PAGE_SIZE + 1} - {Math.min(data.posts.length, (page + 1) * PAGE_SIZE)} of {data.posts
-			.length}
+		{pageStart}-{pageEnd} of {data.total}
 	</small>
-	<button
-		disabled={(page + 1) * PAGE_SIZE >= data.posts.length}
-		on:click|preventDefault={() => page++}
-	>
-		Older posts
-	</button>
+	<a href={`?page=${data.page + 1}`} class="btn" class:disabled={isLastPage}> Older </a>
 </nav>
 
 <style>
 	.posts {
 		display: flex;
 		flex-direction: column;
+		min-height: 30dvh;
 	}
 
 	small {
@@ -74,6 +67,11 @@
 		text-wrap: balance;
 	}
 
+	a.disabled {
+		pointer-events: none;
+		color: rgb(186, 186, 186);
+	}
+
 	li {
 		list-style: none;
 		display: grid;
@@ -93,21 +91,24 @@
 		flex-direction: row;
 		align-items: end;
 		justify-content: space-between;
-		margin-top: 2em;
+		margin-top: 3em;
 	}
 
-	button {
-		background: none;
-		border: none;
-		font-size: 1rem;
-		cursor: pointer;
-		text-decoration: underline;
-		color: darkslategray;
-	}
+	.btn {
+		display: block;
 
-	button:disabled {
-		cursor: not-allowed;
+		background-color: rgb(227, 222, 213);
+		border: 0.25em solid rgb(216, 216, 216);
+		padding: 0.25em 0.5em;
+		min-width: 12ch;
 		text-decoration: none;
-		opacity: 0.5;
+		font-weight: 600;
+		text-align: center;
+		font-family: 'Azeret Mono Variable', monospace;
+	}
+
+	.btn:hover {
+		background-color: rgb(216, 216, 216);
+		color: darkslategray;
 	}
 </style>
