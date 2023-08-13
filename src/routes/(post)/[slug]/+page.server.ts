@@ -1,6 +1,14 @@
 import { posts } from '$lib/server/posts';
 import { error } from '@sveltejs/kit';
 
+export const prerender = true;
+
+export function entries() {
+	return posts.map((post) => ({
+		slug: post.slug
+	}));
+}
+
 export function load({ params }) {
 	const { slug } = params;
 

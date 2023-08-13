@@ -3,11 +3,17 @@
 
 	export let data;
 
-	$: pageStart = data.page * data.pageSize + 1;
-	$: pageEnd = Math.min(data.total, pageStart + data.pageSize - 1);
+	const POSTS_PER_PAGE = 5;
 
-	$: isLastPage = pageEnd === data.total;
-	$: isFirstPage = pageStart === 1;
+	$: currentPage = 0;
+
+	$: currentPageStart = currentPage * POSTS_PER_PAGE + 1;
+	$: currentPageEnd = Math.min(currentPageStart + POSTS_PER_PAGE, data.posts.length + 1);
+
+	$: currentPosts = data.posts.slice(currentPageStart - 1, currentPageEnd - 1);
+
+	$: isFirstPage = currentPage === 0;
+	$: isLastPage = currentPageEnd === data.posts.length + 1;
 </script>
 
 <svelte:head>
@@ -16,7 +22,7 @@
 
 <article class="posts">
 	<ul>
-		{#each data.posts as post, index}
+		{#each currentPosts as post, index}
 			<li>
 				<a href={`/${post.slug}`}>
 					{post.title}
@@ -33,11 +39,21 @@
 </article>
 
 <nav>
-	<a href={`?page=${data.page - 1}`} class="btn" class:disabled={isFirstPage}>Newer</a>
+	<button
+		on:click={() => {
+			currentPage = currentPage - 1;
+		}}
+		disabled={isFirstPage}>Newer</button
+	>
 	<small>
-		{pageStart}-{pageEnd} of {data.total}
+		{currentPageStart}-{currentPageEnd} of {data.posts.length}
 	</small>
-	<a href={`?page=${data.page + 1}`} class="btn" class:disabled={isLastPage}> Older </a>
+	<button
+		on:click={() => {
+			currentPage = currentPage + 1;
+		}}
+		disabled={isLastPage}>Older</button
+	>
 </nav>
 
 <style>
@@ -67,11 +83,6 @@
 		text-wrap: balance;
 	}
 
-	a.disabled {
-		pointer-events: none;
-		color: rgb(186, 186, 186);
-	}
-
 	li {
 		list-style: none;
 		display: grid;
@@ -94,9 +105,9 @@
 		margin-top: 3em;
 	}
 
-	.btn {
+	button {
 		display: block;
-
+		color: darkslategray;
 		background-color: rgb(227, 222, 213);
 		border: 0.25em solid rgb(216, 216, 216);
 		padding: 0.25em 0.5em;
@@ -107,8 +118,12 @@
 		font-family: 'Azeret Mono Variable', monospace;
 	}
 
-	.btn:hover {
+	button:hover {
 		background-color: rgb(216, 216, 216);
-		color: darkslategray;
+	}
+
+	button:disabled {
+		pointer-events: none;
+		color: rgb(186, 186, 186);
 	}
 </style>
