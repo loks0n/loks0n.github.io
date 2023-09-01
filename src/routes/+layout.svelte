@@ -1,14 +1,12 @@
 <script>
 	import '../app.css';
-	import '@fontsource-variable/work-sans';
-	import '@fontsource-variable/azeret-mono';
+	import '../code.css';
 	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
 	import Footer from '$lib/components/Footer.svelte';
-	import Header from '$lib/components/Header.svelte';
 
 	onMount(() => {
 		if (!dev) splitbee.init();
@@ -20,35 +18,35 @@
 </svelte:head>
 
 <main>
-	<Header />
-	<Nav />
-	<div>
-		<slot />
+	<div class="container">
+		<Nav />
+		<div class="content">
+			<slot />
+		</div>
+		<Footer />
 	</div>
-	<Footer />
 </main>
 
 <style>
 	main {
-		min-height: 100vh;
-		min-height: 100dvh;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		background-color: rgb(255, 250, 239);
-	}
-
-	div {
-		width: min(100%, 40em);
 		padding: 1em;
-		margin-top: 1em;
-		margin-bottom: 2em;
-		flex: 1;
+		min-height: 100vh;
+		min-height: 100dvh;
 	}
 
-	@media (min-width: 450px) {
-		div {
-			padding: 2em;
-		}
+	.container {
+		display: flex;
+		flex-direction: column;
+		max-width: 28rem;
+	}
+
+	.content {
+		margin-top: 3em;
+		margin-bottom: 3em;
+		flex: 1;
 	}
 </style>

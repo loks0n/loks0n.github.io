@@ -10,18 +10,16 @@
 	font: inherit;
 }
 
-ul,
-ol {
-	padding: revert;
-}
-
 nav > ul {
 	padding: 0;
 }
 
 body {
 	color: #333333;
-	font-family: 'Work SansVariable', sans-serif;
+}
+
+a {
+	color: rgb(37, 123, 76);
 }
 
 img,
@@ -32,131 +30,91 @@ video {
 	max-width: 100%;
 }
 
-article,
-article > section {
-	max-width: 100%;
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
+article > * {
+	line-height: 1.5;
+	margin-bottom: 1.5em;
 }
 
-article img {
-	margin: 1.5em 0;
-	border-radius: 0.5em;
+article small {
+	font-family: 'Courier New', Courier, monospace;
+	opacity: 0.5;
+	font-size: 0.75rem;
 }
 
-p,
-ul {
-	line-height: 1.8;
-}
-
-h1 {
-	font-size: 2.5rem;
-	font-weight: 800;
-	line-height: 1.1;
-	margin: 0 auto 0.5em;
-	text-wrap: balance;
-	color: darkslategray;
-	font-family: 'Azeret Mono Variable', monospace;
-}
-
-h2 {
-	font-size: 2rem;
-	font-weight: 700;
-	margin-top: 1.5em;
-	text-wrap: balance;
-	color: darkslategray;
-	font-family: 'Azeret Mono Variable', monospace;
-}
-
-h3 {
-	font-size: 1.75rem;
+article h1,
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
 	font-weight: 600;
-	margin-top: 0.5em;
-	text-wrap: balance;
-	color: darkslategray;
-	font-family: 'Azeret Mono Variable', monospace;
+	line-height: 1.1;
 }
 
-h4 {
+article h1 {
+	font-size: 3.5rem;
+	margin-bottom: 0em;
+}
+
+article h2 {
+	font-size: 2.5rem;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+article h3 {
+	font-size: 1.5rem;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
+}
+
+article h4 {
 	font-size: 1.25rem;
-	font-weight: 500;
-	margin-top: 0.5em;
-	text-wrap: balance;
-	color: darkslategray;
-	font-family: 'Azeret Mono Variable', monospace;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
 }
 
-@supports (font-variation-settings: normal) {
-	h1 {
-		font-variation-settings: 'wght' 800;
-	}
-
-	h2 {
-		font-variation-settings: 'wght' 700;
-	}
-
-	h3 {
-		font-variation-settings: 'wght' 600;
-	}
+article h5 {
+	font-size: 1.15rem;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
 }
 
-a {
-	color: darkslategray;
-	font-family: 'Azeret Mono Variable', monospace;
+article h6 {
+	font-size: 1rem;
+	margin-top: 1.5em;
+	margin-bottom: 0.5em;
 }
 
-a:visited {
-	filter: brightness(0.8);
+article ul,
+article ol {
+	padding: revert;
+	padding-left: 1.5em;
 }
 
-button {
-	font-family: 'Azeret Mono Variable', monospace;
-}
-
-article pre {
-	max-width: 100%;
-	overflow-x: scroll;
-	font-size: 0.9rem;
-	font-family: monospace;
-}
-
-article code {
-	border-radius: 0.5em;
-	font-size: 0.9rem;
-	font-family: monospace;
+article li {
+	margin-bottom: 0.5em;
 }
 
 article blockquote {
-	border-left: 0.25em solid darkslategray;
+	border-left: 0.25em solid #333333;
 	padding-left: 1em;
+	margin-left: 0;
 	font-style: italic;
 }
 
-hr {
-	opacity: 0.1;
-}
-
-/*
- * Laserwave Theme originally by Jared Jones for Visual Studio Code
- * https://github.com/Jaredk3nt/laserwave
- *
- * Ported for PrismJS by Simon Jespersen [https://github.com/simjes]
- */
-
-code[class*='language-'],
-pre[class*='language-'] {
+article code:not([class*='language-']) {
 	background: #27212e;
 	color: #ffffff;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* this is the default */
 	/* The following properties are standard, please leave them as they are */
-	font-size: 1em;
+	font-size: 0.75rem;
 	direction: ltr;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
 	word-break: normal;
-	line-height: 1.5;
+	line-height: inherit;
 	-moz-tab-size: 2;
 	-o-tab-size: 2;
 	tab-size: 2;
@@ -165,108 +123,7 @@ pre[class*='language-'] {
 	-moz-hyphens: none;
 	-ms-hyphens: none;
 	hyphens: none;
-}
-
-code[class*='language-']::-moz-selection,
-code[class*='language-'] ::-moz-selection,
-pre[class*='language-']::-moz-selection,
-pre[class*='language-'] ::-moz-selection {
-	background: #eb64b927;
-	color: inherit;
-}
-
-code[class*='language-']::selection,
-code[class*='language-'] ::selection,
-pre[class*='language-']::selection,
-pre[class*='language-'] ::selection {
-	background: #eb64b927;
-	color: inherit;
-}
-
-/* Properties specific to code blocks */
-pre[class*='language-'] {
-	padding: 1em; /* this is standard */
-	margin: 0.5em 0; /* this is the default */
-	overflow: auto; /* this is standard */
+	padding: 0.25em;
+	overflow: auto;
 	border-radius: 0.5em;
-}
-
-/* Properties specific to inline code */
-:not(pre) > code[class*='language-'] {
-	padding: 0.2em 0.3em;
-	border-radius: 0.5rem;
-	white-space: normal; /* this is standard */
-}
-
-.token.comment,
-.token.prolog,
-.token.cdata {
-	color: #91889b;
-}
-
-.token.punctuation {
-	color: #7b6995;
-}
-
-.token.builtin,
-.token.constant,
-.token.boolean {
-	color: #ffe261;
-}
-
-.token.number {
-	color: #b381c5;
-}
-
-.token.important,
-.token.atrule,
-.token.property,
-.token.keyword {
-	color: #40b4c4;
-}
-
-.token.doctype,
-.token.operator,
-.token.inserted,
-.token.tag,
-.token.class-name,
-.token.symbol {
-	color: #74dfc4;
-}
-
-.token.attr-name,
-.token.function,
-.token.deleted,
-.token.selector {
-	color: #eb64b9;
-}
-
-.token.attr-value,
-.token.regex,
-.token.char,
-.token.string {
-	color: #b4dce7;
-}
-
-.token.entity,
-.token.url,
-.token.variable {
-	color: #ffffff;
-}
-
-/* The following rules are pretty similar across themes, but feel free to adjust them */
-.token.bold {
-	font-weight: bold;
-}
-
-.token.italic {
-	font-style: italic;
-}
-
-.token.entity {
-	cursor: help;
-}
-
-.token.namespace {
-	opacity: 0.7;
 }

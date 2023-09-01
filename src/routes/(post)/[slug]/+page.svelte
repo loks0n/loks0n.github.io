@@ -22,30 +22,3 @@
 </article>
 
 <a href="/">Back to posts</a>
-
-<style>
-	header {
-		display: flex;
-		flex-direction: column;
-	}
-
-	hr {
-		margin-bottom: 2em;
-	}
-
-	article {
-		margin-bottom: 3em;
-	}
-
-	h1 {
-		margin-bottom: 0.5em;
-		text-align: center;
-		font-size: 1.75rem;
-	}
-
-	small {
-		font-size: 0.9rem;
-		opacity: 0.5;
-		text-align: center;
-	}
-</style>

@@ -21,13 +21,3 @@
 		</li>
 	</ul>
 </article>
-
-<style>
-	a {
-		font-weight: bold;
-	}
-
-	li {
-		margin-bottom: 0.5em;
-	}
-</style>
