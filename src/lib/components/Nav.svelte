@@ -33,10 +33,20 @@
 <style>
 	nav {
 		display: flex;
-		justify-content: space-between;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 		font-weight: 500;
 		font-size: 1.1em;
 	}
+
+	@media (min-width: 450px) {
+		nav {
+			justify-content: space-between;
+			flex-direction: row;
+		}
+	}
+	
 
 	ul {
 		display: flex;

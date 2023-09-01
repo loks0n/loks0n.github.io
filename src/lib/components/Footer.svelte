@@ -33,10 +33,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
 	}
 	ul {
 		display: flex;
 		list-style: none;
 		gap: 1em;
+		flex-wrap: wrap;
 	}
 </style>
