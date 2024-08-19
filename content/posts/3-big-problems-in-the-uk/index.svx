@@ -1,0 +1,33 @@
+---
+title: 3 big problems in the UK
+date: 2024-8-19
+---
+
+### Public sector productivity
+
+The 3 structural issues facing the NHS:
+- The NHS is the UK's largest employer, and spends ~£70Bn yearly on wages.
+- The UK has an aging population. The number of people aged 65+ is expected to increase by 50% in the next 20 years.
+- The UK is borrowing a lot of money, national debt is at ~100% of GDP.
+
+Given the financial constraints and the growing need for healthcare services, the only viable option is to increase productivity. Anyone who has worked in the NHS is aware of existing inefficiencies. Even before considering AI, software alone holds tremendous potential for improvement.
+
+A interesting startup in the space is [Healthtech 1](https://www.healthtech1.uk/).
+
+### Housing and planning
+
+Housing is relatively unaffordable in the UK. This is largely due to a lack of supply. Two things need improve here:
+- The UK goverment needs to build more houses.
+- The UK goverment needs to permit more houses to be built.
+
+Social housing is an effective way to increase supply while also improving outcomes for the most vulnerable in society. It's also necessary because, if left to the market alone, houses will be built in boom-and-bust cycles.
+
+The UK needs, and can certainly afford, to employ more planners. While the main challenges in this area are legislative, a forward-thinking government could enable planners and builders to work more efficiently with advanced digital tools.
+
+I'm not aware of any startups in this space, but I'd be interested in learning about them.
+
+### Public transport and cycling infrastructure
+
+Much of the UK's productivity challenges stem from poor transport infrastructure. Cities that are well-connected are more productive because they have wider and deeper labor markets. The preferred term for this is 'agglomeration'—the benefits of having a large concentration of people in one place.
+
+The UK has significant catching up to do in this area. Our close neighbors, the Dutch, have much better cycling infrastructure, and the French have a superior high-speed rail network.
