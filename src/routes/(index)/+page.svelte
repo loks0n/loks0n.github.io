@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { SITE_TITLE } from '$lib/config';
 
-	export let data;
+	let { data } = $props();
 </script>
 
 <svelte:head>

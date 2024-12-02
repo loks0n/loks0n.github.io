@@ -2,7 +2,11 @@
 	import { SITE_TITLE } from '$lib/config';
 	import type { PageData } from './$types';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const date = new Date(data.post.date).toLocaleDateString();
 </script>
@@ -17,7 +21,7 @@
 		<small>authored by Luke B. Silver on {date}</small>
 	</header>
 	<hr />
-	<svelte:component this={data.component} />
+	<data.component />
 	<hr />
 </article>
 

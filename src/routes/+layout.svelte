@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import '../code.css';
 	import splitbee from '@splitbee/web';
@@ -7,6 +7,11 @@
 	import { onMount } from 'svelte';
 	import { dev } from '$app/environment';
 	import Footer from '$lib/components/Footer.svelte';
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 
 	onMount(() => {
 		if (!dev) splitbee.init();
@@ -21,7 +26,7 @@
 	<div class="container">
 		<Nav />
 		<div class="content">
-			<slot />
+			{@render children?.()}
 		</div>
 		<Footer />
 	</div>

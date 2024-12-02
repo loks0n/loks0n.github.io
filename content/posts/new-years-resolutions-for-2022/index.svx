@@ -9,7 +9,7 @@ During 2022, I'd like to:
 - [x] Wild camp overnight in the UK.
 - [ ] Visit Kielder forest.
 - [ ] Write a total of 12 posts on this blog.
-- [ ] Bring the rewrite of <draughts.org> to feature parity with the existing site, and release it.
+- [ ] Bring the rewrite of `draughts.org` to feature parity with the existing site, and release it.
 - [x] Climb an entire set of red routes (V3-5) at the Depot Climbing Centre in Nottingham.
 - [ ] Do a muscle-up with good form.
 
