@@ -11,7 +11,7 @@
 	<img alt="My face" src={meSrc} />
 	<ul>
 		<li>
-			I'm a <strong>Software Engineer</strong> at <a href="https://appwrite.io">Appwrite</a>. I've
+			I'm a <strong>Platform Engineer</strong> at <a href="https://appwrite.io">Appwrite</a>. I've
 			previously worked at <a href="https://www.thg.com">THG</a> and
 			<a href="https://samsung.com">Samsung</a>.
 		</li>
