@@ -10,7 +10,11 @@ date: 2024-12-9
 There's a growing sense that UK state apparatus is failing. NHS, prisons and defence being the most glaring examples. Every government in my memory has talked of reforming, through austerity, through investment, through technology. But which reforms have actually worked?
 
 ### Learning from history
-When the NHS introduced [Payment by Results](https://www.york.ac.uk/media/che/documents/papers/researchpapers/CHERP174_Impact_Payment_Results_NHS_hospital_productivity.pdf) in the 2000s, hospital productivity increased by 28%. When the [Government Digital Service](https://www.nao.org.uk/reports/digital-transformation-in-government/) transformed 25 major services, it saved £1.7 billion. When [back-office functions were consolidated](https://www.nao.org.uk/reports/efficiency-and-reform-in-government-corporate-functions-through-shared-service-centres/) across departments, costs per employee dropped by 35%. These successes share common elements: they were incremental, measurable, and built on existing systems.
+- When the NHS introduced [Payment by Results](https://www.york.ac.uk/media/che/documents/papers/researchpapers/CHERP174_Impact_Payment_Results_NHS_hospital_productivity.pdf) in the 2000s, hospital productivity increased by 28%. 
+- When the [Government Digital Service](https://www.nao.org.uk/reports/digital-transformation-in-government/) transformed 25 major services, it saved £1.7 billion. 
+- When [back-office functions were consolidated](https://www.nao.org.uk/reports/efficiency-and-reform-in-government-corporate-functions-through-shared-service-centres/) across departments, costs per employee dropped by 35%. 
+
+These successes share common elements: they were incremental, measurable, and built on existing systems.
 
 But contrast these with the failures. The [NHS IT Programme](https://www.nao.org.uk/reports/the-national-programme-for-it-in-the-nhs-an-update-on-the-delivery-of-detailed-care-records-systems/) wasted £20 billion. [Universal Credit's implementation](https://committees.parliament.uk/committee/127/public-accounts-committee/news/99559/rolling-out-universal-credit/) costs ballooned to £699 per claim from £173. Nine empty [fire control centers](https://publications.parliament.uk/pa/cm201012/cmselect/cmpubacc/1397/1397.pdf) cost £4 million per month in maintenance. The pattern is clear: grand visions, imposed from above, disconnected from operational reality.
 
