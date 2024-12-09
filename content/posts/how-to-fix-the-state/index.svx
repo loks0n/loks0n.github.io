@@ -1,0 +1,41 @@
+---
+title: How to modernize a state
+date: 2024-12-9
+---
+
+> "Too many people in Whitehall are comfortable in the tepid bath of managed decline. Have forgotten, to paraphrase JFK, that you choose change, not because it's easy but because it's hard,"
+> 
+> Sir Keir Starmer, 5th December 2024
+
+There's a growing sense that UK state apparatus is failing. NHS, prisons and defence being the most glaring examples. Every government in my memory has talked of reforming, through austerity, through investment, through technology. But which reforms have actually worked?
+
+### Learning from history
+When the NHS introduced [Payment by Results](https://www.york.ac.uk/media/che/documents/papers/researchpapers/CHERP174_Impact_Payment_Results_NHS_hospital_productivity.pdf) in the 2000s, hospital productivity increased by 28%. When the [Government Digital Service](https://www.nao.org.uk/reports/digital-transformation-in-government/) transformed 25 major services, it saved £1.7 billion. When [back-office functions were consolidated](https://www.nao.org.uk/reports/efficiency-and-reform-in-government-corporate-functions-through-shared-service-centres/) across departments, costs per employee dropped by 35%. These successes share common elements: they were incremental, measurable, and built on existing systems.
+
+But contrast these with the failures. The [NHS IT Programme](https://www.nao.org.uk/reports/the-national-programme-for-it-in-the-nhs-an-update-on-the-delivery-of-detailed-care-records-systems/) wasted £20 billion. [Universal Credit's implementation](https://committees.parliament.uk/committee/127/public-accounts-committee/news/99559/rolling-out-universal-credit/) costs ballooned to £699 per claim from £173. Nine empty [fire control centers](https://publications.parliament.uk/pa/cm201012/cmselect/cmpubacc/1397/1397.pdf) cost £4 million per month in maintenance. The pattern is clear: grand visions, imposed from above, disconnected from operational reality.
+
+### A new approach
+We need a new approach that learns from both success and failure. International examples show us the way. [Singapore's GovTech](https://www.tech.gov.sg/) succeeded by making technical talent permanent civil servants.
+
+Enter the Productivity Engineering program. Instead of temporary transformations, we embed top software engineers as permanent civil servants, working shoulder-to-shoulder with existing teams to build tools that make their jobs more effective. Not to cut costs or reduce headcount, but to enhance their capability to serve the public.
+
+First, we recruit the best engineers in the country - the kind who would typically join Google or Jane Street - by offering competitive private sector salaries. These aren't consultants writing PowerPoints; they're civil servants who happen to be world-class builders.
+
+These engineers embed physically within public sector teams for initial 12-week rotations. They don't work from distant offices or through management layers. They sit with court administrators, benefit assessors, and hospital staff, understanding their daily challenges firsthand. They shadow workers and managers, learning the complexities and constraints of real public service delivery.
+
+But unlike traditional consultants or transformation programs, they don't just observe and recommend - they build. Working in one-week cycles, they create tools and systems that directly address the problems they've seen. Each solution is developed hand-in-hand with the people who'll actually use it. There's no handover phase because the handover happens continuously - department staff are involved in testing and refining the tools from day one.
+
+### Impact and investment
+Consider our courts system. Every day, skilled administrators wrestle with byzantine scheduling systems and paper trails while cases pile up. A Productivity Engineering team embedded there wouldn't sweep away existing processes - they'd work with staff to build tools that amplify their capabilities, reducing administrative burden and increasing capacity to handle cases.
+
+When [Estonia's Tax and Customs Board](https://e-estonia.com/solutions/ease_of_doing_business/e-tax/) modernized their systems, they enabled 95% of tax declarations to be filed in 3-5 minutes. They didn't fire tax officials - they freed them to focus on complex cases and better serve citizens.
+
+The Productivity Engineering program is designed to scale. Starting with 50 engineers across three departments, successful solutions can be shared and adapted across similar teams. But crucially, each solution remains focused and specific - we avoid the trap of trying to build massive, all-encompassing systems that have doomed past IT projects.
+
+The total cost? Approximately £10 million annually for the initial team - a fraction of what we currently spend on external consultants. But unlike consultancy spend, this investment builds internal capability. Each Productivity Engineering deployment leaves behind not just working software, but upskilled civil servants better equipped to maintain and evolve their tools.
+
+This isn't a silver bullet for all public sector challenges. But it offers a practical path to improvement that learns from both past successes and failures. It combines top technical talent with deep operational understanding. Most importantly, it empowers our public servants to serve citizens better.
+
+> "There are many brilliant people in the civil service and politics."
+>
+> [Dominic Cummings, 2nd January 2020](https://dominiccummings.com/2020/01/02/two-hands-are-a-lot-were-hiring-data-scientists-project-managers-policy-experts-assorted-weirdos/)
