@@ -23,3 +23,22 @@
 		</li>
 	</ul>
 </article>
+
+<style>
+	article {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 1em;
+	}
+	@media (min-width: 600px) {
+		article {
+			flex-direction: row;
+		}
+	}
+
+	img {
+		width: 300px;
+		margin-bottom: 1em;
+	}
+</style>

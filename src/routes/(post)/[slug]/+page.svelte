@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { SITE_TITLE } from '$lib/config';
+	import DateFormat from '../../(index)/DateFormat.svelte';
 	import type { PageData } from './$types';
 
 	interface Props {
@@ -18,7 +19,7 @@
 <article>
 	<header>
 		<h1>{data.post.title}</h1>
-		<small>authored by Luke B. Silver on {date}</small>
+		<small>authored by Luke B. Silver on <DateFormat date={new Date(data.post.date)} /></small>
 	</header>
 	<hr />
 	<data.component />

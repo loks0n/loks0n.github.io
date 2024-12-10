@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { SITE_TITLE } from '$lib/config';
+	import DateFormat from './DateFormat.svelte';
 
 	let { data } = $props();
 </script>
@@ -16,7 +17,7 @@
 					{post.title}
 				</a>
 				<small>
-					{new Date(post.date).toDateString()}
+					<DateFormat date={new Date(post.date)} />
 				</small>
 			</li>
 			{#if index !== data.posts.length - 1}

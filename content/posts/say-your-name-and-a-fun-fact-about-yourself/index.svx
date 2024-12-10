@@ -1,5 +1,5 @@
 ---
-title: Say your name and a fun fact about yourself.
+title: Say your name and a fun fact about yourself
 date: 2023-06-21
 ---
 

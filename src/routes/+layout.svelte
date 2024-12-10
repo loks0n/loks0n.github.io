@@ -46,7 +46,7 @@
 	.container {
 		display: flex;
 		flex-direction: column;
-		width: min(100%, 30rem);
+		width: min(100%, 35rem);
 	}
 
 	.content {
