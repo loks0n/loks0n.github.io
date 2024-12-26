@@ -1,0 +1,54 @@
+---
+title: Some thoughts on writing documentation
+date: 2024-12-26
+---
+
+Technical documentation should be easy to understand. Here's what works:
+
+### Skip the jargon
+Write "This lets users log in" instead of "This facilitates authentication via credentials." When you use clear words, more people can use your code.
+
+### Use direct statements
+Write exactly what something does once, then move on. Think "The timeout sets how long to wait." Your readers will grasp the concept faster without repeated explanations.
+
+### Break down complex ideas
+Start simple: "Check if a user is logged in" before jumping to "Handle session tokens." Each piece builds naturally on the last.
+
+### Lead with examples
+Show a working code snippet before explaining how it works:
+
+```javascript
+// Clear example
+const user = await getUser(id)
+
+// Instead of lengthy setup and context
+const options = {...}
+const client = new Client(...)
+const user = await client.users.findOne(...)
+```
+
+### Keep code samples minimal
+Remove any code that doesn't directly demonstrate your point. A 3-line example is often better than a 20-line one.
+
+### Structure visually
+Use whitespace to separate ideas. Let concepts breathe on the page rather than cramming them together with transitions and segues.
+
+### Write in active voice
+Say "The function returns a string" instead of "A string is returned by the function." Active voice makes it clear what does what.
+
+### Include error cases
+Show what happens when things go wrong:
+```javascript
+try {
+  await saveUser(data)
+} catch (error) {
+  // Show how to handle common errors
+  if (error.code === 'DUPLICATE_EMAIL') {
+    // Handle duplicate email
+  }
+}
+```
+
+---
+
+These techniques take practice. Test your writing by asking: Could I explain this in a tweet? If not, make it simpler.
