@@ -42,7 +42,7 @@ hr {
 
 article small {
 	opacity: 0.5;
-	font-size: 0.75rem;
+	font-size: 0.875rem;
 }
 
 article h1,
@@ -58,6 +58,7 @@ article h6 {
 article h1 {
 	font-size: 3.5rem;
 	margin-bottom: 0em;
+	text-wrap: balance;
 }
 
 article h2 {

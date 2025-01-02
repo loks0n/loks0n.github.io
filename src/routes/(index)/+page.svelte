@@ -39,6 +39,7 @@
 
 	a {
 		text-wrap: balance;
+		font-size: 1.125rem;
 	}
 
 	hr {
