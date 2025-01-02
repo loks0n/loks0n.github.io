@@ -12,13 +12,13 @@
 <article>
 	<ul>
 		{#each data.posts as post, index}
+			<small>
+				<DateFormat date={new Date(post.date)} />
+			</small>
 			<li>
 				<a href={`/${post.slug}`}>
 					{post.title}
 				</a>
-				<small>
-					<DateFormat date={new Date(post.date)} />
-				</small>
 			</li>
 			{#if index !== data.posts.length - 1}
 				<hr />
@@ -34,9 +34,7 @@
 		flex-direction: column;
 	}
 	li {
-		display: flex;
-		justify-content: space-between;
-		gap: 1em;
+		display: grid;
 	}
 
 	a {
@@ -44,7 +42,7 @@
 	}
 
 	hr {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+		margin-top: 1em;
+		margin-bottom: 1em;
 	}
 </style>

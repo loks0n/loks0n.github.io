@@ -16,7 +16,7 @@ nav > ul {
 
 body {
 	color: #333333;
-	font-family: Georgia, Times, 'Times New Roman', serif;
+	font-family: 'Source Serif Pro', 'Georgia', 'Cambria', 'Times New Roman', Times, serif;
 }
 
 a {
@@ -37,7 +37,7 @@ article > * {
 }
 
 hr {
-	opacity: 0.2;
+	opacity: 0.1;
 }
 
 article small {

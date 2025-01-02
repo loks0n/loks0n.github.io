@@ -25,7 +25,7 @@
 		</ul>
 	</nav>
 
-	<small>© 2023</small>
+	<small>© {new Date().getFullYear()}</small>
 </footer>
 
 <style>
@@ -40,5 +40,9 @@
 		list-style: none;
 		gap: 1em;
 		flex-wrap: wrap;
+	}
+
+	a {
+		letter-spacing: 0.05em;
 	}
 </style>

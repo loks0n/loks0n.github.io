@@ -1,6 +1,7 @@
 <script lang="ts">
 	import '../app.css';
 	import '../code.css';
+	import '@fontsource/source-serif-pro';
 	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
