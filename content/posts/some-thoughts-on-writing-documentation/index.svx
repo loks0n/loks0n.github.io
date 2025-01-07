@@ -1,5 +1,5 @@
 ---
-title: Some thoughts on writing documentation
+title: On writing documentation
 date: 2024-12-26
 ---
 
@@ -36,9 +36,10 @@ Use whitespace to separate ideas. Let concepts breathe on the page rather than c
 ### Write in active voice
 Say "The function returns a string" instead of "A string is returned by the function." Active voice makes it clear what does what.
 
-### Include error cases
-Show what happens when things go wrong:
+### Don't include error handling
+Focus on the happy path. Errors should be handled after the reader understands the main concept. For example:
 ```javascript
+// Instead of:
 try {
   await saveUser(data)
 } catch (error) {
@@ -47,6 +48,9 @@ try {
     // Handle duplicate email
   }
 }
+
+// Write:
+await saveUser(data)
 ```
 
 ---
