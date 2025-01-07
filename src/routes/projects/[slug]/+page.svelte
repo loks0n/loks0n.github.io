@@ -9,6 +9,19 @@
 </svelte:head>
 
 <article>
-	<h1>{data.project.name} - <a href={data.project.github}>GitHub</a></h1>
+	<header>
+		<h1>{data.project.name}</h1>
+		{#if data.project.github}
+			<a href={data.project.github}>See on GitHub</a>
+		{/if}
+	</header>
 	<data.component />
 </article>
+
+<style>
+	header {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+	}
+</style>

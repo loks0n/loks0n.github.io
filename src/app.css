@@ -45,6 +45,10 @@ article small {
 	font-size: 0.875rem;
 }
 
+article strong {
+	font-weight: 600;
+}
+
 article h1,
 article h2,
 article h3,

@@ -4,7 +4,7 @@ description: A super speedy, blazing fast, rocket-powered TypeScript draughts/ch
 github: https://github.com/loks0n/rapid-draughts
 ---
 
-rapid-draughts is a super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
+**rapid-draughts** is a super speedy, blazing fast, rocket-powered TypeScript draughts/checkers engine with move validation, AI and game history.
 
 ### Table of Contents
 - [1. Introduction](#1-introduction)
@@ -22,7 +22,7 @@ rapid-draughts is a super speedy, blazing fast, rocket-powered TypeScript draugh
 
 ## 1. Introduction <div id="1-introduction"></div>
 
-One of the key advantages is its use of bitboards, a board representation that holds the draughts board in three 32 or 64-bit unsigned integers. One for the light pieces, dark pieces, and the king pieces. Bitboards enable fast move generation and have minimal memory usage, contributing to the library's exceptional performance.
+**rapid-draughts** uses bitboards, a board representation that holds the draughts board in three 32 or 64-bit unsigned integers. One for the light pieces, dark pieces, and the king pieces. Bitboards enable fast move generation and have minimal memory usage, contributing to the library's exceptional performance.
 
 In the following sections, we will explore its usage in detail, covering installation, usage, AI strategies, game history, and more.
 
