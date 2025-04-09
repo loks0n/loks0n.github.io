@@ -19,7 +19,7 @@ In scenario 2 and 3 you need to learn how to direct AI effectively, or you will 
 
 ## Hallucinations
 
-One of the biggest criticisms of LLMs in their tendency to hallucinate.
+The most frequent criticism of LLMs is probably their tendency to hallucinate.
 
 Go to to ChatGPT, any offline model, and write this prompt:
 
