@@ -19,7 +19,7 @@ In scenario 2 and 3 you need to learn how to direct AI effectively, or you will 
 
 ## Hallucinations
 
-One of the biggest criticism of LLMs in their tendency to hallucinate.
+One of the biggest criticisms of LLMs in their tendency to hallucinate.
 
 Go to to ChatGPT, any offline model, and write this prompt:
 
@@ -84,7 +84,7 @@ For example, if you ask an Claude code to generate a complex function to pass a 
 
 Source: [https://openai.com/index/chain-of-thought-monitoring/](https://openai.com/index/chain-of-thought-monitoring/)
 
-*Homework* download Aider or Claude Code, and write a test that will verify the correctness of the generated code. Instruct the agent to follow implement the feature by passing your test. If the issue is very complex, there's a good change that you might encounter reward hacking.
+**Homework**: download Aider or Claude Code, and write a test that will verify the correctness of the generated code. Instruct the agent to follow implement the feature by passing your test. If the issue is very complex, there's a good change that you might encounter reward hacking.
 
 To minimise reward hacking: write or verify the reward function yourself, don't let the LLM edit it
 
