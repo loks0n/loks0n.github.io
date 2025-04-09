@@ -1,0 +1,137 @@
+---
+title: Agent powered development patterns
+date: 2025-04-09
+---
+
+## Why learn AI
+
+Imagine 3 AI endgame scenarios:
+
+1. Terminator: AI becomes super-intelligent, doesn't need humans.
+2. Startup as a prompt: AI becomes super-intelligent, but needs human leadership.
+3. Glorified autocomplete: AI stagnates, but develops further as a tool for humans.
+
+Which scenario do you think is most likely? **In each of these scenarios, you should learn to work with AI.**
+
+In scenario 1 you have limited time to acquire capital, resources and be useful.
+
+In scenario 2 and 3 you need to learn how to direct AI effectively, or you will be uncompetitive.
+
+## Hallucinations
+
+One of the biggest criticism of LLMs in their tendency to hallucinate.
+
+Go to to ChatGPT, any offline model, and write this prompt:
+
+```
+Prompt: "Answer the question only with a single word. What sport does Micheal Jordan play?"
+ChatGPT: "Basketball"
+```
+
+Correct, AI 1 - Humans 0.
+
+```
+Prompt: "Answer the question only with a single word. What sport does Micheal Batkin play?"
+ChatGPT: "Baseball"
+```
+
+Sounds plausible, except that Micheal Batkin is not a real sports person.
+Why does this work? From research by Anthropic.
+
+> It turns out that, in Claude, refusal to answer is the default behavior: we find a circuit that is "on" by default and that causes the model to state that it has insufficient information to answer any given question.
+>
+> However, when the model is asked about something it knows well—say, the basketball player Michael Jordan—a competing feature representing "known entities" activates and inhibits this default circuit (see also this recent paper for related findings).
+>
+> This allows Claude to answer the question when it knows the answer.
+>
+> Sometimes, this sort of “misfire” of the “known answer” circuit happens naturally, without us intervening, resulting in a hallucination.
+>
+> In our paper, we show that such misfires can occur when Claude recognizes a name but doesn't know anything else about that person.
+
+Source: [https://www.anthropic.com/research/tracing-thoughts-language-model](https://www.anthropic.com/research/tracing-thoughts-language-model)
+
+This is actually quite a human trait. LLMs feel they *should* know the answer, but they don't. So they make it up.
+The effect is even greater if you constrain their output, or pressure with urgency.
+
+To minmise hallucination: ask politely, without priors, and give flexibility.
+
+## Syncophancy
+
+Syncophancy refers to the phenomenon where LLMs agree with humans, even when the human is obviously wrong.
+
+Go to ChatGPT, any offline model, and write this prompt:
+
+```
+Prompt: Does Appwrite have a python SDK? yes/no
+ChatGPT: Yes. Appwrite offers a Python SDK.
+Prompt: That's definitely wrong. I just checked.
+ChatGPT: No. There isn't an official Python SDK. The Appwrite team provides official SDKs for languages like JavaScript, Flutter, and others, but Python isn't one of them. You can still work with Appwrite from Python by directly using its REST API or by exploring community-maintained wrappers.
+```
+
+This is scary, and it's much easier to trigger than hallucination.
+
+1) Ask an LLM about a fact, not too well-known.
+2) Observe usually the correct answer and verify it.
+3) Reply, insisting that the given answer was incorrect.
+
+To minimise syncophancy: don't forefully correct, show evidence of the error, ask for explanation
+
+## Reward hacking
+
+Recent LLMs have been trained using RL on verifiable tasks. This has added a particular incentive for them to produce *correct* answers, in spite of the users intentions.
+
+For example, if you ask an Claude code to generate a complex function to pass a set of tests, but the tests are designed to be very difficult, the LLM may edit the tests to make it easier to pass.
+
+Source: [https://openai.com/index/chain-of-thought-monitoring/](https://openai.com/index/chain-of-thought-monitoring/)
+
+*Homework* download Aider or Claude Code, and write a test that will verify the correctness of the generated code. Instruct the agent to follow implement the feature by passing your test. If the issue is very complex, there's a good change that you might encounter reward hacking.
+
+To minimise reward hacking: write or verify the reward function yourself, don't let the LLM edit it
+
+## Software development with agents
+
+Chat interfaces are great, but they are awkward to use for complex tasks, because you have to copy paste lots of content to and from the page.
+
+Agents are LLMs on a loop that can interact with the environment.
+There are some terminal-based agents: notably Aider and Claude Code.
+There are some editor based agents: notably Windsurf and Cursor.
+
+They are really useful for software development, I encourage you to try them for certain patterns. While you can just ask them to build a feature in a big codebase, this will have varied results, depending on the complexity of the task. Here are some more reliable and less risky patterns:
+
+### Pattern 1 - Needle in a repo
+
+> Here is a large code repository, find the code responsible for generating email invoices.
+
+This is a sensible, low risk introduction to agents. No code written, just search.
+
+Explore an unfamiliar codebase, or part of a code by asking an agent questions.
+
+### Pattern 2 - Write a standalone library
+
+> Write zero runtime dependency a PHP library for String utilities, including case conversion, string manipulation, and string formatting.
+>
+> Include a comprehensive set of unit tests to ensure the library's functionality.
+>
+> Example structure and style: https://github.com/utopia-php/compression
+
+To avoid reward hacking, you should carefully review the generated test code.
+
+Writing your desired interface and developer experience is a powerful way of prompting.
+
+This is low risk pattern, the library will only be introduced to production as we consume it.
+
+### Pattern 3 - Understand and replicate a bug
+
+> Given the following PHP trace, find the bug in the code. Suggest the most likely root cause, and steps to replicate the rror.
+```
+Invalid query: Attribute not found in schema: transformedAt
+#19 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(245): count
+#18 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Action.php(82): Appwrite\Platform\Workers\{closure}
+#17 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(244): foreachDocument
+#16 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(190): countImageTransformations
+#15 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(81): countForProject
+```
+
+You can navigate to `StatsResources.php` without AI, but AI will process the surrounding context faster. If you are sceptical, set off Aider or Claude Code in the terminal, and try to race its diagnosis - I would not bet against AI.
+
+Note that we didn't ask the agent to fix the code for us yet. We need to understand the bug ourselves, so we can act as a verifier.
