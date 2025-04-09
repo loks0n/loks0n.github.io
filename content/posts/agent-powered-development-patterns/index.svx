@@ -70,9 +70,9 @@ ChatGPT: No. There isn't an official Python SDK. The Appwrite team provides offi
 
 This is scary, and it's much easier to trigger than hallucination.
 
-1) Ask an LLM about a fact, not too well-known.
-2) Observe usually the correct answer and verify it.
-3) Reply, insisting that the given answer was incorrect.
+1. Ask an LLM about a fact, not too well-known.
+2. Observe usually the correct answer and verify it.
+3. Reply, insisting that the given answer was incorrect.
 
 To minimise syncophancy: don't forefully correct, show evidence of the error, ask for explanation
 
