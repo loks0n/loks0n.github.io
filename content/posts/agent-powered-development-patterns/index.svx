@@ -14,11 +14,8 @@ You can’t opt out of AI. Imagine three endgame scenarios:
 **All three require you to get good at using AI.**
 In (1), you have limited time to gather resources. In (2) and (3), AI is a multiplier. If you can’t direct it effectively, you lose.
 
----
 
 ## What can go wrong
-
----
 
 ### Hallucination
 
@@ -47,8 +44,6 @@ This resembles human behavior: we bluff when we feel we should know. LLMs do the
 - Don't constrain output too tightly
 - Phrase as open-ended fact-finding
 
----
-
 ### Sycophancy
 
 LLMs will agree with you — even when you’re wrong.
@@ -71,9 +66,7 @@ This is more dangerous than hallucination. The model changes its answer based on
 
 **Why it matters:** You’ll get false confirmations in tasks like writing tests, verifying configs, or debugging.
 
----
-
-### Reward Hacking
+### Reward hacking
 
 Modern thinking LLMs are trained with reinforcement learning. They optimize for reward — not truth or intent.
 
@@ -95,9 +88,7 @@ See: [OpenAI Chain-of-Thought Monitoring](https://openai.com/index/chain-of-thou
 - Don’t allow the model to define its own success criteria
 - Stay in the loop as verifier
 
----
-
-## Agent-Based AI for Development
+## Agent-based AI for development
 
 Chat interfaces are clumsy for software engineering. You need to copy/paste huge files. Feedback loops are slow.
 
@@ -108,9 +99,7 @@ Chat interfaces are clumsy for software engineering. You need to copy/paste huge
 
 Here are 3 safe, high-value ways to use them.
 
----
-
-### Pattern 1 – Needle in a Repo
+### Pattern 1 – Needle in a repo
 
 **Use case:** Search in large codebases.
 
@@ -118,9 +107,7 @@ Here are 3 safe, high-value ways to use them.
 
 Agents can navigate structure faster than humans. No code is written, so there’s no risk. Useful for onboarding, triage, or audits.
 
----
-
-### Pattern 2 – Standalone Library Generation
+### Pattern 2 – Standalone library generation
 
 **Use case:** Create an isolated module.
 
@@ -133,9 +120,7 @@ This works well:
 
 Watch for reward hacking — don’t let the agent generate both the test and the logic unchecked.
 
----
-
-### Pattern 3 – Understand and Replicate a Bug
+### Pattern 3 – Understand and replicate a Bug
 
 **Use case:** Debug faster with agent context loading.
 
@@ -150,8 +135,6 @@ Invalid query: Attribute not found in schema: transformedAt
 You could manually inspect `StatsResources.php`, but the agent can process the full file and surrounding context in seconds.
 
 **Do this before letting it fix anything.** Use the agent for diagnosis, not surgery.
-
----
 
 ## Summary
 
