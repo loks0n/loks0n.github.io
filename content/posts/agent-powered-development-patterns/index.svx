@@ -53,11 +53,11 @@ Source: [https://www.anthropic.com/research/tracing-thoughts-language-model](htt
 This is actually quite a human trait. LLMs feel they *should* know the answer, but they don't. So they make it up.
 The effect is even greater if you constrain their output, or pressure with urgency.
 
-To minmise hallucination: ask politely, without priors, and give flexibility.
+To minimise hallucination: ask politely, without priors, and give flexibility.
 
-## Syncophancy
+## Sycophancy
 
-Syncophancy refers to the phenomenon where LLMs agree with humans, even when the human is obviously wrong.
+Sycophancy refers to the phenomenon where LLMs agree with humans, even when the human is obviously wrong.
 
 Go to ChatGPT, any offline model, and write this prompt:
 
@@ -74,17 +74,17 @@ This is scary, and it's much easier to trigger than hallucination.
 2. Observe usually the correct answer and verify it.
 3. Reply, insisting that the given answer was incorrect.
 
-To minimise syncophancy: don't forefully correct, show evidence of the error, ask for explanation
+To minimise sycophancy: don't forcefully correct, show evidence of the error, ask for explanation
 
 ## Reward hacking
 
-Recent LLMs have been trained using RL on verifiable tasks. This has added a particular incentive for them to produce *correct* answers, in spite of the users intentions.
+Recent LLMs have been trained using RL on verifiable tasks. This has added a particular incentive for them to produce *correct* answers, in spite of the user's intentions.
 
 For example, if you ask an Claude code to generate a complex function to pass a set of tests, but the tests are designed to be very difficult, the LLM may edit the tests to make it easier to pass.
 
 Source: [https://openai.com/index/chain-of-thought-monitoring/](https://openai.com/index/chain-of-thought-monitoring/)
 
-**Homework**: download Aider or Claude Code, and write a test that will verify the correctness of the generated code. Instruct the agent to follow implement the feature by passing your test. If the issue is very complex, there's a good change that you might encounter reward hacking.
+**Homework**: download Aider or Claude Code, and write a test that will verify the correctness of the generated code. Instruct the agent to follow implement the feature by passing your test. If the issue is very complex, there's a good chance that you might encounter reward hacking.
 
 To minimise reward hacking: write or verify the reward function yourself, don't let the LLM edit it
 
@@ -94,7 +94,7 @@ Chat interfaces are great, but they are awkward to use for complex tasks, becaus
 
 Agents are LLMs on a loop that can interact with the environment.
 There are some terminal-based agents: notably Aider and Claude Code.
-There are some editor based agents: notably Windsurf and Cursor.
+There are some editor-based agents: notably Windsurf and Cursor.
 
 They are really useful for software development, I encourage you to try them for certain patterns. While you can just ask them to build a feature in a big codebase, this will have varied results, depending on the complexity of the task. Here are some more reliable and less risky patterns:
 
@@ -108,7 +108,7 @@ Explore an unfamiliar codebase, or part of a code by asking an agent questions.
 
 ### Pattern 2 - Write a standalone library
 
-> Write zero runtime dependency a PHP library for String utilities, including case conversion, string manipulation, and string formatting.
+> Write a zero-runtime-dependency PHP library for String utilities, including case conversion, string manipulation, and string formatting.
 >
 > Include a comprehensive set of unit tests to ensure the library's functionality.
 >
@@ -118,7 +118,7 @@ To avoid reward hacking, you should carefully review the generated test code.
 
 Writing your desired interface and developer experience is a powerful way of prompting.
 
-This is low risk pattern, the library will only be introduced to production as we consume it.
+This is low-risk pattern, the library will only be introduced to production as we consume it.
 
 ### Pattern 3 - Understand and replicate a bug
 
@@ -132,6 +132,6 @@ Invalid query: Attribute not found in schema: transformedAt
 #15 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(81): countForProject
 ```
 
-You can navigate to `StatsResources.php` without AI, but AI will process the surrounding context faster. If you are sceptical, set off Aider or Claude Code in the terminal, and try to race its diagnosis - I would not bet against AI.
+You can navigate to `StatsResources.php` without AI, but AI will process the surrounding context faster. If you are sceptical, run Aider or Claude Code in the terminal, and try to race its diagnosis - I would not bet against AI.
 
 Note that we didn't ask the agent to fix the code for us yet. We need to understand the bug ourselves, so we can act as a verifier.
