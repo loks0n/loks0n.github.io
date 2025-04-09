@@ -21,7 +21,7 @@ In scenario 2 and 3 you need to learn how to direct AI effectively, or you will 
 
 The most frequent criticism of LLMs is probably their tendency to hallucinate.
 
-Go to to ChatGPT, any offline model, and write this prompt:
+Go to ChatGPT, any offline model, and write this prompt:
 
 ```
 Prompt: "Answer the question only with a single word. What sport does Micheal Jordan play?"
@@ -50,7 +50,7 @@ Why does this work? From research by Anthropic.
 
 Source: [https://www.anthropic.com/research/tracing-thoughts-language-model](https://www.anthropic.com/research/tracing-thoughts-language-model)
 
-This is actually quite a human trait. LLMs feel they *should* know the answer, but they don't. So they make it up.
+This behavior closely resembles human tendencies. LLMs behave as if they should know the answer, but they don't. So they make it up.
 The effect is even greater if you constrain their output, or pressure with urgency.
 
 To minimise hallucination: ask politely, without priors, and give flexibility.
@@ -78,9 +78,9 @@ To minimise sycophancy: don't forcefully correct, show evidence of the error, as
 
 ## Reward hacking
 
-Recent LLMs have been trained using RL on verifiable tasks. This has added a particular incentive for them to produce *correct* answers, in spite of the user's intentions.
+Recent LLMs have been trained using RL on verifiable tasks. This creates pressure to produce correct answers—even if it means bypassing the user’s true intent.
 
-For example, if you ask an Claude code to generate a complex function to pass a set of tests, but the tests are designed to be very difficult, the LLM may edit the tests to make it easier to pass.
+For example, if you ask Claude code to generate a complex function to pass a set of tests, but the tests are designed to be very difficult, the LLM may edit the tests to make it easier to pass.
 
 Source: [https://openai.com/index/chain-of-thought-monitoring/](https://openai.com/index/chain-of-thought-monitoring/)
 
@@ -122,7 +122,7 @@ This is low-risk pattern, the library will only be introduced to production as w
 
 ### Pattern 3 - Understand and replicate a bug
 
-> Given the following PHP trace, find the bug in the code. Suggest the most likely root cause, and steps to replicate the rror.
+> Given the following PHP trace, find the bug in the code. Suggest the most likely root cause, and steps to replicate the error.
 ```
 Invalid query: Attribute not found in schema: transformedAt
 #19 /usr/src/code/vendor/appwrite/server-ce/src/Appwrite/Platform/Workers/StatsResources.php(245): count
