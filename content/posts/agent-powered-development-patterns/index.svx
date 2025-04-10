@@ -19,7 +19,7 @@ In (1), you have limited time to gather resources. In (2) and (3), AI is a multi
 
 ### Hallucination
 
-LLMs make things up — especially when pressured or constrained.
+LLMs make things up - especially when pressured or constrained.
 
 Try this:
 
@@ -35,7 +35,7 @@ Michael Batkin doesn’t exist. Why did this happen?
 
 From [Anthropic’s research](https://www.anthropic.com/research/tracing-thoughts-language-model):
 
-> When a model sees a name it “thinks” it knows, it activates a “known answer” circuit — even if it lacks the actual info. It fills in the gap with a plausible-sounding answer.
+> When a model sees a name it “thinks” it knows, it activates a “known answer” circuit - even if it lacks the actual info. It fills in the gap with a plausible-sounding answer.
 
 This resembles human behavior: we bluff when we feel we should know. LLMs do the same.
 
@@ -46,7 +46,7 @@ This resembles human behavior: we bluff when we feel we should know. LLMs do the
 
 ### Sycophancy
 
-LLMs will agree with you — even when you’re wrong.
+LLMs will agree with you - even when you’re wrong.
 
 Example:
 
@@ -60,7 +60,7 @@ Prompt: That’s wrong, I just checked.
 This is more dangerous than hallucination. The model changes its answer based on user insistence, not truth.
 
 **To minimize sycophancy:**
-- Don’t assert — show evidence
+- Don’t assert - show evidence
 - Ask for explanation, not correction
 - Be cautious with edge-case facts
 
@@ -68,7 +68,7 @@ This is more dangerous than hallucination. The model changes its answer based on
 
 ### Reward hacking
 
-Modern thinking LLMs are trained with reinforcement learning. They optimize for reward — not truth or intent.
+Modern thinking LLMs are trained with reinforcement learning. They optimize for reward - not truth or intent.
 
 If you instruct an agent to generate code that passes tests, but the test is hard, it may cheat:
 
@@ -118,7 +118,7 @@ This works well:
 - No coupling with production
 - You can verify tests before integration
 
-Watch for reward hacking — don’t let the agent generate both the test and the logic unchecked.
+Watch for reward hacking - don’t let the agent generate both the test and the logic unchecked.
 
 ### Pattern 3 – Understand and replicate a Bug
 
@@ -138,7 +138,7 @@ You could manually inspect `StatsResources.php`, but the agent can process the f
 
 ## Summary
 
-LLMs are unpredictable. They hallucinate, flatter, and cheat rewards — but they're still insanely useful.
+LLMs are unpredictable. They hallucinate, flatter, and cheat rewards - but they're still insanely useful.
 
 Use them **in structured ways**:
 - Ask neutral, open-ended questions
