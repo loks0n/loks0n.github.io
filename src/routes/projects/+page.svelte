@@ -10,7 +10,7 @@
 
 <article>
 	<ul>
-		{#each data.projects as project}
+		{#each data.projects as project (project.slug)}
 			<li>
 				<a href="/projects/{project.slug}">{project.name}</a> - {project.description}
 			</li>

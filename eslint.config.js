@@ -29,7 +29,8 @@ export default [
 	},
 	{
 		rules: {
-			'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }]
+			'@typescript-eslint/no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
+			'svelte/no-navigation-without-resolve': 'off'
 		}
 	},
 	{

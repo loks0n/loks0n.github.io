@@ -11,7 +11,7 @@
 
 <article>
 	<ul>
-		{#each data.posts as post, index}
+		{#each data.posts as post, index (post.slug)}
 			<small>
 				<DateFormat date={new Date(post.date)} />
 			</small>

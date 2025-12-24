@@ -20,7 +20,7 @@
 <nav>
 	<p>loks0n.dev</p>
 	<ul>
-		{#each links as link}
+		{#each links as link (link.url)}
 			<li>
 				<a href={link.url} class:active={page.url.pathname === link.url}>
 					{link.name}
