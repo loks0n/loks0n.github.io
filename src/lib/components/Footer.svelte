@@ -44,5 +44,6 @@
 
 	a {
 		letter-spacing: 0.05em;
+		text-decoration: none;
 	}
 </style>

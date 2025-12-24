@@ -37,13 +37,19 @@
 		display: grid;
 	}
 
+	small {
+		margin-bottom: 0.25em;
+	}
+
 	a {
 		text-wrap: balance;
 		font-size: 1.125rem;
+		font-weight: 600;
 	}
 
 	hr {
 		margin-top: 1em;
 		margin-bottom: 1em;
+		opacity: 0.15;
 	}
 </style>

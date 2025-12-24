@@ -38,7 +38,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		background-color: rgb(255, 250, 239);
+		background-color: var(--color-background);
 		padding: 1em;
 		min-height: 100vh;
 		min-height: 100dvh;
@@ -54,5 +54,17 @@
 		margin-top: 3em;
 		margin-bottom: 3em;
 		flex: 1;
+		animation: fade-in 0.4s ease-out;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+			transform: translateY(10px);
+		}
+		to {
+			opacity: 1;
+			transform: translateY(0);
+		}
 	}
 </style>

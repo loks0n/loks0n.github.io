@@ -1,3 +1,25 @@
+:root {
+	/* Colors */
+	--color-primary: rgb(37, 123, 76);
+	--color-background: rgb(255, 250, 239);
+	--color-text: #333333;
+	--color-text-muted: #666666;
+	--color-code-bg: #27212e;
+	--color-code-text: #ffffff;
+
+	/* Typography */
+	--font-serif: 'Source Serif Pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+	--font-mono: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	--line-height: 1.5;
+
+	/* Spacing */
+	--spacing-base: 1.5em;
+
+	/* Transitions */
+	--transition-fast: 0.15s ease;
+	--transition-base: 0.2s ease;
+}
+
 *,
 *::before,
 *::after {
@@ -14,13 +36,46 @@ nav > ul {
 	padding: 0;
 }
 
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
+}
+
+::selection {
+	background: var(--color-primary);
+	color: var(--color-code-text);
+}
+
 body {
-	color: #333333;
-	font-family: 'Source Serif Pro', 'Georgia', 'Cambria', 'Times New Roman', Times, serif;
+	color: var(--color-text);
+	font-family: var(--font-serif);
+	line-height: var(--line-height);
 }
 
 a {
-	color: rgb(37, 123, 76);
+	color: var(--color-primary);
+}
+
+/* Animated underline for article links */
+article a {
+	text-decoration: none;
+	background-image: linear-gradient(currentColor, currentColor);
+	background-position: 0% 100%;
+	background-repeat: no-repeat;
+	background-size: 0% 1px;
+	transition: background-size var(--transition-base);
+}
+
+article a:hover {
+	background-size: 100% 1px;
+}
+
+/* External link indicator */
+article a[href^="http"]:not([href*="loks0n.dev"])::after {
+	content: ' ↗';
+	font-size: 0.75em;
+	opacity: 0.7;
 }
 
 img,
@@ -33,7 +88,6 @@ video {
 }
 
 article > * {
-	line-height: 1.5;
 	margin-bottom: 1.5em;
 }
 
@@ -58,6 +112,25 @@ article h5,
 article h6 {
 	font-weight: 600;
 	line-height: 1.1;
+}
+
+/* Heading anchor links */
+.heading-anchor {
+	opacity: 0;
+	text-decoration: none;
+	margin-left: -1em;
+	padding-right: 0.5em;
+	font-weight: 400;
+	transition: opacity var(--transition-fast);
+}
+
+article h2:hover .heading-anchor,
+article h3:hover .heading-anchor,
+article h4:hover .heading-anchor,
+article h5:hover .heading-anchor,
+article h6:hover .heading-anchor,
+.heading-anchor:focus {
+	opacity: 0.5;
 }
 
 article h1 {
@@ -98,7 +171,6 @@ article h6 {
 
 article ul,
 article ol {
-	padding: revert;
 	padding-left: 1.5em;
 }
 
@@ -107,34 +179,22 @@ article li {
 }
 
 article blockquote {
-	border-left: 0.25em solid #666666;
+	border-left: 0.25em solid var(--color-text-muted);
 	padding-left: 1em;
 	margin-left: 0;
 	font-style: italic;
-	color: #666666;
+	color: var(--color-text-muted);
 }
 
 article :not(pre) > code {
-	background: #27212e;
-	color: #ffffff;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* this is the default */
-	/* The following properties are standard, please leave them as they are */
-	font-size: 0.75rem;
-	direction: ltr;
-	text-align: left;
+	background: var(--color-code-bg);
+	color: var(--color-code-text);
+	font-family: var(--font-mono);
+	font-size: 0.875em;
 	white-space: pre;
-	word-spacing: normal;
 	word-break: normal;
-	line-height: inherit;
-	-moz-tab-size: 2;
-	-o-tab-size: 2;
 	tab-size: 2;
-	/* The following properties are also standard */
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
 	hyphens: none;
-	padding: 0.25em;
-	overflow: auto;
-	border-radius: 0.5em;
+	padding: 0.1em 0.3em;
+	border-radius: 0.25em;
 }

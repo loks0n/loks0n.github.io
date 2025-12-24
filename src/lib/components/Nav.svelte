@@ -18,7 +18,11 @@
 </script>
 
 <nav>
-	<p>loks0n.dev</p>
+	<p class="logo">
+		{#each 'loks0n.dev'.split('') as letter (letter)}
+			<span class="letter">{letter}</span>
+		{/each}
+	</p>
 	<ul>
 		{#each links as link (link.url)}
 			<li>
@@ -40,13 +44,23 @@
 		font-size: 1.1rem;
 	}
 
-	p {
+	.logo {
 		font-weight: 800;
 		font-size: 1.25rem;
 	}
 
+	.letter {
+		display: inline-block;
+		transition: transform var(--transition-fast);
+	}
+
+	.letter:hover {
+		transform: translateY(-0.15em);
+	}
+
 	a {
 		letter-spacing: 0.05em;
+		text-decoration: none;
 	}
 
 	@media (min-width: 450px) {
