@@ -3,47 +3,58 @@ title: No one wants suburbia
 date: 2025-04-10
 ---
 
-**Suburbia, is by definition a compromise.** No one actually wants to live there. Ask someone *why* they live in a suburban neighbourhood, and they are likely to give one of several possible misleading answers.
+I grew up in Burton Joyce, a village that isn't quite a village. A suburban extension of Nottingham, close enough to the city for commuting, far enough to feel like you've escaped something. There's a Co-op, a chippy, a pub that's fine. Everyone drives everywhere.
 
-**Why do you live in X suburban neighbourhood?**
+It was a good place to grow up. Not a place to stay.
 
-1. It's cheaper than in the city.
+**Suburbia is, by definition, a compromise.** No one actually wants to live there. Ask someone *why* they chose a suburban neighbourhood and you'll get misleading answers:
+
+1. It's cheaper than the city.
 2. It's leafier than the city.
 3. It's got more sense of community than the city.
 
-These answers construct a false dichotomy, conjuring a world without countryside villages, which sit comfortably beyond suburbia in all of these categories.
+These answers construct a false dichotomy. A world without countryside villages, which beat suburbia on all three counts.
 
-If the subject has a rural background, their answers might shift:
+If the person has a rural background, the answers shift:
 
-1. There are more jobs here than where I grew up.
+1. More jobs here than where I grew up.
 2. More amenities than out in the sticks.
-3. All my friends left my hometown – there’s more going on closer to the city.
+3. Everyone I knew left. There's more going on near the city.
 
-In both cases, there’s subtext: *“If I could have the best of both worlds, I would.”* They’ve traded one set of compromises for another.
+The subtext is the same: *"If I could have the best of both worlds, I would."* Everyone's trading one set of compromises for another.
 
-Cities, fortunately, don’t *have* to be expensive, devoid of nature, or inhuman. It's harder, and it takes coherent planning and aligned incentives, but it’s entirely possible.
+Last year I visited Northstowe, a new town off the A14 north of Cambridge. It's the future we're actually building. Thousands of homes, a primary school, and almost nothing else. No pub. No market square. No reason to linger. A busway connects it to Cambridge every twenty minutes if you're lucky. The development technically has a "town centre": a Tesco, a pharmacy, a car park.
 
-The concerns of those pining for a simple life in the country are trickier.
+I walked around for an hour. I didn't see anyone walking who wasn't going to their car.
 
-There’s a semantic trap. The *countryside* should obviously be mostly country, not concrete. *Small* towns can’t be *big* - neither in area nor population. They’re linguistically constrained.
+This is what we build when we're not paying attention. Housing as unit count. Communities as afterthought.
 
-Still, there are missed opportunities glimmering inside our popular conception of the village:
+**Cities don't have to be expensive, treeless, or inhuman.** It takes coherent planning and aligned incentives, but it's possible. Vienna, Amsterdam, Barcelona. We know how to do this.
 
-- **Why should a small settlement consist only of small buildings?** Could a town composed of just a few mid-rise blocks, clustered around a high street, offer a better balance than miles of low-density semis?
+The countryside is trickier. There's a semantic trap: the countryside should obviously be mostly country. Small towns can't be big. They're linguistically constrained.
 
-- **Why can’t rural mean connected?** Fast broadband now reaches much of rural England. Remote work exists. The barrier to economic vitality isn’t infrastructure, it’s zoning, planning bureaucracy, and lack of political will.
+But there are missed opportunities inside our conception of the village:
 
-- **Why do we assume scale equals quality?** A single excellent GP surgery, bakery, or community hub can outperform ten poor-quality equivalents. Amenities don’t need to sprawl to serve.
+**Why should a small settlement mean only small buildings?** A town of three mid-rise blocks clustered around a high street, surrounded by fields, might offer a better life than miles of low-density semis leaking into the green belt.
 
-- **Why is culture assumed to be urban?** Cultural life doesn’t require millions - it requires density of *interaction*. Pubs, libraries, markets, studios. Walkable distance. Third places. If people bump into each other, culture follows.
+**Why can't rural mean connected?** Fast broadband reaches most of rural England now. Remote work exists. The barrier to economic vitality is zoning, planning bureaucracy, and lack of political will.
 
-Our built environments reflect outdated assumptions: that economic opportunity *must* be urban, that quiet living *must* be rural, and that the suburban middle is the compromise we have to swallow. These assumptions get reinforced by planning rules, land use policy, and a risk-averse approach to development.
+**Why do we assume scale equals quality?** A single excellent GP surgery, bakery, or community hub can outperform ten mediocre equivalents.
 
-But there’s no reason we can’t build better patterns.
+**Why is culture assumed to be urban?** Culture doesn't require millions. It requires density of *interaction*. Pubs, libraries, markets, studios. Walkable distances. Third places. If people bump into each other, culture follows.
 
-Imagine a compact village with flats above shops, a co-working space in the church hall, a regular bus into the nearest city, allotments in place of driveways, and a pub with actual locals in it. That’s not utopia, it’s barely even innovation. It’s just an update to the British village for the 21st century.
+The obvious objection: people move to villages to escape density. They don't want a mid-rise block on the high street. They'll fight it at every planning meeting, and they'll win.
 
-We don’t need more dormitory towns off the A14. We need places that *function* as communities - without forcing people to choose between affordability, liveability, and opportunity.
+They're not wrong to worry. Bad density is worse than no density. A soulless apartment block dropped into a medieval village would be a disaster.
 
-The real question isn’t “city or suburb or countryside?”
-It’s: *Why are we still pretending those are our only options?*
+But we can design density that earns its place.
+
+**Our built environments reflect outdated assumptions:** that economic opportunity must be urban, that quiet living must be rural, and that the suburban middle is the compromise we swallow. Planning rules reinforce this. So do risk-averse councils and homeowners who got theirs and pulled the ladder up.
+
+Imagine a compact village: flats above shops, a co-working space in the church hall, a regular bus into the nearest city, allotments instead of driveways, a pub with actual regulars. That's not utopia. Barely even innovation. Just an update to the British village for the 21st century.
+
+We don't need more Northstowes. We need places that function as communities, without forcing people to choose between affordability, liveability, and opportunity.
+
+Burton Joyce almost had it. Northstowe never will.
+
+I'm still looking.

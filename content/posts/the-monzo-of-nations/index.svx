@@ -3,12 +3,30 @@ title: The Monzo of nations
 date: 2023-01-06
 ---
 
-Imagine the Monzo of nations. Kinda like Gov.UK but rather than just the websites being useable, the entire country's infrastructure is a loveable, customer-facing enterprise.
+Last month I spent three hours on hold with HMRC. The hold music was worse than the wait. When someone finally answered, they told me to post a form. The form took six weeks. The response was a letter asking me to call back.
 
-Nation-states hold a monopoly of violence over geographic regions. This enables them to act mainly in the interests of their employees. In Banking, as technology has lowered barriers to entry, we've seen incumbent giants lose market share to new competition, like Monzo and Starling.
+Monzo tells me I've spent too much on coffee before I've finished the cup.
 
-One natural consequence of a growing digital economy is greater transnational competition for the business of their, newly digital, citizens. At the risk of sounding like a corporate shill, I invite Monzo to do it themselves: I'd be a citizen of Monzo.
+Imagine the Monzo of nations. Not just Gov.UK with better fonts - the entire country's infrastructure as a responsive, loveable, customer-facing enterprise. You interact with the state and it actually seems like it wants you there.
 
-Democracies are slow. Imagine your favourite cereal brand changed its recipe, and it started to taste like human waste. You wouldn't wait 5 years until the next shareholders meeting of the manufacturer, and then queue to vote against the CEO. You'd switch to a different cereal.
+Nation-states hold a monopoly of violence over geographic regions. This lets them act mainly in the interests of their employees. In banking, as technology lowered barriers to entry, incumbent giants lost market share to new competition - Monzo, Starling, Revolut. The giants had to improve or die.
 
-Cerealiously. If switching residency becomes any easier, world leaders might have to start looking towards their bowl of Wheaties&trade; for inspiration.
+Countries don't face this pressure. Where are you going to go? The switching costs are enormous. So the hold music plays, the forms multiply, and nobody gets fired.
+
+But a growing digital economy changes the calculus. Remote work means talent can live anywhere. Corporate tax competition already exists. Digital nomad visas are proliferating. The question isn't whether nations will compete for citizens - it's when, and how badly incumbents will lose.
+
+At the risk of sounding like a corporate shill: I invite Monzo to do it themselves. I'd be a citizen of Monzo.
+
+This is obviously insane. Citizenship isn't a subscription. You can't cancel Britain because the UI is bad. Nations aren't products - they're mutual obligations, historical accidents, collective fictions we've agreed to maintain because the alternative is chaos.
+
+And yet.
+
+When the fiction stops working - when the hold music loops forever, when the letter asks for the same documents you've already sent twice - you start to wonder what you're actually paying for. Taxes aren't optional. Services apparently are.
+
+I don't actually want to be a citizen of Monzo. I want the country I'm already a citizen of to act like it wants my business. To feel, even a little, the pressure that makes startups obsess over user experience.
+
+Democracies are slow. They don't have to feel like hold music.
+
+Cerealiously - imagine your favourite cereal brand changed its recipe and it started tasting like human waste. You wouldn't wait five years for the next shareholder meeting to vote against the CEO. You'd switch cereals.
+
+If switching residency gets any easier, world leaders might want to look at their bowl of Wheaties™ for inspiration.
