@@ -113,7 +113,7 @@ article blockquote {
 	color: #666666;
 }
 
-article code:not([class*='language-']) {
+article :not(pre) > code {
 	background: #27212e;
 	color: #ffffff;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace; /* this is the default */
