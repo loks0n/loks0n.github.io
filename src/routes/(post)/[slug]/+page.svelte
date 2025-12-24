@@ -8,8 +8,6 @@
 	}
 
 	let { data }: Props = $props();
-
-	const date = new Date(data.post.date).toLocaleDateString();
 </script>
 
 <svelte:head>

@@ -5,11 +5,13 @@ import mdsvexConfig from './mdsvex.config.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	// @ts-ignore
-	extensions: ['.svelte', ...mdsvexConfig.extensions],
+	extensions: ['.svelte', '.md', '.svx'],
 	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 	kit: {
-		adapter: adapter()
+		adapter: adapter(),
+		alias: {
+			$content: './content'
+		}
 	}
 };
 

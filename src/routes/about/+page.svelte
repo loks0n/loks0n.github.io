@@ -1,5 +1,4 @@
 <script>
-	import { SITE_TITLE } from '$lib/config';
 	import meSrc from './me.webp';
 </script>
 
