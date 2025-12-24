@@ -6,9 +6,9 @@ thumbnail: ./cycling-past-train.png
 
 I have been a customer of LNER for a good few years, traveling between York and Newark. It's been pretty patchy service. Several canceled trains, and a bunch of late ones.
 
-But my most recent experience has riled me up such that, at the moment, I'd rather crawl up the A1 with my shoelaces tied. 
+But my most recent experience has riled me up such that, at the moment, I'd rather crawl up the A1 with my shoelaces tied.
 
-I had booked the 16:46 train from Newark Northgate. I walked into the station cold and dishevelled, having travelled to the station via bus. The dreary winter days of January had come fast and without relief. My shivering knees stumbled onto the first LNER service that arrived at the station. 
+I had booked the 16:46 train from Newark Northgate. I walked into the station cold and dishevelled, having travelled to the station via bus. The dreary winter days of January had come fast and without relief. My shivering knees stumbled onto the first LNER service that arrived at the station.
 
 Yet, the respite from the freezing temperature Newark air was short-lived. The ticket attendant began to reprimand me.
 
@@ -22,20 +22,19 @@ If my sad journey is not refunded, I will take up cycling.
 
 
 > Dear Mr Silver
-> 
+>
 > Thank you for getting in touch with us at London North Eastern Railway.
-> 
+>
 > I am sincerely sorry to hear that your journey was tainted by the cold temperature and the charge you received. I understand this must have been disappointing. I do feel it is important to point out that the process followed by the member of staff who charged you is correct. When buying a ticket, you are entering into a contract to travel on the service you have booked for. It is stated in the terms and conditions of your ticket that if you do not travel on the correct service, you will be charged.
 >
 > Thanks again for contacting us at London North Eastern Railway.
 
+Very well LNER,
 
-Very well LNER, 
-
-You have forced my hand.
-I will journey via bike henceforth.
+You have forced my hand. I will journey via bike henceforth.
 
 ![Luke speeding past a delayed LNER train](./cycling-past-train.png)
 
-Thanks,
-Luke
+---
+
+*[I took the 16:46 again on Tuesday.]*
