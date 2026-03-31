@@ -1,7 +1,7 @@
 import path from 'path';
 
 type GlobEntry = {
-	metadata: Post;
+	frontmatter: Post;
 	default: unknown;
 };
 
@@ -12,12 +12,12 @@ export interface Post {
 }
 
 export const posts = Object.entries(
-	import.meta.glob<GlobEntry>('/content/posts/*/index.svx', { eager: true })
+	import.meta.glob<GlobEntry>('/content/posts/*/index.markdoc', { eager: true })
 )
-	.map(([filePath, { metadata }]) => {
+	.map(([filePath, { frontmatter }]) => {
 		const dirname = path.dirname(filePath);
 		return {
-			...metadata,
+			...frontmatter,
 			slug: path.basename(dirname)
 		};
 	})

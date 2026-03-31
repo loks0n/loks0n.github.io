@@ -72,7 +72,7 @@ article a:hover {
 }
 
 /* External link indicator */
-article a[href^="http"]:not([href*="loks0n.dev"])::after {
+article a[href^='http']:not([href*='loks0n.dev'])::after {
 	content: ' ↗';
 	font-size: 0.75em;
 	opacity: 0.7;

@@ -20,14 +20,14 @@ github: https://github.com/loks0n/rapid-draughts
   * [3.1. Random Strategy](#31-random-strategy)
   * [3.2. AlphaBeta Strategy](#32-alphabeta-strategy)
 
-## 1. Introduction <div id="1-introduction"></div>
+## 1. Introduction
 
 **rapid-draughts** uses bitboards, a board representation that holds the draughts board in three 32 or 64-bit unsigned integers. One for the light pieces, dark pieces, and the king pieces. Bitboards enable fast move generation and have minimal memory usage, contributing to the library's exceptional performance.
 
 In the following sections, we will explore its usage in detail, covering installation, usage, AI strategies, game history, and more.
 
-## 2. Core <div id="2-core"></div>
-### 2.1. Setting up the engine <div id="21-setting-up-the-engine"></div>
+## 2. Core
+### 2.1. Setting up the engine
 
 First, install the library using npm:
 
@@ -62,9 +62,9 @@ import {
 const draughts = Draughts.setup({ player: DraughtsPlayer.LIGHT });
 ```
 
-### 2.2 Using the draughts engine <div id="22-using-the-draughts-engine"></div>
+### 2.2 Using the draughts engine
 
-#### 2.2.1. The board <div id="221-the-board"></div>
+#### 2.2.1. The board
 
 By default, the draughts board is set up with the standard starting position.
 You can get the current board state by accessing the board property. The board is returned as a 1D array with the following type:
@@ -88,7 +88,7 @@ For convenience you can output an ASCII representation of the board with the `as
 console.log(draughts.asciiBoard());
 ```
 
-#### 2.2.2. Current player <div id="222-current-player"></div>
+#### 2.2.2. Current player
 
 To get the current player, access the `player` property of the `draughts` object. The player will be either `DraughtsPlayer.LIGHT` or `DraughtsPlayer.DARK`.
 
@@ -97,7 +97,7 @@ const { player } = draughts;
 console.log(`Current player: ${player}`);
 ```
 
-#### 2.2.3. Current status <div id="223-current-status"></div>
+#### 2.2.3. Current status
 
 To get the current game status, access the `status` property of the `draughts` object. The status will be one of the following values: `DraughtsStatus.PLAYING`, `DraughtsStatus.DRAW`, `DraughtsStatus.LIGHT_WINS`, or `DraughtsStatus.DARK_WINS`.
 
@@ -107,14 +107,14 @@ console.log(`Current status: ${status}`);
 ```
 
 
-#### 2.2.4. Game history <div id="224-game-history"></div>
+#### 2.2.4. Game history
 The `draughts` object maintains a history of moves played during the game, as well as all the resulting board positions. To access the game history, use the `history` property.
 
 ```typescript
 const { moves, boards } = draughts.history;
 ```
 
-#### 2.2.3. Making a move <div id="223-making-a-move"></div>
+#### 2.2.3. Making a move
 
 To make a move, first, get the list of legal moves available for the current position. You can access this list using the `moves` property of the `draughts` object. 
 
@@ -141,11 +141,11 @@ draughts.move(selectedMove);
 
 After making a move, the draughts object will update the board, the current player, and the game status. It will also add the move to the game history. Keep in mind that the `move()` method does not validate if the move is legal. An error will be thrown if an illegal move is passed in.
 
-## 3. AI <div id="3-ai"></div>
+## 3. AI
 The library provides a set of AI strategies that can be used to play against or to simulate games. In this section, we'll cover two strategies: Random and AlphaBeta.
 
 
-### 3.1. Random Strategy <div id="31-random-strategy"></div>
+### 3.1. Random Strategy
 The random strategy is a simple AI that chooses a random legal move. To create a random AI player, use the `ComputerFactory.random()` method.
 
 ```typescript
@@ -165,7 +165,7 @@ draughts.move(randomMove);
 
 Note that the computer player functions are asynchronous, so you'll need to use the `await` keyword.
 
-### 3.2. AlphaBeta Strategy <div id="32-alphabeta-strategy"></div>
+### 3.2. AlphaBeta Strategy
 The AlphaBeta strategy is a more advanced AI that uses the alpha-beta pruning algorithm to search for the best move. You can configure the search depth by passing an object with the `maxDepth` property to the `ComputerFactory.alphaBeta()` method.
 
 ```typescript
