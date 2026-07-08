@@ -1,17 +1,18 @@
-<!-- Sea and sky settling into the same grey; a boat breathing on the line. -->
+<!-- Sea and sky settling into the same grey; a boat breathing on the line,
+     the water clipping its hull so it floats low. -->
 <div class="seascape" aria-hidden="true">
 	<div class="sky"></div>
 	<div class="glow"></div>
-	<div class="sea"></div>
-	<svg class="boat reflect" viewBox="0 0 60 46">
-		<path class="sail" d="M30 4 L30 34 L11 34 Z" />
-		<path class="sail jib" d="M30 10 L30 34 L44 34 Z" />
-		<path class="hull" d="M12 35 L48 35 Q44 45 30 45 Q16 45 12 35 Z" />
-	</svg>
 	<svg class="boat" viewBox="0 0 60 46">
 		<path class="sail" d="M30 4 L30 34 L11 34 Z" />
 		<path class="sail jib" d="M30 10 L30 34 L44 34 Z" />
 		<line class="mast" x1="30" y1="2" x2="30" y2="36" />
+		<path class="hull" d="M12 35 L48 35 Q44 45 30 45 Q16 45 12 35 Z" />
+	</svg>
+	<div class="sea"></div>
+	<svg class="boat reflect" viewBox="0 0 60 46">
+		<path class="sail" d="M30 4 L30 34 L11 34 Z" />
+		<path class="sail jib" d="M30 10 L30 34 L44 34 Z" />
 		<path class="hull" d="M12 35 L48 35 Q44 45 30 45 Q16 45 12 35 Z" />
 	</svg>
 </div>
@@ -29,11 +30,7 @@
 		position: absolute;
 		inset: 0 0 42% 0;
 		background: linear-gradient(#b7bbbe, #cdcac4);
-	}
-	.sea {
-		position: absolute;
-		inset: 58% 0 0 0;
-		background: linear-gradient(#c6c7c5, #99a0a4);
+		z-index: 1;
 	}
 	.glow {
 		position: absolute;
@@ -43,7 +40,13 @@
 		height: 130px;
 		transform: translate(-50%, -50%);
 		background: radial-gradient(closest-side, rgba(242, 237, 224, 0.9), transparent);
-		z-index: -1;
+		z-index: 2;
+	}
+	.sea {
+		position: absolute;
+		inset: 58% 0 0 0;
+		background: linear-gradient(#c6c7c5, #99a0a4);
+		z-index: 4;
 	}
 	.boat {
 		position: absolute;
@@ -51,14 +54,16 @@
 		top: 58%;
 		width: 44px;
 		height: auto;
+		z-index: 3;
 		transform-origin: 50% 100%;
-		translate: -50% -100%;
+		translate: -50% -78%;
 		animation: bob 6.5s ease-in-out infinite;
 	}
 	.boat.reflect {
-		translate: -50% 0;
+		z-index: 5;
+		translate: -50% -22%;
 		scale: 1 -1;
-		opacity: 0.16;
+		opacity: 0.14;
 		filter: blur(1.2px);
 		animation-name: bob-reflect;
 	}

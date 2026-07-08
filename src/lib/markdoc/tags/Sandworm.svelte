@@ -1,158 +1,183 @@
 <script lang="ts">
-	// A sandworm breaches through a break in the page as you scroll past it.
-	// Wordless, scroll-driven, pure CSS.
-	const segs = Array.from({ length: 20 }, (_, i) => {
-		const t = i / 19; // 0 = head, 1 = tail
-		return {
-			cx: +(60 + Math.sin(t * Math.PI * 1.1) * 16).toFixed(1),
-			cy: +(40 + t * 158).toFixed(1),
-			r: +(30 - t * 26).toFixed(1)
-		};
-	});
-	const head = segs[0];
-	const teeth = Array.from({ length: 18 }, (_, i) => {
-		const a = (i / 18) * Math.PI * 2;
-		return {
-			x1: +(head.cx + Math.cos(a) * 12).toFixed(1),
-			y1: +(head.cy + Math.sin(a) * 12).toFixed(1),
-			x2: +(head.cx + Math.cos(a) * 21).toFixed(1),
-			y2: +(head.cy + Math.sin(a) * 21).toFixed(1)
-		};
+	// A vast toothed maw rises from the sand as you scroll past. A lone bird
+	// gives the scale. Pure CSS, scroll-driven.
+	const C = 250;
+	const R_IN = 150;
+	const R_OUT = 232;
+	const teeth = Array.from({ length: 56 }, (_, i) => {
+		const a = (i / 56) * Math.PI * 2;
+		const w = ((Math.PI * 2) / 56) * 0.34;
+		const p = (r: number, ang: number) =>
+			`${(C + Math.cos(ang) * r).toFixed(1)} ${(C + Math.sin(ang) * r).toFixed(1)}`;
+		return `M${p(R_IN, a)} L${p(R_OUT, a - w)} L${p(R_OUT, a + w)} Z`;
 	});
 </script>
 
 <div class="dunes" aria-hidden="true">
-	<div class="spray"></div>
-	<div class="worm">
-		<svg viewBox="0 0 120 210">
-			{#each [...segs].reverse() as s (s.cy)}
-				<circle class="seg" cx={s.cx} cy={s.cy} r={s.r} />
-				<ellipse class="ridge" cx={s.cx} cy={s.cy - s.r * 0.35} rx={s.r * 0.8} ry={s.r * 0.3} />
+	<svg class="bird" viewBox="0 0 24 10">
+		<path d="M1 8 Q6 1 12 6 Q18 1 23 8" fill="none" />
+	</svg>
+
+	<div class="maw">
+		<svg viewBox="0 0 500 500">
+			<defs>
+				<radialGradient id="worm-flesh" cx="50%" cy="40%" r="62%">
+					<stop offset="0%" stop-color="#8a6636" />
+					<stop offset="100%" stop-color="#38280f" />
+				</radialGradient>
+				<radialGradient id="worm-throat" cx="50%" cy="44%" r="60%">
+					<stop offset="0%" stop-color="#050301" />
+					<stop offset="72%" stop-color="#180f05" />
+					<stop offset="100%" stop-color="#2c1e0d" />
+				</radialGradient>
+			</defs>
+			<circle cx={C} cy={C} r="248" fill="url(#worm-flesh)" />
+			{#each teeth as d (d)}
+				<path class="tooth" {d} />
 			{/each}
-			<circle class="maw-rim" cx={head.cx} cy={head.cy} r="26" />
-			<circle class="throat" cx={head.cx} cy={head.cy} r="21" />
-			{#each teeth as t (t.x1)}
-				<line class="tooth" x1={t.x1} y1={t.y1} x2={t.x2} y2={t.y2} />
-			{/each}
-			<circle class="gullet" cx={head.cx} cy={head.cy} r="10" />
+			<circle cx={C} cy={C} r="150" fill="url(#worm-throat)" />
 		</svg>
+		<span class="sand s1"></span>
+		<span class="sand s2"></span>
+		<span class="sand s3"></span>
 	</div>
+
 	<div class="dune"></div>
+	<div class="haze"></div>
 </div>
 
 <style>
 	.dunes {
 		position: relative;
-		height: 190px;
+		height: 240px;
 		margin: var(--spacing-base) 0;
 		overflow: hidden;
 		border-radius: 0.5em;
-		background: linear-gradient(#f4ecd8, #e6cfa6 68%, #d9bd88);
+		background: linear-gradient(#ddcaa2, #cbad7c 58%, #b7945d);
 		view-timeline-name: --breach;
 		view-timeline-axis: block;
 	}
+	.haze {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(rgba(233, 216, 182, 0.6), transparent 34%);
+		pointer-events: none;
+		z-index: 4;
+	}
 	.dune {
 		position: absolute;
-		inset: auto 0 -70px 0;
-		height: 130px;
-		background: radial-gradient(150% 100% at 50% 100%, #c3a26c, transparent 60%);
+		inset: auto -5% -46px -5%;
+		height: 120px;
+		border-radius: 50% 50% 0 0;
+		background: linear-gradient(#c6a066, #ac8a52);
+		z-index: 3;
+		box-shadow: 0 -14px 22px -8px rgba(120, 92, 50, 0.5);
 	}
-	.spray {
+	.bird {
 		position: absolute;
-		left: 50%;
-		bottom: 6px;
-		width: 150px;
-		height: 60px;
-		transform: translateX(-50%);
-		background: radial-gradient(60% 100% at 50% 100%, rgba(120, 90, 45, 0.35), transparent 70%);
-		opacity: 0;
-		animation: dust linear both;
-		animation-timeline: --breach;
-		animation-range: entry 20% cover 75%;
+		top: 14%;
+		left: 20%;
+		width: 18px;
+		opacity: 0.5;
+		z-index: 2;
+		animation: drift 9s ease-in-out infinite;
 	}
-
-	.worm {
-		position: absolute;
-		bottom: -34px;
-		left: 6%;
-		width: 128px;
-		height: 210px;
-		transform-origin: 50% 88%;
-		animation: breach linear both;
-		animation-timeline: --breach;
-		animation-range: entry 0% cover 95%;
-		filter: drop-shadow(0 12px 9px rgba(80, 55, 20, 0.3));
-	}
-	.seg {
-		fill: #ad8342;
-	}
-	.ridge {
-		fill: #c49a55;
-		opacity: 0.6;
-	}
-	.maw-rim {
-		fill: #916a34;
-	}
-	.throat {
-		fill: #3c2a12;
-	}
-	.gullet {
-		fill: #150d04;
-	}
-	.tooth {
-		stroke: #efe2c4;
-		stroke-width: 2.4;
+	.bird path {
+		stroke: #46341f;
+		stroke-width: 1.4;
 		stroke-linecap: round;
 	}
 
-	@keyframes breach {
+	.maw {
+		position: absolute;
+		left: 50%;
+		bottom: 0;
+		width: min(410px, 104%);
+		aspect-ratio: 1;
+		transform-origin: 50% 50%;
+		transform: translate(-50%, 6%) scaleY(0.85);
+		filter: drop-shadow(0 4px 26px rgba(30, 18, 4, 0.5));
+		animation: surface linear both;
+		animation-timeline: --breach;
+		animation-range: entry 0% cover 92%;
+	}
+	.maw svg {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+	.tooth {
+		fill: #ece0c2;
+	}
+
+	.sand {
+		position: absolute;
+		top: 30%;
+		width: 2px;
+		height: 34px;
+		background: linear-gradient(rgba(226, 208, 170, 0.8), transparent);
+		border-radius: 2px;
+		z-index: 3;
+		animation: fall 2.2s linear infinite;
+	}
+	.sand.s1 {
+		left: 38%;
+		animation-delay: 0s;
+	}
+	.sand.s2 {
+		left: 50%;
+		animation-delay: 0.7s;
+	}
+	.sand.s3 {
+		left: 62%;
+		animation-delay: 1.4s;
+	}
+
+	@keyframes surface {
 		0% {
-			transform: translate(-12%, 96%) rotate(-30deg);
-		}
-		46% {
-			transform: translate(96%, -8%) rotate(4deg);
-		}
-		56% {
-			transform: translate(150%, -8%) rotate(9deg);
+			transform: translate(-50%, 26%) scaleY(0.85);
 		}
 		100% {
-			transform: translate(300%, 96%) rotate(38deg);
+			transform: translate(-50%, -10%) scaleY(0.85);
 		}
 	}
-	@keyframes dust {
-		0%,
-		20% {
+	@keyframes fall {
+		0% {
+			transform: translateY(-8px) scaleY(0.6);
 			opacity: 0;
-			transform: translateX(-50%) scaleY(0.4);
 		}
-		45% {
+		25% {
 			opacity: 1;
-			transform: translateX(-50%) scaleY(1);
 		}
 		100% {
+			transform: translateY(64px) scaleY(1.3);
 			opacity: 0;
-			transform: translateX(-50%) scaleY(1.2);
+		}
+	}
+	@keyframes drift {
+		0%,
+		100% {
+			transform: translate(0, 0);
+		}
+		50% {
+			transform: translate(28px, -6px);
 		}
 	}
 
 	@supports not (animation-timeline: view()) {
-		.worm {
+		.maw {
 			animation: none;
-			transform: translate(70%, 4%) rotate(2deg);
-		}
-		.spray {
-			animation: none;
-			opacity: 1;
+			transform: translate(-50%, 4%) scaleY(0.85);
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.worm {
+		.maw {
 			animation: none;
-			transform: translate(70%, 4%) rotate(2deg);
+			transform: translate(-50%, 4%) scaleY(0.85);
 		}
-		.spray {
+		.sand,
+		.bird {
 			animation: none;
-			opacity: 0.6;
 		}
 	}
 </style>
