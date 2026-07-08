@@ -14,12 +14,16 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 // so it can be called from markdoc's synchronous fence transform below.
 const highlighter = await createHighlighter({
 	themes: ['tokyo-night'],
-	langs: ['javascript', 'typescript', 'svelte', 'html', 'css', 'json', 'bash', 'yaml']
+	langs: ['javascript', 'typescript', 'svelte', 'html', 'css', 'json', 'bash', 'shell', 'yaml']
 });
 
-function highlight(content, language = 'text') {
-	const lang = highlighter.getLoadedLanguages().includes(language) ? language : 'text';
-	return highlighter.codeToHtml(content, { lang, theme: 'tokyo-night' });
+function highlight(content, language) {
+	// Fall back to plain text for unregistered or unknown languages.
+	try {
+		return highlighter.codeToHtml(content, { lang: language || 'text', theme: 'tokyo-night' });
+	} catch {
+		return highlighter.codeToHtml(content, { lang: 'text', theme: 'tokyo-night' });
+	}
 }
 
 function getTextContent(children) {

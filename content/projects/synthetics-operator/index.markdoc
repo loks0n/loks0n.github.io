@@ -1,0 +1,46 @@
+---
+name: synthetics-operator
+description: Declarative synthetic monitoring for Kubernetes. Define HTTP checks, DNS probes, Playwright browser flows, and k6 load tests as CRDs, and get Prometheus metrics and Grafana dashboards without wiring any of it yourself.
+github: https://github.com/loks0n/synthetics-operator
+---
+
+**synthetics-operator** brings declarative synthetic monitoring to Kubernetes. Define HTTP checks, DNS probes, Playwright browser flows, and k6 load tests as custom resources — get Prometheus metrics and Grafana dashboards without wiring any of it yourself.
+
+It's a self-hosted alternative to BetterStack or Datadog Synthetics: in-cluster, no SaaS, no per-seat pricing, no proprietary query language.
+
+## A probe is just a resource
+
+```yaml
+apiVersion: synthetics.dev/v1alpha1
+kind: HTTPProbe
+metadata:
+  name: api-health
+spec:
+  interval: 30s
+  request:
+    url: https://api.example.com/health
+  assertions:
+    - name: status_ok
+      expr: status_code = 200
+    - name: fast
+      expr: duration_ms < 500
+    - name: cert_fresh
+      expr: ssl_expiry_days >= 14
+```
+
+## Scraped as metrics
+
+The operator reconciles each probe into a scheduled check and exposes the results on a `/metrics` endpoint:
+
+```text
+synthetics_probe{name="api-health",kind="HTTPProbe"}                         1
+synthetics_probe_duration_ms{name="api-health"}                              142
+synthetics_probe_assertion_result{name="api-health",assertion="status_ok"}   1
+```
+
+## Batteries included
+
+- **Four probe kinds** — HTTP, DNS, Playwright browser flows, and k6 load tests, all as first-class CRDs.
+- **Expression assertions** — status codes, latency budgets, and TLS certificate expiry, evaluated per run.
+- **Shipped Grafana dashboards** — a per-kind view and a fleet-level overview with failing probes, suppressions, and certs expiring at a glance.
+- **Prometheus-native** — no bespoke storage; the metrics slot into whatever you already run.

@@ -1,0 +1,27 @@
+---
+name: php-fast-profile
+description: A modern sampling profiler for PHP 8.0+, written in Rust. Attaches to a running process, walks the Zend VM stack without pausing it, and emits pprof, folded stacks, or a live in-terminal view.
+github: https://github.com/loks0n/php-fast-profile
+---
+
+**pfp** is a modern sampling profiler for PHP 8.0+, written in Rust. It attaches to a running PHP process and walks the Zend VM's call stack without pausing the target — capturing ~100% of samples at 999 Hz with a ~3 MB RSS footprint, and emitting formats your tools already speak.
+
+```shell
+pfp -p $(pgrep -n php) -d 30 -H 999 -f folded -o stacks.txt
+```
+
+## Why pfp
+
+- **High fidelity at high sample rates.** Two syscalls per frame, with `Arc<str>`-interned function and file names. At 999 Hz pfp captures 4996/5000 samples on a 5-second window.
+- **Multi-PID with no rediscovery overhead.** `pfp -P php-fpm` spawns one thread per worker, attaches once, and persists symbol state. New workers are picked up on a configurable interval.
+- **Container-aware.** `--this-container` scopes attach to processes in the current cgroup — no PID juggling between sidecar and target.
+- **Live `top` mode.** A ratatui table showing per-function exclusive/inclusive percentages, updating in real time.
+- **Native pprof v3 output.** Produces a gzipped protobuf consumable by `pprof.dev`, `flamegraph.com`, Grafana, and Pyroscope — no intermediate collapse step.
+- **PHP 8.0 through 8.5.** Per-version struct offsets verified with `pahole` against Sury's debug builds.
+- **Linux x86_64 and aarch64**, both NTS and ZTS build flavours.
+
+## How it works
+
+pfp reads the target's memory directly rather than instrumenting it. For each sample it resolves the executor globals, then walks the chain of `zend_execute_data` frames, reading function and file names and interning them so repeated frames cost almost nothing.
+
+Because it never stops the world, a production `php-fpm` fleet can be profiled continuously with negligible overhead — and the output drops straight into a continuous-profiling backend like Pyroscope.
