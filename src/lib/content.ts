@@ -9,16 +9,17 @@ const slugOf = (filePath: string) => filePath.split('/').at(-2)!;
 /**
  * A content collection: markdoc entries under /content/<name>/*\/index.markdoc.
  * Pass the two globs in (don't create them here) so tests can drive it with
- * in-memory maps. Frontmatter is eager (needed for lists/feed); the component
- * is lazy (code-split, loaded per page).
+ * in-memory maps. Frontmatter is eager and imported on its own (needed for
+ * lists/feed, without pulling every entry's compiled body into the shared
+ * bundle); the component is lazy (code-split, loaded per page).
  */
 export function collection<T>(
-	frontmatters: Record<string, { frontmatter: T }>,
+	frontmatters: Record<string, T>,
 	loaders: Record<string, () => Promise<Module>>,
 	options: { label: string; sort?: (a: T & { slug: string }, b: T & { slug: string }) => number }
 ) {
 	const paths = new Map(Object.keys(frontmatters).map((f) => [slugOf(f), f]));
-	const entries = Object.entries(frontmatters).map(([f, { frontmatter }]) => ({
+	const entries = Object.entries(frontmatters).map(([f, frontmatter]) => ({
 		...frontmatter,
 		slug: slugOf(f)
 	}));
@@ -50,13 +51,13 @@ export interface Project {
 }
 
 export const posts = collection<Post>(
-	import.meta.glob('/content/posts/*/index.markdoc', { eager: true }),
+	import.meta.glob('/content/posts/*/index.markdoc', { eager: true, import: 'frontmatter' }),
 	import.meta.glob<Module>('/content/posts/*/index.markdoc'),
 	{ label: 'Post', sort: (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime() }
 );
 
 export const projects = collection<Project>(
-	import.meta.glob('/content/projects/*/index.markdoc', { eager: true }),
+	import.meta.glob('/content/projects/*/index.markdoc', { eager: true, import: 'frontmatter' }),
 	import.meta.glob<Module>('/content/projects/*/index.markdoc'),
 	{ label: 'Project' }
 );
