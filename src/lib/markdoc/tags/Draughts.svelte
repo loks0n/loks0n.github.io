@@ -5,7 +5,7 @@
 	import frames from './draughts-frames.json';
 
 	const N = frames.length;
-	const seconds = Math.round(N * 0.42);
+	const seconds = Math.round(N * 0.2);
 </script>
 
 <div class="board-term" aria-hidden="true">
@@ -23,11 +23,13 @@
 		>
 			{#each frames as f (f.n)}
 				<div class="frame">
-					<div class="meta">
-						<span>move {f.n}</span>
-						<span class="turn">{f.n % 2 === 0 ? '● dark to move' : '○ light to move'}</span>
+					<div class="game">
+						<div class="meta">
+							<span class="num">move {f.n}</span>
+							<span class="turn">{f.n % 2 === 0 ? '● dark to move' : '○ light to move'}</span>
+						</div>
+						<pre class="board">{f.board}</pre>
 					</div>
-					<pre class="board">{f.board}</pre>
 				</div>
 			{/each}
 		</div>
@@ -93,16 +95,25 @@
 	.frame {
 		height: 16.5em;
 		display: flex;
-		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 0.6em;
+	}
+	.game {
+		position: relative;
+		display: inline-block;
 	}
 	.meta {
+		position: absolute;
+		left: 0;
+		bottom: calc(100% + 0.5em);
 		display: flex;
-		gap: 1.4em;
+		gap: 1.2em;
+		white-space: nowrap;
 		color: #565f89;
 		font-size: 0.85em;
+	}
+	.num {
+		min-width: 5em;
 	}
 	.turn {
 		color: #7aa2f7;
@@ -110,7 +121,7 @@
 	.board {
 		margin: 0;
 		letter-spacing: 0.14em;
-		font-size: 1.15em;
+		font-size: 1.1em;
 		color: #c0caf5;
 	}
 
