@@ -8,6 +8,8 @@ Profiling PHP in production usually means a bad trade. Instrumenting extensions 
 
 It attaches to a running PHP process and walks the Zend VM call stack by reading the target's memory directly, so the process being measured never pauses. That design is what keeps it accurate at high sample rates where other profilers fall behind.
 
+{% terminal /%}
+
 ## The result
 
 Measured against phpspy, the other Linux sampling profiler for PHP, on identical workloads over 5 second windows:
