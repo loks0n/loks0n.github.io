@@ -1,10 +1,10 @@
 <script lang="ts">
 	// A mouse's tracks pressed into the sand, appearing one by one as you scroll,
 	// leading the way onward. Wordless, scroll-driven, pure CSS.
-	const prints = Array.from({ length: 11 }, (_, i) => ({
-		x: +(5 + i * 8.4).toFixed(1),
-		y: i % 2 === 0 ? 5 : 21,
-		start: +(12 + i * 5.5).toFixed(1)
+	const prints = Array.from({ length: 26 }, (_, i) => ({
+		x: +(5 + i * 3.1).toFixed(1),
+		y: i % 2 === 0 ? 6 : 15,
+		start: +(12 + i * 2.6).toFixed(1)
 	}));
 </script>
 
@@ -33,7 +33,7 @@
 	}
 	.print {
 		position: absolute;
-		width: 13px;
+		width: 10px;
 		height: auto;
 		fill: #7c6034;
 		opacity: 0;
