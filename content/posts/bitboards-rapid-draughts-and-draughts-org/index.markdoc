@@ -1,5 +1,6 @@
 ---
 title: Bitboards, rapid-draughts and draughts.org
+excerpt: How I built a fast TypeScript draughts engine using bitboards, three integers for the whole board, now powering draughts.org.
 date: 2023-03-12
 ---
 
