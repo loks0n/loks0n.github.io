@@ -112,6 +112,11 @@ const config = {
 	],
 	kit: {
 		adapter: adapter(),
+		// Inline all our CSS (largest chunk ~7KB) into the document head so it
+		// isn't a render-blocking request and the @font-face is discovered
+		// without a round-trip. GitHub Pages caps asset cache TTL at 10m and
+		// cannot be configured, so keeping the critical path short matters more.
+		inlineStyleThreshold: 8192,
 		alias: {
 			$content: './content'
 		}
