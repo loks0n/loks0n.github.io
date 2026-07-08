@@ -1,46 +1,21 @@
 ---
 name: synthetics-operator
-description: Declarative synthetic monitoring for Kubernetes. Define HTTP checks, DNS probes, Playwright browser flows, and k6 load tests as CRDs, and get Prometheus metrics and Grafana dashboards without wiring any of it yourself.
+description: A Kubernetes operator that replaces SaaS synthetic monitoring with in-cluster HTTP, DNS, browser, and load checks defined as custom resources and exported to plain Prometheus metrics.
 github: https://github.com/loks0n/synthetics-operator
 ---
 
-**synthetics-operator** brings declarative synthetic monitoring to Kubernetes. Define HTTP checks, DNS probes, Playwright browser flows, and k6 load tests as custom resources — get Prometheus metrics and Grafana dashboards without wiring any of it yourself.
+Synthetic monitoring is usually a SaaS line item: per-seat pricing, your health data leaving the cluster, and a proprietary query language to learn. **synthetics-operator** asks whether a Kubernetes cluster already has everything needed to do it in-house.
 
-It's a self-hosted alternative to BetterStack or Datadog Synthetics: in-cluster, no SaaS, no per-seat pricing, no proprietary query language.
+You declare a check as a custom resource, whether an HTTP probe, a DNS probe, a Playwright browser journey, or a k6 load test, and the operator turns the results into plain Prometheus metrics that your existing Grafana and Alertmanager already understand. Nothing leaves the cluster, and there is nothing new to query.
 
-## A probe is just a resource
+## The interesting problem
 
-```yaml
-apiVersion: synthetics.dev/v1alpha1
-kind: HTTPProbe
-metadata:
-  name: api-health
-spec:
-  interval: 30s
-  request:
-    url: https://api.example.com/health
-  assertions:
-    - name: status_ok
-      expr: status_code = 200
-    - name: fast
-      expr: duration_ms < 500
-    - name: cert_fresh
-      expr: ssl_expiry_days >= 14
-```
+Browser and load tests run as ephemeral CronJob pods, external to the operator process. When one finishes, its result has to reach a shared, stateful component reachable from inside an arbitrary pod. Every obvious answer carries a cost.
 
-## Scraped as metrics
+Routing results through the Kubernetes API turns the API server into the data plane, so the scaling ceiling becomes reconcile throughput rather than the number of probes. Posting to an HTTP endpoint on the operator instead makes a single replica the bottleneck and the availability risk.
 
-The operator reconciles each probe into a scheduled check and exposes the results on a `/metrics` endpoint:
+So the operator puts a NATS work queue in the middle. The test sidecar publishes its result and disconnects, probe workers consume and scale horizontally behind the queue, and the metrics consumer reads the stream without knowing who wrote to it. Every component stays stateless and independently scalable, and NATS costs around 32Mi of memory when idle.
 
-```text
-synthetics_probe{name="api-health",kind="HTTPProbe"}                         1
-synthetics_probe_duration_ms{name="api-health"}                              142
-synthetics_probe_assertion_result{name="api-health",assertion="status_ok"}   1
-```
+## Choices worth noting
 
-## Batteries included
-
-- **Four probe kinds** — HTTP, DNS, Playwright browser flows, and k6 load tests, all as first-class CRDs.
-- **Expression assertions** — status codes, latency budgets, and TLS certificate expiry, evaluated per run.
-- **Shipped Grafana dashboards** — a per-kind view and a fleet-level overview with failing probes, suppressions, and certs expiring at a glance.
-- **Prometheus-native** — no bespoke storage; the metrics slot into whatever you already run.
+It is deliberately opinionated. Playwright for browser tests, k6 for load, and nothing else, which keeps the operator simple and its behaviour predictable. Probes can declare dependencies on one another, so a downstream failure is silenced automatically when an upstream it relies on is already failing, with transitive resolution and loop detection. Instrumentation is OpenTelemetry internally but exposed on a plain metrics endpoint, so it slots into an existing Prometheus setup with no collector required.
