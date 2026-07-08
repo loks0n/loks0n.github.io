@@ -25,17 +25,18 @@
 					<stop offset="0%" stop-color="#8a6636" />
 					<stop offset="100%" stop-color="#38280f" />
 				</radialGradient>
-				<radialGradient id="worm-throat" cx="50%" cy="44%" r="60%">
+				<radialGradient id="worm-throat" cx="50%" cy="46%" r="56%">
 					<stop offset="0%" stop-color="#050301" />
-					<stop offset="72%" stop-color="#180f05" />
-					<stop offset="100%" stop-color="#2c1e0d" />
+					<stop offset="44%" stop-color="#0c0702" />
+					<stop offset="78%" stop-color="#120b04" stop-opacity="0.8" />
+					<stop offset="100%" stop-color="#2c1e0d" stop-opacity="0" />
 				</radialGradient>
 			</defs>
 			<circle cx={C} cy={C} r="248" fill="url(#worm-flesh)" />
 			{#each teeth as d (d)}
 				<path class="tooth" {d} />
 			{/each}
-			<circle cx={C} cy={C} r="150" fill="url(#worm-throat)" />
+			<circle cx={C} cy={C} r="214" fill="url(#worm-throat)" />
 		</svg>
 		<span class="sand s1"></span>
 		<span class="sand s2"></span>

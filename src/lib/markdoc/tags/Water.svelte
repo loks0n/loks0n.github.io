@@ -19,7 +19,7 @@
 		margin: var(--spacing-base) 0;
 		border-radius: 0.5em;
 		overflow: hidden;
-		background: linear-gradient(#5a6f73, #415154);
+		background: linear-gradient(#cdd6d7, #b3c0c2);
 	}
 	.sheen {
 		position: absolute;
@@ -27,7 +27,7 @@
 		right: 0;
 		top: 58%;
 		height: 1px;
-		background: linear-gradient(90deg, transparent, rgba(226, 236, 236, 0.45), transparent);
+		background: linear-gradient(90deg, transparent, rgba(80, 100, 104, 0.35), transparent);
 	}
 	.drop {
 		position: absolute;
@@ -36,7 +36,7 @@
 		width: 11px;
 		height: auto;
 		margin-left: -5.5px;
-		fill: #e6efef;
+		fill: #5d7276;
 		animation: drip 3.8s cubic-bezier(0.5, 0, 0.9, 0.4) infinite;
 	}
 	.rings {
@@ -51,7 +51,7 @@
 		width: 14px;
 		height: 14px;
 		margin: -7px 0 0 -7px;
-		border: 1.5px solid rgba(226, 236, 236, 0.5);
+		border: 1.5px solid rgba(78, 98, 102, 0.5);
 		border-radius: 50%;
 		transform: scale(0);
 		opacity: 0;
@@ -86,7 +86,7 @@
 			opacity: 0;
 		}
 		33% {
-			opacity: 0.6;
+			opacity: 0.55;
 		}
 		80% {
 			transform: scale(8);
@@ -104,7 +104,7 @@
 		}
 		.rings span:first-child {
 			transform: scale(3.5);
-			opacity: 0.2;
+			opacity: 0.25;
 		}
 	}
 </style>

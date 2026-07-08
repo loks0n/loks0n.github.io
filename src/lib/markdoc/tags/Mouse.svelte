@@ -1,25 +1,27 @@
-<!-- A mouse scuttles across the column as you scroll past, fading in and out at
-     the edges of the text. Wordless. -->
+<!-- A mouse scuttles across the column as you scroll past, legs stepping,
+     fading in and out at the edges of the text. Wordless. -->
 <div class="scurry" aria-hidden="true">
-	<svg class="mouse" viewBox="0 0 66 34">
-		<path class="tail" d="M12 26 q-8 1 -8 -8 q0 -5 5 -6" fill="none" />
-		<ellipse class="foot" cx="22" cy="30" rx="3" ry="1.6" />
-		<ellipse class="foot" cx="36" cy="30" rx="3" ry="1.6" />
+	<svg class="mouse" viewBox="0 0 72 42">
+		<path class="tail" d="M14 25 q-9 1 -9 -8 q0 -5 5 -6" fill="none" />
+		<rect class="leg legs-a" x="22.7" y="26" width="2.6" height="11" rx="1.3" />
+		<rect class="leg legs-b" x="29.7" y="26" width="2.6" height="11" rx="1.3" />
+		<rect class="leg legs-b" x="47.7" y="26" width="2.6" height="11" rx="1.3" />
+		<rect class="leg legs-a" x="53.7" y="26" width="2.6" height="11" rx="1.3" />
 		<path
 			class="fur"
-			d="M11 26 C8 15 15 11 25 11 C41 11 53 15 62 21 C55 26 45 26 35 27 C23 28 14 28 11 26 Z"
+			d="M14 26 C9 15 20 12 32 13 C46 14 58 18 65 24 C59 27 52 27 45 27 C32 28 20 29 14 26 Z"
 		/>
-		<circle class="fur" cx="48" cy="9" r="7" />
-		<circle class="inner-ear" cx="48" cy="9" r="3.5" />
-		<circle class="eye" cx="54" cy="16" r="1.4" />
-		<circle class="nose" cx="62" cy="21" r="1.5" />
+		<circle class="fur" cx="52" cy="11" r="6.5" />
+		<circle class="inner-ear" cx="52" cy="11" r="3.3" />
+		<circle class="eye" cx="58" cy="19" r="1.4" />
+		<circle class="nose" cx="65" cy="24" r="1.5" />
 	</svg>
 </div>
 
 <style>
 	.scurry {
 		position: relative;
-		height: 34px;
+		height: 40px;
 		margin: 0.5em 0;
 		overflow: visible;
 	}
@@ -27,7 +29,7 @@
 		position: absolute;
 		bottom: 0;
 		left: -6%;
-		width: 32px;
+		width: 34px;
 		height: auto;
 		opacity: 0;
 		animation: scurry linear both;
@@ -40,8 +42,16 @@
 	.inner-ear {
 		fill: #5f5751;
 	}
-	.foot {
-		fill: #2f2b27;
+	.leg {
+		fill: #35302b;
+		transform-box: fill-box;
+		transform-origin: 50% 8%;
+	}
+	.legs-a {
+		animation: step-a 0.34s steps(1, end) infinite;
+	}
+	.legs-b {
+		animation: step-b 0.34s steps(1, end) infinite;
 	}
 	.eye {
 		fill: #fdfaf2;
@@ -59,35 +69,54 @@
 		0% {
 			left: -6%;
 			opacity: 0;
-			transform: translateY(0) rotate(-3deg) scaleY(1);
+			transform: translateY(0) rotate(-2deg);
 		}
 		8% {
 			opacity: 1;
-			transform: translateY(-5px) rotate(2deg) scaleY(1.04);
+			transform: translateY(-4px) rotate(1deg);
 		}
-		22% {
-			transform: translateY(0) rotate(-3deg) scaleY(0.96);
+		25% {
+			transform: translateY(0) rotate(-2deg);
 		}
-		36% {
-			transform: translateY(-5px) rotate(2deg) scaleY(1.04);
+		42% {
+			transform: translateY(-4px) rotate(1deg);
 		}
-		50% {
-			transform: translateY(0) rotate(-3deg) scaleY(0.96);
+		59% {
+			transform: translateY(0) rotate(-2deg);
 		}
-		64% {
-			transform: translateY(-5px) rotate(2deg) scaleY(1.04);
-		}
-		78% {
-			transform: translateY(0) rotate(-3deg) scaleY(0.98);
+		76% {
+			transform: translateY(-4px) rotate(1deg);
 		}
 		90% {
 			opacity: 1;
-			transform: translateY(-3px) rotate(2deg) scaleY(1.02);
+			transform: translateY(0) rotate(-2deg);
 		}
 		100% {
 			left: 100%;
 			opacity: 0;
-			transform: translateY(0) rotate(-2deg) scaleY(1);
+			transform: translateY(0) rotate(-2deg);
+		}
+	}
+	@keyframes step-a {
+		0% {
+			transform: rotate(22deg);
+		}
+		50% {
+			transform: rotate(-22deg);
+		}
+		100% {
+			transform: rotate(22deg);
+		}
+	}
+	@keyframes step-b {
+		0% {
+			transform: rotate(-22deg);
+		}
+		50% {
+			transform: rotate(22deg);
+		}
+		100% {
+			transform: rotate(-22deg);
 		}
 	}
 
@@ -97,7 +126,8 @@
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.mouse {
+		.mouse,
+		.leg {
 			animation: none;
 		}
 	}

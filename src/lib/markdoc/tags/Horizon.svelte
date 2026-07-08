@@ -56,12 +56,12 @@
 		height: auto;
 		z-index: 3;
 		transform-origin: 50% 100%;
-		translate: -50% -78%;
+		translate: -50% -86%;
 		animation: bob 6.5s ease-in-out infinite;
 	}
 	.boat.reflect {
 		z-index: 5;
-		translate: -50% -22%;
+		translate: -50% -14%;
 		scale: 1 -1;
 		opacity: 0.14;
 		filter: blur(1.2px);
