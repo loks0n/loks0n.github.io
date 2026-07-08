@@ -3,6 +3,11 @@
 	<div class="sky"></div>
 	<div class="glow"></div>
 	<div class="sea"></div>
+	<svg class="boat reflect" viewBox="0 0 60 46">
+		<path class="sail" d="M30 4 L30 34 L11 34 Z" />
+		<path class="sail jib" d="M30 10 L30 34 L44 34 Z" />
+		<path class="hull" d="M12 35 L48 35 Q44 45 30 45 Q16 45 12 35 Z" />
+	</svg>
 	<svg class="boat" viewBox="0 0 60 46">
 		<path class="sail" d="M30 4 L30 34 L11 34 Z" />
 		<path class="sail jib" d="M30 10 L30 34 L44 34 Z" />
@@ -23,21 +28,21 @@
 	.sky {
 		position: absolute;
 		inset: 0 0 42% 0;
-		background: linear-gradient(#b9bdc0, #cfccc6);
+		background: linear-gradient(#b7bbbe, #cdcac4);
 	}
 	.sea {
 		position: absolute;
 		inset: 58% 0 0 0;
-		background: linear-gradient(#c6c7c5, #9aa1a5);
+		background: linear-gradient(#c6c7c5, #99a0a4);
 	}
 	.glow {
 		position: absolute;
 		left: 50%;
 		top: 58%;
-		width: 260px;
-		height: 120px;
+		width: 300px;
+		height: 130px;
 		transform: translate(-50%, -50%);
-		background: radial-gradient(closest-side, rgba(240, 235, 222, 0.85), transparent);
+		background: radial-gradient(closest-side, rgba(242, 237, 224, 0.9), transparent);
 		z-index: -1;
 	}
 	.boat {
@@ -48,7 +53,14 @@
 		height: auto;
 		transform-origin: 50% 100%;
 		translate: -50% -100%;
-		animation: bob 6s ease-in-out infinite;
+		animation: bob 6.5s ease-in-out infinite;
+	}
+	.boat.reflect {
+		translate: -50% 0;
+		scale: 1 -1;
+		opacity: 0.16;
+		filter: blur(1.2px);
+		animation-name: bob-reflect;
 	}
 	.sail {
 		fill: #3a3f43;
@@ -71,6 +83,15 @@
 		}
 		50% {
 			transform: translateY(-3px) rotate(1.5deg);
+		}
+	}
+	@keyframes bob-reflect {
+		0%,
+		100% {
+			transform: translateY(0) rotate(-1.5deg);
+		}
+		50% {
+			transform: translateY(3px) rotate(1.5deg);
 		}
 	}
 

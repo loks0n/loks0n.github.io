@@ -6,4 +6,5 @@
 	export { default as Sandworm } from './tags/Sandworm.svelte';
 	export { default as Reversal } from './tags/Reversal.svelte';
 	export { default as Horizon } from './tags/Horizon.svelte';
+	export { default as Water } from './tags/Water.svelte';
 </script>
