@@ -1,81 +1,67 @@
-<!-- A mouse scuttles across the column as you scroll past, fading in and out at
-     the edges of the text. Silhouette: Fluent Emoji (Microsoft), MIT. -->
-<div class="scurry" aria-hidden="true">
-	<svg class="mouse" viewBox="0 0 32 32">
-		<g fill="currentColor">
-			<path
-				d="M17.67 6.32c0-2.39-1.94-4.33-4.33-4.33A4.34 4.34 0 0 0 9 6.32c0 .17.01.33.03.49h-.001a4 4 0 0 1-.027-.362L9 6.562v.26L5.978 8.949L2.91 11.1c-.57.4-.91 1.05-.91 1.75c0 1.18.96 2.14 2.14 2.14h3.832a9.1 9.1 0 0 0 1.778 2.87l-1.21 4.73c-.05.2.1.4.3.4H11c.42 0 .73-.2.87-.74l.61-2.35c1.2.58 2.53 1.1 3.93 1.1h.63c-.6 0-1.08.449-1.08 1.01s.48 1.01 1.08 1.01h5.241c-1.281 0-2.172-1.301-2.578-2.02h.035l.013.023a4.52 4.52 0 0 1 4.043-6.543a.5.5 0 1 1 0 1a3.52 3.52 0 0 0 0 7.04h3.1q.3 0 .581-.064a3.37 3.37 0 0 1-2.845 1.564l-5.64-.01a2.99 2.99 0 0 0-.01 5.98L23 30c.55 0 1-.44 1.01-1c0-.55-.45-1-1-1l-4.02-.01c-.55 0-.99-.44-.99-.99s.44-.99.99-.99l5.64.01c2.96 0 5.37-2.41 5.37-5.37v-6.181a1 1 0 0 0-.054-.323c-.558-5.22-5.371-9.083-10.626-7.946l-1.66.427q.01-.152.01-.307m-1.924.188a2.482 2.482 0 1 1-4.965 0a2.482 2.482 0 0 1 4.965 0M7.426 12.5a1.105 1.105 0 1 1 0-2.21a1.105 1.105 0 0 1 0 2.21m-4.216-.73c.46.13.79.54.79 1.04c0 .51-.35.93-.82 1.05c-.17-.3-.26-.65-.26-1.02c0-.38.1-.75.29-1.07"
-			/>
-			<path d="M8.007 6.298c.072-1.323.68-2.906 1.909-3.994a4.32 4.32 0 0 0-5.239 6.338z" />
-		</g>
-	</svg>
+<script lang="ts">
+	// A mouse's tracks pressed into the sand, appearing one by one as you scroll,
+	// leading the way onward. Wordless, scroll-driven, pure CSS.
+	const prints = Array.from({ length: 11 }, (_, i) => ({
+		x: +(5 + i * 8.4).toFixed(1),
+		y: i % 2 === 0 ? 5 : 21,
+		start: +(12 + i * 5.5).toFixed(1)
+	}));
+</script>
+
+<div class="track" aria-hidden="true">
+	{#each prints as p (p.x)}
+		<svg
+			class="print"
+			viewBox="0 0 14 12"
+			style="left:{p.x}%; top:{p.y}px; animation-range: cover {p.start}% cover {p.start + 9}%;"
+		>
+			<ellipse cx="4" cy="6" rx="2.4" ry="1.9" />
+			<circle cx="8" cy="3.4" r="1.05" />
+			<circle cx="9.2" cy="6" r="1.05" />
+			<circle cx="8" cy="8.6" r="1.05" />
+		</svg>
+	{/each}
 </div>
 
 <style>
-	.scurry {
+	.track {
 		position: relative;
-		height: 36px;
-		margin: 0.5em 0;
-		overflow: visible;
+		height: 40px;
+		margin: 0.8em 0;
+		view-timeline-name: --track;
+		view-timeline-axis: block;
 	}
-	.mouse {
+	.print {
 		position: absolute;
-		bottom: 0;
-		left: -8%;
-		width: 34px;
+		width: 13px;
 		height: auto;
-		color: #423d38;
+		fill: #7c6034;
 		opacity: 0;
-		scale: -1 1;
-		animation: scurry linear both;
-		animation-timeline: view();
-		animation-range: entry 6% cover 74%;
+		animation: press linear both;
+		animation-timeline: --track;
 	}
 
-	@keyframes scurry {
-		0% {
-			left: -8%;
+	@keyframes press {
+		from {
 			opacity: 0;
-			transform: translateY(0) rotate(-2deg);
+			transform: scale(0.3);
 		}
-		8% {
-			opacity: 1;
-			transform: translateY(-4px) rotate(1deg);
-		}
-		23% {
-			transform: translateY(0) rotate(-2deg);
-		}
-		38% {
-			transform: translateY(-4px) rotate(1deg);
-		}
-		53% {
-			transform: translateY(0) rotate(-2deg);
-		}
-		68% {
-			transform: translateY(-4px) rotate(1deg);
-		}
-		83% {
-			transform: translateY(0) rotate(-2deg);
-		}
-		90% {
-			opacity: 1;
-			transform: translateY(-2px) rotate(1deg);
-		}
-		100% {
-			left: 100%;
-			opacity: 0;
-			transform: translateY(0) rotate(-2deg);
+		to {
+			opacity: 0.42;
+			transform: scale(1);
 		}
 	}
 
 	@supports not (animation-timeline: view()) {
-		.mouse {
+		.print {
 			animation: none;
+			opacity: 0.42;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.mouse {
+		.print {
 			animation: none;
+			opacity: 0.42;
 		}
 	}
 </style>
