@@ -1,41 +1,35 @@
 <script lang="ts">
-	// Velázquez, "Juan de Pareja" (1650), Met Open Access / CC0. The portrait
-	// arrives washed pale and resolves to its true colour once it is well into
-	// view. Wordless.
+	// Velázquez, "Juan de Pareja" (1650), Met Open Access / CC0. The painting is
+	// extended into a wide field of its own warm shadow; it arrives washed pale
+	// and resolves to its true colour once it is well into view. Wordless.
 	import portrait from './juan-de-pareja.jpg?enhanced';
 </script>
 
-<figure class="plate">
-	<span class="frame">
-		<enhanced:img class="face" src={portrait} alt="Juan de Pareja, painted by Velázquez in 1650" />
-	</span>
+<figure class="stage" aria-hidden="true">
+	<enhanced:img class="face" src={portrait} alt="Juan de Pareja, painted by Velázquez in 1650" />
 </figure>
 
 <style>
-	.plate {
-		width: min(230px, 66%);
-		margin: var(--spacing-base) auto;
-		padding: 0.7em;
-		background: #fdfaf2;
-		border: 1px solid rgba(51, 51, 51, 0.16);
-		box-shadow: 0 1.2em 2.4em -1.2em rgba(51, 51, 51, 0.45);
-	}
-	.frame {
-		display: block;
-		aspect-ratio: 5 / 6;
+	.stage {
+		position: relative;
+		height: 280px;
+		margin: var(--spacing-base) 0;
+		border-radius: 0.5em;
 		overflow: hidden;
+		display: grid;
+		place-items: center;
+		background: radial-gradient(74% 100% at 50% 38%, #2c2418, #17110a 78%);
 	}
-	.frame :global(picture) {
-		display: block;
-		width: 100%;
-		height: 100%;
+	.stage :global(picture) {
+		display: contents;
 	}
 	.face {
-		display: block;
-		width: 100%;
-		height: 100%;
+		height: 112%;
+		width: auto;
 		object-fit: cover;
-		object-position: 50% 10%;
+		/* feather the painting's edges into the surrounding shadow */
+		-webkit-mask-image: radial-gradient(66% 82% at 50% 44%, #000 52%, transparent 100%);
+		mask-image: radial-gradient(66% 82% at 50% 44%, #000 52%, transparent 100%);
 		animation: resolve linear both;
 		animation-timeline: view();
 		animation-range: entry 35% cover 80%;
