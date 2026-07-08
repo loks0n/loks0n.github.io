@@ -3,8 +3,9 @@
 </script>
 
 <article>
+	<h1 class="sr-only">About</h1>
 	<div class="image-container">
-		<img alt="My face" src={meSrc} />
+		<img alt="Luke B. Silver" src={meSrc} width="1784" height="1824" />
 	</div>
 	<div class="content">
 		<p>
@@ -42,6 +43,7 @@
 
 	img {
 		width: 300px;
+		height: auto;
 		border-radius: 0.25em;
 	}
 

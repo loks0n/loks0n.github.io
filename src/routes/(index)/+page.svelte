@@ -10,19 +10,17 @@
 </svelte:head>
 
 <article>
+	<h1 class="sr-only">Blog</h1>
 	<ul>
-		{#each data.posts as post, index (post.slug)}
-			<small>
-				<DateFormat date={new Date(post.date)} />
-			</small>
+		{#each data.posts as post (post.slug)}
 			<li>
+				<small>
+					<DateFormat date={new Date(post.date)} />
+				</small>
 				<a href={`/${post.slug}`}>
 					{post.title}
 				</a>
 			</li>
-			{#if index !== data.posts.length - 1}
-				<hr />
-			{/if}
 		{/each}
 	</ul>
 </article>
@@ -30,11 +28,20 @@
 <style>
 	ul {
 		padding: 0;
+		margin: 0;
+		list-style: none;
 		display: flex;
 		flex-direction: column;
 	}
 	li {
 		display: grid;
+		padding: 1em 0;
+	}
+	li:first-child {
+		padding-top: 0;
+	}
+	li + li {
+		border-top: 1px solid rgba(51, 51, 51, 0.15);
 	}
 
 	small {
@@ -45,11 +52,5 @@
 		text-wrap: balance;
 		font-size: 1.125rem;
 		font-weight: 600;
-	}
-
-	hr {
-		margin-top: 1em;
-		margin-bottom: 1em;
-		opacity: 0.15;
 	}
 </style>

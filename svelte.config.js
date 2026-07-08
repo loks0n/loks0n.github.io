@@ -71,6 +71,15 @@ const config = {
 			highlighter: async (code, language) => highlight(code, language),
 			config: {
 				nodes: {
+					th: {
+						transform(node, config) {
+							return new Tag(
+								'th',
+								{ scope: 'col', ...node.transformAttributes(config) },
+								node.transformChildren(config)
+							);
+						}
+					},
 					heading: {
 						children: ['inline'],
 						attributes: {

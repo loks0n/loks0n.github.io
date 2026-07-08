@@ -26,7 +26,11 @@
 	<ul>
 		{#each links as link (link.url)}
 			<li>
-				<a href={link.url} class:active={page.url.pathname === link.url}>
+				<a
+					href={link.url}
+					aria-current={page.url.pathname === link.url ? 'page' : undefined}
+					class:active={page.url.pathname === link.url}
+				>
 					{link.name}
 				</a>
 			</li>

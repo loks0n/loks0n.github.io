@@ -9,6 +9,7 @@
 </svelte:head>
 
 <article>
+	<h1 class="sr-only">Projects</h1>
 	<ul>
 		{#each data.projects as project (project.slug)}
 			<li>

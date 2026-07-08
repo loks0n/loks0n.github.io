@@ -9,8 +9,8 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
-		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --threshold warning",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --threshold warning --watch",
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write ."
 	},

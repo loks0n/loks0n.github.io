@@ -10,7 +10,7 @@
 
 <svelte:window onscroll={updateProgress} />
 
-<div class="progress-bar" style="width: {progress}%"></div>
+<div class="progress-bar" style="width: {progress}%" aria-hidden="true"></div>
 
 <style>
 	.progress-bar {
