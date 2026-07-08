@@ -2,23 +2,21 @@
 	<nav>
 		<ul>
 			<li>
-				<a href="/rss.xml" target="_blank" rel="noreferer">RSS</a>
+				<a href="/rss.xml" target="_blank" rel="noopener noreferrer">RSS</a>
 			</li>
 			<li>
 				<a
-					role="button"
 					class="outline"
 					target="_blank"
-					rel="noreferer"
+					rel="noopener noreferrer"
 					href="https://linkedin.com/in/lukebsilver">LinkedIn</a
 				>
 			</li>
 			<li>
 				<a
-					role="button"
 					class="outline"
 					target="_blank"
-					rel="noreferer"
+					rel="noopener noreferrer"
 					href="https://github.com/loks0n">GitHub</a
 				>
 			</li>

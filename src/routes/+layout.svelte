@@ -2,21 +2,14 @@
 	import '../app.css';
 	import '../code.css';
 	import '@fontsource/source-serif-pro';
-	import splitbee from '@splitbee/web';
 	import Nav from '$lib/components/Nav.svelte';
 	import { SITE_TITLE } from '$lib/config';
-	import { onMount } from 'svelte';
-	import { dev } from '$app/environment';
 	import Footer from '$lib/components/Footer.svelte';
 	interface Props {
 		children?: import('svelte').Snippet;
 	}
 
 	let { children }: Props = $props();
-
-	onMount(() => {
-		if (!dev) splitbee.init();
-	});
 </script>
 
 <svelte:head>

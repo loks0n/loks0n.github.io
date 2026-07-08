@@ -1,5 +1,5 @@
 <script lang="ts">
-	let { date } = $props<{ date: Date }>();
+	let { date }: { date: Date } = $props();
 
 	function getSuffix(date: Date) {
 		let day = date.getDate();

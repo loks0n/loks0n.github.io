@@ -30,6 +30,8 @@ jobs:
           node-version: 26
           cache: 'npm'
       - run: npm ci
+      - run: npm run check
+      - run: npm run lint
       - run: npm run build
       - name: Upload artifact
         uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
