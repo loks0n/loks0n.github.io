@@ -8,6 +8,28 @@ Synthetic monitoring is usually a SaaS line item: per-seat pricing, your health 
 
 You declare a check as a custom resource, whether an HTTP probe, a DNS probe, a Playwright browser journey, or a k6 load test, and the operator turns the results into plain Prometheus metrics that your existing Grafana and Alertmanager already understand. Nothing leaves the cluster, and there is nothing new to query.
 
+```yaml
+apiVersion: synthetics.dev/v1alpha1
+kind: HTTPProbe
+metadata:
+  name: api-health
+spec:
+  interval: 30s
+  request:
+    url: https://api.example.com/health
+  assertions:
+    - name: status_ok
+      expr: status_code = 200
+    - name: fast
+      expr: duration_ms < 500
+    - name: cert_fresh
+      expr: ssl_expiry_days >= 14
+```
+
+That probe reconciles into a scheduled check, and its results land on the shipped Grafana dashboard with no wiring on your part.
+
+{% dashboard /%}
+
 ## The interesting problem
 
 Browser and load tests run as ephemeral CronJob pods, external to the operator process. When one finishes, its result has to reach a shared, stateful component reachable from inside an arbitrary pod. Every obvious answer carries a cost.
