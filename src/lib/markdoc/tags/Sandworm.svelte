@@ -136,10 +136,10 @@
 
 	@keyframes surface {
 		0% {
-			transform: translate(-50%, 26%) scaleY(0.85);
+			transform: translate(-50%, 30%) scale(0.72) scaleY(0.85);
 		}
 		100% {
-			transform: translate(-50%, -10%) scaleY(0.85);
+			transform: translate(-50%, -6%) scale(1.32) scaleY(0.85);
 		}
 	}
 	@keyframes fall {
