@@ -198,3 +198,32 @@ article :not(pre) > code {
 	padding: 0.1em 0.3em;
 	border-radius: 0.25em;
 }
+
+article table {
+	width: 100%;
+	border-collapse: collapse;
+	margin: var(--spacing-base) 0;
+	font-size: 0.9rem;
+	line-height: 1.35;
+	font-variant-numeric: tabular-nums;
+}
+
+article th,
+article td {
+	text-align: left;
+	padding: 0.5em 0.85em;
+	vertical-align: top;
+}
+
+article thead th {
+	font-weight: 600;
+	border-bottom: 2px solid var(--color-text);
+}
+
+article tbody td {
+	border-bottom: 1px solid rgba(51, 51, 51, 0.12);
+}
+
+article tbody tr:last-child td {
+	border-bottom: none;
+}
