@@ -1,7 +1,5 @@
-import { posts } from '$lib/server/posts';
+import { posts } from '$lib/content';
 
 export const prerender = true;
 
-export async function load() {
-	return { posts };
-}
+export const load = () => ({ posts: posts.list() });

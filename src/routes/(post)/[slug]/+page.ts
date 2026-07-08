@@ -1,13 +1,5 @@
-import type { PageLoad } from './$types';
+import { posts } from '$lib/content';
 
 export const prerender = true;
-
-export const load: PageLoad = async ({ data }) => {
-	// load the markdown file based on slug
-	const component = await import(`$content/posts/${data.post.slug}/index.markdoc`);
-
-	return {
-		post: data.post,
-		component: component.default
-	};
-};
+export const entries = () => posts.slugs();
+export const load = ({ params }) => posts.bySlug(params.slug);

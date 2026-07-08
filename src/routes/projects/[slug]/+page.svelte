@@ -5,14 +5,14 @@
 </script>
 
 <svelte:head>
-	<title>{data.project.name} | {SITE_TITLE}</title>
+	<title>{data.entry.name} | {SITE_TITLE}</title>
 </svelte:head>
 
 <article>
 	<header>
-		<h1>{data.project.name}</h1>
-		{#if data.project.github}
-			<a href={data.project.github}>See on GitHub</a>
+		<h1>{data.entry.name}</h1>
+		{#if data.entry.github}
+			<a href={data.entry.github}>See on GitHub</a>
 		{/if}
 	</header>
 	<data.component />

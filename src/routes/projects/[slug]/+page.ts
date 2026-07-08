@@ -1,13 +1,5 @@
-import type { PageLoad } from './$types';
+import { projects } from '$lib/content';
 
 export const prerender = true;
-
-export const load: PageLoad = async ({ data }) => {
-	// load the markdown file based on slug
-	const component = await import(`$content/projects/${data.project.slug}/index.markdoc`);
-
-	return {
-		project: data.project,
-		component: component.default
-	};
-};
+export const entries = () => projects.slugs();
+export const load = ({ params }) => projects.bySlug(params.slug);

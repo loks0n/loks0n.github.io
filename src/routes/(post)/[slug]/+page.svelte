@@ -14,13 +14,13 @@
 <ReadingProgress />
 
 <svelte:head>
-	<title>{data.post.title} | {SITE_TITLE}</title>
+	<title>{data.entry.title} | {SITE_TITLE}</title>
 </svelte:head>
 
 <article>
 	<header>
-		<h1>{data.post.title}</h1>
-		<small>authored by Luke B. Silver on <DateFormat date={new Date(data.post.date)} /></small>
+		<h1>{data.entry.title}</h1>
+		<small>authored by Luke B. Silver on <DateFormat date={new Date(data.entry.date)} /></small>
 	</header>
 	<hr />
 	<data.component />
