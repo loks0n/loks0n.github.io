@@ -1,61 +1,49 @@
-<!-- A portrait that arrives washed pale and resolves to its true colour as it
-     reaches the middle of the view. Wordless. -->
-<figure class="plate" aria-hidden="true">
-	<svg class="portrait" viewBox="0 0 200 210">
-		<!-- shoulders -->
-		<path class="cloth" d="M18 210 C24 158 60 140 100 140 C140 140 176 158 182 210 Z" />
-		<!-- neck -->
-		<rect class="skin" x="86" y="120" width="28" height="34" rx="12" />
-		<!-- head -->
-		<ellipse class="skin" cx="100" cy="88" rx="46" ry="54" />
-		<!-- hair -->
-		<path class="hair" d="M54 84 C50 34 150 34 146 84 C150 60 140 44 100 44 C60 44 50 60 54 84 Z" />
-		<!-- the shadow's four scars -->
-		<g class="scars">
-			<line x1="70" y1="72" x2="86" y2="104" />
-			<line x1="78" y1="68" x2="94" y2="100" />
-			<line x1="86" y1="66" x2="101" y2="98" />
-			<line x1="94" y1="66" x2="108" y2="96" />
-		</g>
-	</svg>
+<script lang="ts">
+	// Velázquez, "Juan de Pareja" (1650), Met Open Access / CC0. The portrait
+	// arrives washed pale and resolves to its true colour once it is well into
+	// view. Wordless.
+	import portrait from './juan-de-pareja.jpg?enhanced';
+</script>
+
+<figure class="plate">
+	<span class="frame">
+		<enhanced:img class="face" src={portrait} alt="Juan de Pareja, painted by Velázquez in 1650" />
+	</span>
 </figure>
 
 <style>
 	.plate {
-		width: min(240px, 70%);
+		width: min(230px, 66%);
 		margin: var(--spacing-base) auto;
-		padding: 0.8em;
+		padding: 0.7em;
 		background: #fdfaf2;
 		border: 1px solid rgba(51, 51, 51, 0.16);
-		box-shadow: 0 1.2em 2.4em -1.2em rgba(51, 51, 51, 0.4);
+		box-shadow: 0 1.2em 2.4em -1.2em rgba(51, 51, 51, 0.45);
 	}
-	.portrait {
+	.frame {
+		display: block;
+		aspect-ratio: 5 / 6;
+		overflow: hidden;
+	}
+	.frame :global(picture) {
 		display: block;
 		width: 100%;
-		height: auto;
+		height: 100%;
+	}
+	.face {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: 50% 10%;
 		animation: resolve linear both;
 		animation-timeline: view();
-		animation-range: entry 15% cover 52%;
-	}
-	.skin {
-		fill: #8a4a2c;
-	}
-	.cloth {
-		fill: #2c2620;
-	}
-	.hair {
-		fill: #201509;
-	}
-	.scars line {
-		stroke: #c67a4c;
-		stroke-width: 2;
-		stroke-linecap: round;
-		opacity: 0.55;
+		animation-range: entry 35% cover 80%;
 	}
 
 	@keyframes resolve {
 		from {
-			filter: brightness(1.75) saturate(0.1) contrast(0.9);
+			filter: brightness(1.85) saturate(0.06) contrast(0.86);
 		}
 		to {
 			filter: none;
@@ -63,12 +51,12 @@
 	}
 
 	@supports not (animation-timeline: view()) {
-		.portrait {
+		.face {
 			animation: none;
 		}
 	}
 	@media (prefers-reduced-motion: reduce) {
-		.portrait {
+		.face {
 			animation: none;
 		}
 	}
