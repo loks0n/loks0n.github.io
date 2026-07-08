@@ -6,6 +6,10 @@
 
 <svelte:head>
 	<title>Projects | {SITE_TITLE}</title>
+	<meta
+		name="description"
+		content="A selection of things Luke B. Silver has built, from a Rust PHP profiler to Kubernetes operators."
+	/>
 </svelte:head>
 
 <article>

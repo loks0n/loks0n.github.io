@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { SITE_TITLE } from '$lib/config';
+	import { SITE_TITLE, SITE_DESCRIPTION } from '$lib/config';
 	import DateFormat from './DateFormat.svelte';
 
 	let { data } = $props();
@@ -7,6 +7,7 @@
 
 <svelte:head>
 	<title>{SITE_TITLE}</title>
+	<meta name="description" content={SITE_DESCRIPTION} />
 </svelte:head>
 
 <article>

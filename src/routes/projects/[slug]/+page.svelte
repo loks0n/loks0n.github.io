@@ -6,6 +6,7 @@
 
 <svelte:head>
 	<title>{data.entry.name} | {SITE_TITLE}</title>
+	<meta name="description" content={data.entry.description} />
 </svelte:head>
 
 <article>

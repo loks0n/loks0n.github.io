@@ -15,6 +15,7 @@
 
 <svelte:head>
 	<title>{data.entry.title} | {SITE_TITLE}</title>
+	<meta name="description" content={data.entry.excerpt || data.entry.title} />
 </svelte:head>
 
 <article>

@@ -1,6 +1,15 @@
 <script>
+	import { SITE_TITLE } from '$lib/config';
 	import meSrc from './me.webp';
 </script>
+
+<svelte:head>
+	<title>About | {SITE_TITLE}</title>
+	<meta
+		name="description"
+		content="Luke B. Silver is a Platform Engineer at Appwrite with a background in performance optimization and scalability."
+	/>
+</svelte:head>
 
 <article>
 	<h1 class="sr-only">About</h1>
