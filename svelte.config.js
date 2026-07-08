@@ -2,11 +2,25 @@ import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { markdoc } from 'svelte-markdoc-preprocess';
 import md from '@markdoc/markdoc';
+import { createHighlighter } from 'shiki';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 
 const { Tag } = md;
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Highlight code at build time so Shiki never ships to the client.
+// createHighlighter() is async, but the returned codeToHtml() is synchronous,
+// so it can be called from markdoc's synchronous fence transform below.
+const highlighter = await createHighlighter({
+	themes: ['tokyo-night'],
+	langs: ['javascript', 'typescript', 'svelte', 'html', 'css', 'json', 'bash', 'yaml']
+});
+
+function highlight(content, language = 'text') {
+	const lang = highlighter.getLoadedLanguages().includes(language) ? language : 'text';
+	return highlighter.codeToHtml(content, { lang, theme: 'tokyo-night' });
+}
 
 function getTextContent(children) {
 	return children
@@ -50,6 +64,7 @@ const config = {
 		markdoc({
 			nodes: join(__dirname, './src/lib/markdoc/Nodes.svelte'),
 			tags: join(__dirname, './src/lib/markdoc/Tags.svelte'),
+			highlighter: async (code, language) => highlight(code, language),
 			config: {
 				nodes: {
 					heading: {
