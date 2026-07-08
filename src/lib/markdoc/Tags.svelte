@@ -7,4 +7,5 @@
 	export { default as Reversal } from './tags/Reversal.svelte';
 	export { default as Horizon } from './tags/Horizon.svelte';
 	export { default as Water } from './tags/Water.svelte';
+	export { default as Draughts } from './tags/Draughts.svelte';
 </script>
