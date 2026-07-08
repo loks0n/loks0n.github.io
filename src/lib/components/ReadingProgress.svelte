@@ -1,25 +1,30 @@
-<script lang="ts">
-	let progress = $state(0);
-
-	function updateProgress() {
-		const scrollTop = window.scrollY;
-		const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-		progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-	}
-</script>
-
-<svelte:window onscroll={updateProgress} />
-
-<div class="progress-bar" style="width: {progress}%" aria-hidden="true"></div>
+<!-- Pure-CSS reading progress bar, driven by the scroll position with no JS. -->
+<div class="progress-bar" aria-hidden="true"></div>
 
 <style>
 	.progress-bar {
 		position: fixed;
 		top: 0;
 		left: 0;
+		width: 100%;
 		height: 3px;
 		background: var(--color-primary);
 		z-index: 1000;
-		transition: width 0.1s ease-out;
+		transform: scaleX(0);
+		transform-origin: 0 50%;
+		animation: grow-progress linear;
+		animation-timeline: scroll(root block);
+	}
+
+	@keyframes grow-progress {
+		to {
+			transform: scaleX(1);
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.progress-bar {
+			animation: none;
+		}
 	}
 </style>
