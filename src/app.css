@@ -136,14 +136,13 @@ article strong {
 	font-weight: 600;
 }
 
-article h1,
-article h2,
-article h3,
-article h4,
-article h5,
-article h6 {
+article :is(h1, h2, h3, h4, h5, h6) {
 	font-weight: 600;
 	line-height: 1.1;
+}
+
+article :is(h2, h3, h4, h5, h6) {
+	margin: 1.5em 0 0.5em;
 }
 
 /* Heading anchor links */
@@ -156,49 +155,35 @@ article h6 {
 	transition: opacity var(--transition-fast);
 }
 
-article h2:hover .heading-anchor,
-article h3:hover .heading-anchor,
-article h4:hover .heading-anchor,
-article h5:hover .heading-anchor,
-article h6:hover .heading-anchor,
+article :is(h2, h3, h4, h5, h6):hover .heading-anchor,
 .heading-anchor:focus {
 	opacity: 0.5;
 }
 
 article h1 {
 	font-size: 3.5rem;
-	margin-bottom: 0em;
+	margin-bottom: 0;
 	text-wrap: balance;
 }
 
 article h2 {
 	font-size: 1.9rem;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
 }
 
 article h3 {
 	font-size: 1.5rem;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
 }
 
 article h4 {
 	font-size: 1.25rem;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
 }
 
 article h5 {
 	font-size: 1.15rem;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
 }
 
 article h6 {
 	font-size: 1rem;
-	margin-top: 1.5em;
-	margin-bottom: 0.5em;
 }
 
 article ul,
