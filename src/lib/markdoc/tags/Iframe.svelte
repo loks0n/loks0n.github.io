@@ -1,15 +1,15 @@
 <script lang="ts">
-	interface Props {
-		src: string;
-		title: string;
-		width?: string;
-		height?: string;
-		style?: string;
-		allow?: string;
-		loading?: 'eager' | 'lazy';
-	}
+  interface Props {
+    src: string;
+    title: string;
+    width?: string;
+    height?: string;
+    style?: string;
+    allow?: string;
+    loading?: "eager" | "lazy";
+  }
 
-	let { src, title, width = '100%', height = '352', style, allow, loading }: Props = $props();
+  let { src, title, width = "100%", height = "352", style, allow, loading }: Props = $props();
 </script>
 
 <iframe {src} {title} {width} {height} {style} {allow} {loading} frameborder="0"></iframe>

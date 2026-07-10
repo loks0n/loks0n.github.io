@@ -1,63 +1,63 @@
 <script lang="ts">
-	import '../app.css';
-	import '../code.css';
-	import '@fontsource/source-serif-pro/latin-400.css';
-	import Nav from '$lib/components/Nav.svelte';
-	import { SITE_TITLE } from '$lib/config';
-	import Footer from '$lib/components/Footer.svelte';
-	interface Props {
-		children?: import('svelte').Snippet;
-	}
+  import "../app.css";
+  import "../code.css";
+  import "@fontsource/source-serif-pro/latin-400.css";
+  import Nav from "$lib/components/Nav.svelte";
+  import { SITE_TITLE } from "$lib/config";
+  import Footer from "$lib/components/Footer.svelte";
+  interface Props {
+    children?: import("svelte").Snippet;
+  }
 
-	let { children }: Props = $props();
+  let { children }: Props = $props();
 </script>
 
 <svelte:head>
-	<link rel="alternate" type="application/atom+xml" title={SITE_TITLE} href="/rss.xml" />
+  <link rel="alternate" type="application/atom+xml" title={SITE_TITLE} href="/rss.xml" />
 </svelte:head>
 
 <main>
-	<div class="container">
-		<Nav />
-		<div class="content">
-			{@render children?.()}
-		</div>
-		<Footer />
-	</div>
+  <div class="container">
+    <Nav />
+    <div class="content">
+      {@render children?.()}
+    </div>
+    <Footer />
+  </div>
 </main>
 
 <style>
-	main {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		background-color: var(--color-background);
-		padding: 1em;
-		min-height: 100vh;
-		min-height: 100dvh;
-	}
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-background);
+    padding: 1em;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
 
-	.container {
-		display: flex;
-		flex-direction: column;
-		width: min(100%, 35rem);
-	}
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 35rem);
+  }
 
-	.content {
-		margin-top: 3em;
-		margin-bottom: 3em;
-		flex: 1;
-		animation: fade-in 0.4s ease-out;
-	}
+  .content {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    flex: 1;
+    animation: fade-in 0.4s ease-out;
+  }
 
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-			transform: translateY(10px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 </style>

@@ -1,4 +1,4 @@
-import { projects } from '$lib/content';
+import { projects } from "$lib/content";
 
 export const prerender = true;
 

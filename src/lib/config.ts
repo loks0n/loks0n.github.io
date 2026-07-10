@@ -1,5 +1,5 @@
-import { dev } from '$app/environment';
+import { dev } from "$app/environment";
 
 export const SITE_TITLE = "Luke B. Silver's Blog";
-export const SITE_DESCRIPTION = 'Nothing much here.';
-export const SITE_URL = dev ? 'http://localhost:5173' : 'https://loks0n.dev';
+export const SITE_DESCRIPTION = "Nothing much here.";
+export const SITE_URL = dev ? "http://localhost:5173" : "https://loks0n.dev";

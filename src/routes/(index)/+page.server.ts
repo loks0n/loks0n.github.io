@@ -1,4 +1,4 @@
-import { posts } from '$lib/content';
+import { posts } from "$lib/content";
 
 export const prerender = true;
 
