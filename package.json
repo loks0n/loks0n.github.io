@@ -13,7 +13,7 @@
     "format": "oxfmt ."
   },
   "dependencies": {
-    "@fontsource/source-serif-pro": "^5.2.5"
+    "@fontsource/source-serif-pro": "^5.3.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "^3.0.10",
