@@ -22,7 +22,7 @@
     "@sveltejs/vite-plugin-svelte": "^7.3.0",
     "@types/node": "^26.2.0",
     "oxfmt": "^0.64.0",
-    "oxlint": "^1.77.0",
+    "oxlint": "^1.79.0",
     "shiki": "^4.4.3",
     "svelte": "^5.56.10",
     "svelte-check": "^4.7.6",
