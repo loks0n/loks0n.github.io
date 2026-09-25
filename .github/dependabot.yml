@@ -9,6 +9,9 @@ updates:
       time: "06:00"
       timezone: Europe/London
     open-pull-requests-limit: 5
+    groups:
+      npm:
+        patterns: ["*"]
 
   - package-ecosystem: github-actions
     directory: "/"
@@ -18,3 +21,6 @@ updates:
       time: "06:00"
       timezone: Europe/London
     open-pull-requests-limit: 5
+    groups:
+      github-actions:
+        patterns: ["*"]
