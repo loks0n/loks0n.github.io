@@ -8,7 +8,7 @@
   <title>Projects | {SITE_TITLE}</title>
   <meta
     name="description"
-    content="A selection of things Luke B. Silver has built, from a Rust PHP profiler to Kubernetes operators."
+    content="What Luke B. Silver has built at Appwrite and on the side, including an edge router, a workload orchestrator and a Rust PHP profiler."
   />
 </svelte:head>
 

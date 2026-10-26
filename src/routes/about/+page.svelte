@@ -7,7 +7,7 @@
   <title>About | {SITE_TITLE}</title>
   <meta
     name="description"
-    content="Luke B. Silver is a Platform Engineer at Appwrite with a background in performance optimization and scalability."
+    content="Luke B. Silver is an Engineering Lead at Appwrite, leading the edge, compute and infrastructure behind Appwrite Cloud."
   />
 </svelte:head>
 
@@ -18,14 +18,25 @@
   </div>
   <div class="content">
     <p>
-      I'm a <strong>Platform Engineer</strong> at <a href="https://appwrite.io">Appwrite</a>. I've
-      previously worked at <a href="https://www.thg.com">THG</a> and
+      I'm an <strong>Engineering Lead</strong> at <a href="https://appwrite.io">Appwrite</a>. I look
+      after the platform under Appwrite Cloud: the edge network, the compute that runs customer
+      code, and 21 production Kubernetes clusters across six regions. Together they serve over 100
+      million requests a day.
+    </p>
+
+    <p>
+      I built the <a href="/projects/appwrite-edge">edge router</a> behind Appwrite Sites, designed
+      the <a href="/projects/open-runtimes-orchestrator">orchestrator</a> that schedules functions
+      and builds, and led the <a href="/projects/fleet-hardening">security hardening</a> of every production
+      cluster. I also rebuilt our alerting and on-call escalation.
+    </p>
+
+    <p>
+      Before Appwrite I worked on performance at <a href="https://www.thg.com">THG</a> and
       <a href="https://samsung.com">Samsung</a>.
     </p>
 
-    <p>I have an interesting background in performance optimization & scalability.</p>
-
-    <p>You can contact me <a href="https://www.linkedin.com/in/lukebsilver/">via LinkedIn</a></p>
+    <p>You can contact me <a href="https://www.linkedin.com/in/lukebsilver/">via LinkedIn</a>.</p>
   </div>
 </article>
 
