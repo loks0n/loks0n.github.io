@@ -1,0 +1,11 @@
+---
+name: open-runtimes orchestrator
+description: The next scheduler for Appwrite Functions and builds. One API runs deployments, pools, sandboxes and jobs on Docker or Kubernetes.
+github: https://github.com/open-runtimes/orchestrator
+---
+
+Appwrite's executor drives Docker on a single host. The orchestrator replaces it with one scheduler for Docker and Kubernetes. I wrote the design docs and nearly all of the code in 2026, and it runs Appwrite Cloud's builds in production.
+
+It runs four kinds of workload behind one API. Deployments serve traffic, pools keep warm pods ready, sandboxes run untrusted code alone, and jobs run builds. The same API works on Docker for local development and on Kubernetes in production.
+
+Build artifacts are mounted as filesystem images rather than extracted, so large deployments start fast. A node mount agent does the mount on the host, so no pod running customer code needs a privileged container next to it.

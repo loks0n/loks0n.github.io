@@ -47,7 +47,7 @@ export interface Post {
 export interface Project {
   name: string;
   description: string;
-  github: string;
+  github?: string;
 }
 
 export const posts = collection<Post>(

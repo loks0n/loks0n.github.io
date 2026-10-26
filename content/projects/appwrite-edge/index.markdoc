@@ -1,0 +1,10 @@
+---
+name: Appwrite Edge
+description: The router behind Appwrite Sites. It maps every request to a deployment, serves previews, caches at the edge and scales runtimes per project.
+---
+
+Appwrite Sites needed something to sit in front of every customer domain and decide where a request goes. I built that router for the Sites launch in 2025. It now serves about 11 million requests a day.
+
+Each request resolves a domain to a deployment and a region, then to a running runtime. Preview deployments, redirect rules, custom error pages and cache invalidation all live in the router. When a deployment changes, the region publishes an event and the edge drops its cached rule and runtime.
+
+Runtimes run as Kubernetes pods. The edge scales them per project, keeps warm capacity on spare nodes, and reports every execution back to the region that owns it.
