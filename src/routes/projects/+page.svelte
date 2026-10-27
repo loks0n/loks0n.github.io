@@ -8,7 +8,7 @@
   <title>Projects | {SITE_TITLE}</title>
   <meta
     name="description"
-    content="What Luke B. Silver has built at Appwrite and on the side, including an edge router, a workload orchestrator and a Rust PHP profiler."
+    content="Things Luke B. Silver has built, at Appwrite and on the side."
   />
 </svelte:head>
 
