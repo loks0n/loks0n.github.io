@@ -9,7 +9,7 @@
   <title>About | {SITE_TITLE}</title>
   <meta
     name="description"
-    content="Luke B. Silver is an Engineering Lead at Appwrite, looking after the platform that runs Appwrite Cloud."
+    content="Luke B. Silver leads the Cloud team at Appwrite, which runs Appwrite Cloud and builds much of the product on top of it."
   />
 </svelte:head>
 
@@ -34,18 +34,27 @@
         </svg>
       {/if}
       <h1>Luke B. Silver</h1>
-      <p class="role">Engineering Lead at <a href="https://appwrite.io">Appwrite</a>, London</p>
+      <p class="role">
+        Engineering Lead for Cloud at <a href="https://appwrite.io">Appwrite</a>, London
+      </p>
     </div>
   </header>
 
   <p class="lede">
-    I look after the platform that runs Appwrite Cloud. That's about twenty production Kubernetes
-    clusters in six regions, serving over 100 million requests a day. I also rebuilt how our alerts
-    escalate to on-call.
+    I lead the Cloud team at Appwrite. We run Appwrite Cloud, about twenty production Kubernetes
+    clusters in six regions serving over 100 million requests a day, and we build a large part of
+    the product on top of it.
+  </p>
+
+  <p>
+    That covers reliability and on-call, infrastructure and its cost, CI and deployment, the core
+    server, billing and usage, the SDK generator and the SDKs it ships, and the libraries underneath
+    them. There are four of us. Over the last 90 days we merged over half of all the pull requests
+    across Appwrite's GitHub organizations, in more than a hundred repositories.
   </p>
 
   <section>
-    <h2>Selected work at Appwrite</h2>
+    <h2>Selected work from the Cloud team</h2>
     <ul class="work">
       {#each data.work as project (project.slug)}
         <li>

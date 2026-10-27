@@ -13,9 +13,9 @@
 <article>
   <h1 class="sr-only">Blog</h1>
   <p class="intro">
-    I'm Luke, and I lead platform engineering at <a href="https://appwrite.io">Appwrite</a>. The
-    work is on <a href="/projects">projects</a>, there's more <a href="/about">about me</a>, and my
-    posts are below.
+    I'm Luke, and I lead the Cloud team at <a href="https://appwrite.io">Appwrite</a>. The work is
+    on <a href="/projects">projects</a>, there's more <a href="/about">about me</a>, and my posts
+    are below.
   </p>
   <ul>
     {#each data.posts as post (post.slug)}
