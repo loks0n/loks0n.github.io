@@ -123,6 +123,10 @@ article > * {
   margin-bottom: 1.5em;
 }
 
+article p {
+  text-wrap: pretty;
+}
+
 hr {
   opacity: 0.1;
 }

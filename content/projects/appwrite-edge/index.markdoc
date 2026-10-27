@@ -2,6 +2,7 @@
 name: Appwrite Edge
 description: The router and orchestrator that run customer code for Appwrite Sites and Functions in six regions.
 github: https://github.com/open-runtimes/orchestrator
+employer: Appwrite
 ---
 
 Appwrite Edge runs customer code on a fleet of machines in six regions, with thousands of runtimes live at any moment. The router decides where each request goes, and the orchestrator runs the code.

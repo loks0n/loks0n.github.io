@@ -29,7 +29,9 @@
         <a
           href={link.url}
           aria-current={page.url.pathname === link.url ? "page" : undefined}
-          class:active={page.url.pathname === link.url}
+          class:active={link.url === "/"
+            ? page.url.pathname === "/"
+            : page.url.pathname.startsWith(link.url)}
         >
           {link.name}
         </a>
@@ -65,6 +67,13 @@
   a {
     letter-spacing: 0.05em;
     text-decoration: none;
+    text-underline-offset: 0.35em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:hover,
+  a.active {
+    text-decoration-line: underline;
   }
 
   @media (min-width: 450px) {
