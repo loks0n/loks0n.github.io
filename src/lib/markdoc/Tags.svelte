@@ -8,4 +8,7 @@
   export { default as Horizon } from "./tags/Horizon.svelte";
   export { default as Water } from "./tags/Water.svelte";
   export { default as Draughts } from "./tags/Draughts.svelte";
+  export { default as Trace } from "./tags/Trace.svelte";
+  export { default as Mount } from "./tags/Mount.svelte";
+  export { default as Rollout } from "./tags/Rollout.svelte";
 </script>

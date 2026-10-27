@@ -19,8 +19,8 @@
   <div class="content">
     <p>
       I'm an <strong>Engineering Lead</strong> at <a href="https://appwrite.io">Appwrite</a>. I look
-      after the platform that runs Appwrite Cloud. That's 21 production Kubernetes clusters in six
-      regions, serving over 100 million requests a day.
+      after the platform that runs Appwrite Cloud. That's about twenty production Kubernetes
+      clusters in six regions, serving over 100 million requests a day.
     </p>
 
     <p>
