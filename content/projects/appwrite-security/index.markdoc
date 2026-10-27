@@ -1,25 +1,27 @@
 ---
-name: Appwrite security
+name: Security at Appwrite
 description: How my team locks down a cloud that runs other people's code, covering Kubernetes hardening, keyless credentials, abuse detection and CVE response.
 ---
 
-Appwrite Cloud runs code we didn't write, for people we haven't met, in six regions. Some of that code is hostile, and we build as if all of it might be. I lead the team that owns this work, and Levi, Chirag, Torsten and I designed and built most of what follows.
+Appwrite Cloud runs code we didn't write, for people we haven't met, on about twenty production clusters in six regions. Some of that code is hostile, and we build as if all of it might be. I lead the team that owns this work, and Levi, Chirag, Torsten and I designed and built most of what follows.
 
 ## Hardened clusters
 
-Every pod starts with no egress. Each service declares the hosts it needs, and the network policy drops everything else. Kyverno enforces pod security on the cloud and edge clusters and audits the database clusters. When a service needs an exception, the exception lives in that service's repo and covers one container, volume or capability. Containers run under Appwrite's own seccomp profile, and CI fails any PR that ships a container without the hardened security context.
+Every pod starts with no egress. Each service declares the hosts it needs, and the network policy drops everything else. Across the fleet, that's hundreds of thousands of dropped packets a day. Kyverno enforces pod security on the cloud and edge clusters and audits the database clusters. When a service needs an exception, the exception lives in that service's repo and covers one container, volume or capability. Containers run under Appwrite's own seccomp profile, and CI fails any PR that ships a container without the hardened security context.
 
-On the edge nodes, Tetragon watches for container-escape techniques and pages on-call when it sees one.
+On every edge node, Tetragon watches for container-escape techniques and pages on-call when it sees one.
 
 None of this is hard to switch on. Switching it on without breaking production is the hard part. Each control went to staging first, then into audit mode on one production region, then into enforce mode one cluster at a time. We alerted on dropped traffic, so a missing exception showed up in Grafana before a customer noticed.
 
+{% rollout /%}
+
 ## No long-lived keys
 
-ArgoCD, External Secrets and our internal tools reach GKE and AWS through workload identity, so there's no static key to leak. Each service gets storage keys for its own buckets in its own environment. ArgoCD projects can only touch their own clusters and resource kinds. Each ClusterRole allows only the API calls its service makes. Internal databases and queues use generated passwords and TLS.
+ArgoCD, External Secrets and our internal tools reach our cloud providers through workload identity, so there's no static key to leak. Each service gets storage keys for its own buckets in its own environment. ArgoCD projects can only touch their own clusters and resource kinds. Each ClusterRole allows only the API calls its service makes. Internal databases and queues use generated passwords and TLS.
 
 ## Abuse
 
-Free hosting attracts phishing kits and malware. A scanner checks every deployment, and when it finds a threat in a free-tier project, the platform blocks that project and every other project in the organization. The edge refuses tunnel services and known bad domains at DNS. Our WAF runs Appwrite's internal rules before each project's own rules, and rate limits on deployments and mail stop one account from flooding the platform.
+A scanner checks every deployment, and when it finds a threat in a free-tier project, the platform blocks that project and every other project in the organization. The edge refuses tunnel services and known bad domains at DNS. Our WAF runs Appwrite's internal rules before each project's own rules, and rate limits on deployments and mail stop one account from flooding the platform.
 
 ## Vulnerability response
 

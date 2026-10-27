@@ -36,7 +36,21 @@ Browser and load tests run as ephemeral CronJob pods, external to the operator p
 
 Routing results through the Kubernetes API turns the API server into the data plane, so the scaling ceiling becomes reconcile throughput rather than the number of probes. Posting to an HTTP endpoint on the operator instead makes a single replica the bottleneck and the availability risk.
 
-So the operator puts a NATS work queue in the middle. The test sidecar publishes its result and disconnects, probe workers consume and scale horizontally behind the queue, and the metrics consumer reads the stream without knowing who wrote to it. Every component stays stateless and independently scalable, and NATS costs around 32Mi of memory when idle.
+So the operator puts a NATS work queue in the middle. The test sidecar publishes its result and disconnects, probe workers consume and scale horizontally behind the queue, and the metrics consumer reads the stream without knowing who wrote to it. Every component stays stateless and independently scalable. In production, each NATS replica uses around 10 MiB of memory.
+
+## In production at Appwrite
+
+Appwrite Cloud's synthetic checks run on synthetics-operator, and critical probes page on-call. One install watches all six regions.
+
+It runs about 270 checks. That's over a hundred HTTP probes, a few dozen TCP and DNS probes, around 40 Playwright browser tests and around 100 heartbeats. They cover Sites, the database API, cloud health, a functions canary, the DNS nameservers and more. Together they produce roughly 300,000 results a day, a few every second.
+
+How well it runs, measured from its own metrics:
+
+- **No missed runs.** Over a week, no probe went longer than about one interval between runs, within the one-minute resolution of the metrics.
+- **Always scrapeable.** Its metrics endpoint answered Prometheus 100% of the time over 30 days.
+- **A handful of restarts a month**, across every pod in the install.
+- **Cheap.** The whole install, controller, probers, heartbeat receivers, webhooks, metrics and NATS, fits in a couple of hundred MiB of memory and a small fraction of one CPU core.
+- **Over 99% passing.** Sampled every 5 minutes over 30 days, more than 99% of probes reported a pass at any given moment.
 
 ## Choices worth noting
 
