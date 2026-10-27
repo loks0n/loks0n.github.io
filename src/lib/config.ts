@@ -1,4 +1,4 @@
-import { dev } from "$app/environment";
+import { dev } from "$app/env";
 
 export const SITE_TITLE = "Luke B. Silver";
 export const SITE_DESCRIPTION =

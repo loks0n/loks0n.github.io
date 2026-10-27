@@ -1,7 +1,7 @@
 <script lang="ts">
-  import { SITE_TITLE } from "$lib/config";
+  import { SITE_TITLE } from "#lib/config.ts";
   import DateFormat from "../../(index)/DateFormat.svelte";
-  import ReadingProgress from "$lib/components/ReadingProgress.svelte";
+  import ReadingProgress from "#lib/components/ReadingProgress.svelte";
   import type { PageData } from "./$types";
 
   interface Props {

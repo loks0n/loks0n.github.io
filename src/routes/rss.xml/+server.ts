@@ -1,5 +1,5 @@
-import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "$lib/config";
-import { posts } from "$lib/content";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL } from "#lib/config.ts";
+import { posts } from "#lib/content.ts";
 
 export const prerender = true;
 
