@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SITE_TITLE } from "$lib/config";
+  import { SITE_TITLE } from "#lib/config.ts";
 
   let { data } = $props();
 </script>

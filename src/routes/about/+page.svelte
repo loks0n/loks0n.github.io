@@ -1,5 +1,5 @@
 <script>
-  import { SITE_TITLE } from "$lib/config";
+  import { SITE_TITLE } from "#lib/config.ts";
   import meSrc from "./me.webp";
 </script>
 

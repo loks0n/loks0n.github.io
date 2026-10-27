@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { SITE_TITLE, SITE_DESCRIPTION } from "$lib/config";
+  import { SITE_TITLE, SITE_DESCRIPTION } from "#lib/config.ts";
   import DateFormat from "./DateFormat.svelte";
 
   let { data } = $props();
