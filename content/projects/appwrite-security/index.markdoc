@@ -9,7 +9,7 @@ Appwrite Cloud runs code we didn't write, for people we haven't met, on about tw
 
 Every pod starts with no egress. Each service declares the hosts it needs, and the network policy drops everything else. Across the fleet, that's hundreds of thousands of dropped packets a day. Kyverno enforces pod security on the cloud and edge clusters and audits the database clusters. When a service needs an exception, the exception lives in that service's repo and covers one container, volume or capability. Containers run under Appwrite's own seccomp profile, and CI fails any PR that ships a container without the hardened security context.
 
-On every edge node, Tetragon watches for container-escape techniques and pages on-call when it sees one.
+On every edge machine, Tetragon watches for container-escape techniques and pages on-call when it sees one.
 
 None of this is hard to switch on. Switching it on without breaking production is the hard part. Each control went to staging first, then into audit mode on one production region, then into enforce mode one cluster at a time. We alerted on dropped traffic, so a missing exception showed up in Grafana before a customer noticed.
 
@@ -25,7 +25,7 @@ A scanner checks every deployment, and when it finds a threat in a free-tier pro
 
 ## Vulnerability response
 
-Dependabot, Semgrep and Gitleaks findings all go to one security channel. When a CVE hits a base image, we patch the shared image once and roll every service built on it. Copy.fail (CVE-2026-31431) was a kernel bug, so there was no image to patch. We blocked the vulnerable kernel module on every edge node with a DaemonSet instead.
+Dependabot, Semgrep and Gitleaks findings all go to one security channel. When a CVE hits a base image, we patch the shared image once and roll every service built on it. Copy.fail (CVE-2026-31431) was a kernel bug, so there was no image to patch. We blocked the vulnerable kernel module on every edge machine with a DaemonSet instead.
 
 ## In the product
 

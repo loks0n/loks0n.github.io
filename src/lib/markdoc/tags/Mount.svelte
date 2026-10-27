@@ -2,7 +2,7 @@
   // How a build artifact reaches a pod, plus the four workload kinds. No props.
   const steps = [
     { title: "Object storage", body: "build.erofs", tag: "download · ~10× slower" },
-    { title: "Mount agent", body: "loop + mount on the host", tag: "mount · tens of ms" },
+    { title: "Mount agent", body: "loop + mount on the machine", tag: "mount · tens of ms" },
     { title: "Runtime pod", body: "/usr/code (read-only)", tag: "unprivileged" },
   ];
   const kinds = [
@@ -16,11 +16,11 @@
 <div
   class="node"
   role="img"
-  aria-label="On each node, a build artifact downloads from object storage, the mount agent mounts it on the host in tens of milliseconds, and the runtime pod sees it read-only without a privileged container. The orchestrator runs deployments, pools, sandboxes and jobs."
+  aria-label="On each machine, a build artifact downloads from object storage, the mount agent mounts it on the host in tens of milliseconds, and the runtime pod sees it read-only without a privileged container. The orchestrator runs deployments, pools, sandboxes and jobs."
 >
   <div class="bar">
-    <span class="crumb">node</span>
-    <span class="chip">edge node</span>
+    <span class="crumb">machine</span>
+    <span class="chip">edge</span>
     <span class="spacer"></span>
     <span class="muted">open-runtimes/orchestrator</span>
   </div>
