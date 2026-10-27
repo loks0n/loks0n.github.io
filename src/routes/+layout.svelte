@@ -2,6 +2,8 @@
   import "../app.css";
   import "../code.css";
   import "@fontsource/source-serif-pro/latin-400.css";
+  import "@fontsource/source-serif-pro/latin-400-italic.css";
+  import "@fontsource/source-serif-pro/latin-600.css";
   import Nav from "#lib/components/Nav.svelte";
   import { SITE_TITLE } from "#lib/config.ts";
   import Footer from "#lib/components/Footer.svelte";
@@ -16,10 +18,12 @@
   <link rel="alternate" type="application/atom+xml" title={SITE_TITLE} href="/rss.xml" />
 </svelte:head>
 
+<a class="skip" href="#content">Skip to content</a>
+
 <main>
   <div class="container">
     <Nav />
-    <div class="content">
+    <div class="content" id="content">
       {@render children?.()}
     </div>
     <Footer />
@@ -41,6 +45,20 @@
     display: flex;
     flex-direction: column;
     width: min(100%, 35rem);
+  }
+
+  .skip {
+    position: absolute;
+    left: 1em;
+    top: -3em;
+    padding: 0.5em 1em;
+    background: var(--color-background);
+    z-index: 1;
+    transition: top var(--transition-fast);
+  }
+
+  .skip:focus {
+    top: 1em;
   }
 
   .content {

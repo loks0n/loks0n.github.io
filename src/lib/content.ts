@@ -48,6 +48,8 @@ export interface Project {
   name: string;
   description: string;
   github?: string;
+  /** Set for work done in a job, e.g. "Appwrite". Unset for side projects. */
+  employer?: string;
 }
 
 export const posts = collection<Post>(

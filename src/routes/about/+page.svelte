@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
   import { SITE_TITLE } from "#lib/config.ts";
-  import meSrc from "./me.webp";
+  import me from "./me.webp?enhanced";
+
+  let { data } = $props();
 </script>
 
 <svelte:head>
@@ -12,66 +14,113 @@
 </svelte:head>
 
 <article>
-  <h1 class="sr-only">About</h1>
-  <div class="image-container">
-    <img alt="Luke B. Silver" src={meSrc} width="1784" height="1824" />
-  </div>
-  <div class="content">
-    <p>
-      I'm an <strong>Engineering Lead</strong> at <a href="https://appwrite.io">Appwrite</a>. I look
-      after the platform that runs Appwrite Cloud. That's about twenty production Kubernetes
-      clusters in six regions, serving over 100 million requests a day.
-    </p>
+  <header>
+    <enhanced:img src={me} alt="Luke B. Silver" sizes="(min-width: 600px) 176px, 128px" />
+    <div>
+      <h1>Luke B. Silver</h1>
+      <p class="role">Engineering Lead at <a href="https://appwrite.io">Appwrite</a>, London</p>
+    </div>
+  </header>
 
-    <p>
-      I built the <a href="/projects/appwrite-edge">edge router</a> behind Appwrite Sites and
-      designed the <a href="/projects/appwrite-edge">orchestrator</a> that runs functions and
-      builds. My team also owns <a href="/projects/appwrite-security">platform security</a>, and I
-      rebuilt how our alerts escalate to on-call.
-    </p>
+  <p class="lede">
+    I look after the platform that runs Appwrite Cloud. That's about twenty production Kubernetes
+    clusters in six regions, serving over 100 million requests a day. I also rebuilt how our alerts
+    escalate to on-call.
+  </p>
 
-    <p>
-      Before Appwrite I worked on performance at <a href="https://www.thg.com">THG</a> and
-      <a href="https://samsung.com">Samsung</a>.
-    </p>
+  <section>
+    <h2>Selected work at Appwrite</h2>
+    <ul class="work">
+      {#each data.work as project (project.slug)}
+        <li>
+          <a href="/projects/{project.slug}">{project.name}</a>
+          <p>{project.description}</p>
+        </li>
+      {/each}
+    </ul>
+  </section>
 
-    <p>You can contact me <a href="https://www.linkedin.com/in/lukebsilver/">via LinkedIn</a>.</p>
-  </div>
+  <p>
+    Before Appwrite I worked on performance at <a href="https://www.thg.com">THG</a> and
+    <a href="https://samsung.com">Samsung</a>. You can reach me on
+    <a href="https://www.linkedin.com/in/lukebsilver/">LinkedIn</a>.
+  </p>
 </article>
 
 <style>
-  article {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
+  header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: end;
+    gap: 1.25rem;
+  }
+
+  header :global(img) {
+    width: 8rem;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: 50% 30%;
+    border-radius: 0.5rem;
+    box-shadow: 0 1rem 2rem -1rem rgba(60, 45, 20, 0.45);
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.15em;
+  }
+
+  .role {
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .lede {
+    font-size: 1.2rem;
+    line-height: 1.55;
+    margin-top: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--color-text-muted);
+    margin: 2.5rem 0 0.25rem;
+  }
+
+  .work {
+    list-style: none;
+    padding: 0;
+  }
+
+  .work li {
+    padding: 1rem 0;
+    margin: 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.12);
+  }
+
+  .work li:last-child {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.12);
+  }
+
+  .work a {
+    font-size: 1.15rem;
+    font-weight: 600;
+  }
+
+  .work p {
+    margin: 0.25rem 0 0;
+    color: var(--color-text-muted);
   }
 
   @media (min-width: 600px) {
-    article {
-      flex-direction: row;
-      align-items: flex-start;
+    header :global(img) {
+      width: 11rem;
     }
-  }
 
-  .image-container {
-    flex-shrink: 0;
-  }
-
-  img {
-    width: 300px;
-    height: auto;
-    border-radius: 0.25em;
-  }
-
-  .content {
-    font-size: 1.15rem;
-    line-height: 1.5;
-  }
-
-  .content p {
-    margin-bottom: 1rem;
+    h1 {
+      font-size: 2.75rem;
+    }
   }
 </style>
