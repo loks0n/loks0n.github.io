@@ -7,7 +7,7 @@
   <title>About | {SITE_TITLE}</title>
   <meta
     name="description"
-    content="Luke B. Silver is an Engineering Lead at Appwrite, leading the edge, compute and infrastructure behind Appwrite Cloud."
+    content="Luke B. Silver is an Engineering Lead at Appwrite, looking after the platform that runs Appwrite Cloud."
   />
 </svelte:head>
 
@@ -19,17 +19,15 @@
   <div class="content">
     <p>
       I'm an <strong>Engineering Lead</strong> at <a href="https://appwrite.io">Appwrite</a>. I look
-      after the platform under Appwrite Cloud: the edge network, the compute that runs customer
-      code, and 21 production Kubernetes clusters across six regions. Together they serve over 100
-      million requests a day.
+      after the platform that runs Appwrite Cloud. That's 21 production Kubernetes clusters in six
+      regions, serving over 100 million requests a day.
     </p>
 
     <p>
-      I built the <a href="/projects/appwrite-edge">edge router</a> behind Appwrite Sites, designed
-      the <a href="/projects/appwrite-edge">orchestrator</a> that schedules functions and builds,
-      and lead the team behind
-      <a href="/projects/appwrite-security">Appwrite's platform security</a>. I also rebuilt our
-      alerting and on-call escalation.
+      I built the <a href="/projects/appwrite-edge">edge router</a> behind Appwrite Sites and
+      designed the <a href="/projects/appwrite-edge">orchestrator</a> that runs functions and
+      builds. My team also owns <a href="/projects/appwrite-security">platform security</a>, and I
+      rebuilt how our alerts escalate to on-call.
     </p>
 
     <p>
