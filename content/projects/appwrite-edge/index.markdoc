@@ -4,7 +4,7 @@ description: The router and orchestrator that run customer code for Appwrite Sit
 github: https://github.com/open-runtimes/orchestrator
 ---
 
-Appwrite Edge runs customer code on around a hundred nodes in six regions, with thousands of runtimes live at any moment. The router decides where each request goes, and the orchestrator runs the code.
+Appwrite Edge runs customer code on a fleet of machines in six regions, with thousands of runtimes live at any moment. The router decides where each request goes, and the orchestrator runs the code.
 
 ## The router
 
@@ -16,7 +16,7 @@ A request comes in for a domain. The router looks up the deployment and its regi
 
 That's a median execution. The router spends a couple of milliseconds finding a warm runtime, and nearly all the rest is the customer's code. About 98 in every 100 executions find a runtime already running. The rest pay a cold start of a few seconds.
 
-When a customer ships a new deployment, the region publishes an event and the edge drops its cached rule and runtime. Each project's runtimes scale on their own, and spare nodes hold warm capacity for spikes.
+When a customer ships a new deployment, the region publishes an event and the edge drops its cached rule and runtime. Each project's runtimes scale on their own, and spare machines hold warm capacity for spikes.
 
 ## open-runtimes/orchestrator
 
@@ -24,6 +24,6 @@ The old executor drove Docker on a single host. open-runtimes/orchestrator is th
 
 One API runs four kinds of workload. Deployments serve traffic. Pools keep warm pods ready. Sandboxes run untrusted code alone. Jobs run builds. The same API runs on Docker Compose locally and on Kubernetes in production.
 
-Build artifacts get the most interesting treatment. The orchestrator mounts them as filesystem images instead of extracting them. Mounting takes tens of milliseconds, about a tenth of the time it takes to download the same artifact. A node mount agent does the mount on the host, which means no pod running customer code needs a privileged container sitting next to it.
+Build artifacts get the most interesting treatment. The orchestrator mounts them as filesystem images instead of extracting them. Mounting takes tens of milliseconds, about a tenth of the time it takes to download the same artifact. A mount agent on each machine does the mount, which means no pod running customer code needs a privileged container sitting next to it.
 
 {% mount /%}
