@@ -16,7 +16,23 @@
 <article>
   <header>
     <enhanced:img src={me} alt="Luke B. Silver" sizes="(min-width: 600px) 176px, 128px" />
-    <div>
+    <div class="who">
+      {#if data.weeks.length}
+        <svg
+          class="graph"
+          viewBox="0 0 {data.weeks.length * 12} 84"
+          aria-hidden="true"
+          preserveAspectRatio="xMaxYMid meet"
+        >
+          {#each data.weeks as week, x (x)}
+            {#each week as level, y (y)}
+              {#if level >= 0}
+                <rect x={x * 12} y={y * 12} width="10" height="10" rx="2" class="l{level}" />
+              {/if}
+            {/each}
+          {/each}
+        </svg>
+      {/if}
       <h1>Luke B. Silver</h1>
       <p class="role">Engineering Lead at <a href="https://appwrite.io">Appwrite</a>, London</p>
     </div>
@@ -62,6 +78,41 @@
     object-position: 50% 30%;
     border-radius: 0.5rem;
     box-shadow: 0 1rem 2rem -1rem rgba(60, 45, 20, 0.45);
+  }
+
+  .who {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: stretch;
+    min-width: 0;
+  }
+
+  .graph {
+    width: 100%;
+    margin-bottom: auto;
+    opacity: 0.55;
+    mask-image: linear-gradient(to right, transparent, #000 45%);
+  }
+
+  .graph rect {
+    fill: var(--color-primary);
+  }
+
+  .l0 {
+    fill-opacity: 0.07;
+  }
+  .l1 {
+    fill-opacity: 0.3;
+  }
+  .l2 {
+    fill-opacity: 0.5;
+  }
+  .l3 {
+    fill-opacity: 0.7;
+  }
+  .l4 {
+    fill-opacity: 0.9;
   }
 
   h1 {
