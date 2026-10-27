@@ -1,0 +1,30 @@
+---
+name: Appwrite security
+description: How my team secures a cloud that runs other people's code, from locked-down Kubernetes clusters and keyless credentials to abuse detection and same-day CVE response.
+---
+
+Appwrite Cloud runs code we didn't write, for people we haven't met, across six regions. So we assume some of that code is hostile. I lead the team that owns this work, and I designed or built most of what follows with Levi, Chirag and Torsten.
+
+## Clusters that assume the worst
+
+Every pod starts with no egress, and each service declares what it needs to reach. Kyverno enforces pod security on the cloud and edge clusters and audits the rest. Exceptions live in the repo of the service that needs them, scoped to one container, volume or capability. Containers run under Appwrite's own seccomp profile, and CI fails any PR that ships a container without the hardened security context.
+
+Tetragon watches the edge nodes for container-escape techniques and pages on-call when it sees one. The orchestrator's node mount agent means no pod running customer code needs a privileged container next to it.
+
+We rolled each control out the same way: staging first, then audit mode on one production region, then enforce mode one cluster at a time. An alert on dropped traffic meant a missing exception showed up in Grafana before a customer saw it.
+
+## No long-lived keys
+
+ArgoCD, External Secrets and our internal tools reach GKE and AWS through workload identity, so there is no static key to leak. Storage keys are scoped per service and per environment. ArgoCD projects can only touch their own clusters and resource kinds, ClusterRoles are trimmed to the calls each service makes, and internal databases and queues get generated passwords and TLS.
+
+## Abuse
+
+Free hosting attracts phishing and malware. Every deployment is scanned for threats, and a free-tier project with a detected threat is blocked automatically, along with every project in its organization. The edge refuses tunnels and known bad domains at DNS. A WAF runs Appwrite's internal rules ahead of each project's own, and deployment and mail rate limits stop a single account from flooding the platform.
+
+## Vulnerability response
+
+Dependabot, Semgrep and Gitleaks findings land in one security channel. When a CVE lands, we patch the shared base images once and roll every service built on them. For Copy.fail (CVE-2026-31431), a kernel bug, we blocked the vulnerable module on every edge node with a DaemonSet.
+
+## In the product
+
+Some of it is visible to customers. Team owners can hide member details from other members, users get an email when a new session signs in, logs mask sensitive fields, and read-only routes redact dedicated database credentials.

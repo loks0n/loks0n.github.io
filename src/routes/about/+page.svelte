@@ -26,9 +26,10 @@
 
     <p>
       I built the <a href="/projects/appwrite-edge">edge router</a> behind Appwrite Sites, designed
-      the <a href="/projects/open-runtimes-orchestrator">orchestrator</a> that schedules functions
-      and builds, and led the <a href="/projects/fleet-hardening">security hardening</a> of every production
-      cluster. I also rebuilt our alerting and on-call escalation.
+      the <a href="/projects/appwrite-edge">orchestrator</a> that schedules functions and builds,
+      and lead the team behind
+      <a href="/projects/appwrite-security">Appwrite's platform security</a>. I also rebuilt our
+      alerting and on-call escalation.
     </p>
 
     <p>
