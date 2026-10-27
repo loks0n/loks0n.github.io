@@ -49,8 +49,8 @@
   <p>
     That covers reliability and on-call, infrastructure and its cost, CI and deployment, the core
     server, billing and usage, the SDK generator and the SDKs it ships, and the libraries underneath
-    them. There are four of us. Over the last 90 days we merged over half of all the pull requests
-    across Appwrite's GitHub organizations, in more than a hundred repositories.
+    them. There are four of us, and over the last 90 days we merged about 4,000 pull requests across
+    more than a hundred repositories.
   </p>
 
   <section>
