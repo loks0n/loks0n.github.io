@@ -22,7 +22,7 @@
   "devDependencies": {
     "@sveltejs/adapter-static": "^4.0.1",
     "@sveltejs/enhanced-img": "^1.0.0",
-    "@sveltejs/kit": "^3.1.0",
+    "@sveltejs/kit": "^3.4.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
     "@types/node": "^26.6.5",
     "oxfmt": "^0.74.0",
